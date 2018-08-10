@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-10T08:32:18.977Z</updated>
+  <updated>2018-08-10T15:05:36.991Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>XorDDos木马查杀指北</title>
+    <link href="http://yoursite.com/2018/08/10/XorDDos%E6%9C%A8%E9%A9%AC%E6%9F%A5%E6%9D%80%E6%8C%87%E5%8C%97/"/>
+    <id>http://yoursite.com/2018/08/10/XorDDos木马查杀指北/</id>
+    <published>2018-08-10T13:25:37.000Z</published>
+    <updated>2018-08-10T15:05:36.991Z</updated>
+    
+    <content type="html"><![CDATA[<hr><a id="more"></a><h1 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h1><p>PKHunter检查工具，PKHunter的安装教程见木马查杀RKhunter安装指北</p><p>VMware® Workstation 14 Pro</p><p>注意：安装病毒之前请把虚拟机设置成NAT或host-only模式防止病毒传播或造成破坏！ </p><h1 id="木马上传"><a href="#木马上传" class="headerlink" title="木马上传"></a>木马上传</h1><p>首先我们先把病毒样本上传至虚拟机并解压：</p><p>我们可以利用rz命令上传文件，没有安装的请执行yum -y install lrzsz</p><p>解压可以利用unzip命令，没有的请执行yum -y install unzip</p><p><code>yum -y install lrzsz unzip</code></p><p><code>rz</code></p><p><code>unzip XorDDos样本.zip</code></p><p>给木马文件赋予权限并执行文件： </p><p><code>chmod +x a753cb1ff86c742bb497155362664c3b</code>  </p><h1 id="查杀木马"><a href="#查杀木马" class="headerlink" title="查杀木马"></a>查杀木马</h1><p>利用lsof -i查看到可疑文件，PID为4294，协议使用的是UDP（PID可能不同机器不一样） </p><p>如果没有lsof命令，可用yum安装</p><p><code>yum -y install lsof.x86_64</code></p><p>尝试关闭进程：kill -9  4294后在利用lsof -i查看下 </p><p>发现又启动了个进程，PID为5383，怀疑这个木马病毒会自动改名启动 </p><p>查看我们上传木马的目录发现，木马程序自毁了，现在我们可以尝试下使用RKHunter看看有哪些文件疑似被木马篡改过，用RKHunter检测一下</p><p>排查步骤跳过（因为不是笔者发现的木马位置）</p><p>木马位置为/etc/cron.hourly/，木马文件名可能每个人都不一样，我们先用chmod 000木马的权限取消掉而不是先干掉进程，避免他改名并且可以提取样本进行进一步的分析。 </p><p><code>ll -a /etc/cron.hourly</code></p><p><code>chmod 000 ytimkiztjldbrs.sh</code></p><p>利用<code>ll -aR /etc/rc.d</code>查看木马文件的连接 </p><p>先<code>chmod 000 /etc/init.d/ytimkiztjldbrs</code> 把可疑的连接权限都取消掉</p><p>reboot重启后在利用<code>lsof -i</code>看看可疑进程有没有启动</p><p>用<code>netstat -lnapt</code>查看下有无可疑的udp端口开放 </p><h2 id="提取木马"><a href="#提取木马" class="headerlink" title="提取木马"></a>提取木马</h2><p>之后我们可以尝试吧机器联网，提取木马文件样本，首先我们关闭虚拟机然后把虚拟机设置成桥接（如果是NAT模式并且能上网的话忽略此步骤）关机命令：shutdown now</p><p>使用xshell连接机器，查看之前木马释放出来的脚本<code>cat /etc/cron.hourly/ytimkiztjldbrs.sh</code></p><p><code>#!/bin/sh</code><br><code>PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/X11R6/bin</code><br><code>cp &quot;/usr/bin/ytimkiztjldbrs&quot; &quot;/usr/bin/wgxkzcllem&quot;</code></p><p><code>chmod 000 /usr/bin/wgxkzcllem</code>把可疑文件权限取消并尝试提取出来 </p><p>发现在/usr/bin下也有木马脚本，先去掉权限</p><p><code>chmod 000 ytimkiztjldbrs</code></p><p><code>chmod 000 ytimkiztjldbrs.sh</code></p><p>之后我们删除之前把权限都取消掉的文件</p><p>利用rm -rf命令</p><p>reboot重启系统</p><p>最后重装系统</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+    
+    </summary>
+    
+      <category term="木马查杀" scheme="http://yoursite.com/categories/%E6%9C%A8%E9%A9%AC%E6%9F%A5%E6%9D%80/"/>
+    
+    
+      <category term="木马查杀" scheme="http://yoursite.com/tags/%E6%9C%A8%E9%A9%AC%E6%9F%A5%E6%9D%80/"/>
+    
+  </entry>
   
   <entry>
     <title>应急响应</title>
