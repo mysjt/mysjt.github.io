@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="木马查杀," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -81,15 +81,16 @@
 
 
 
-<meta name="keywords" content="木马查杀">
-<meta property="og:type" content="article">
-<meta property="og:title" content="XorDDos木马查杀指北">
-<meta property="og:url" content="http://yoursite.com/2018/08/10/XorDDos木马查杀指北/index.html">
+<meta name="description" content="繁华一场梦">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Secer">
+<meta property="og:url" content="http://yoursite.com/tags/代码审计/index.html">
 <meta property="og:site_name" content="Secer">
+<meta property="og:description" content="繁华一场梦">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-10T15:05:36.991Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="XorDDos木马查杀指北">
+<meta name="twitter:title" content="Secer">
+<meta name="twitter:description" content="繁华一场梦">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/10/XorDDos木马查杀指北/"/>
+  <link rel="canonical" href="http://yoursite.com/tags/代码审计/"/>
 
 
 
 
 
-  <title>XorDDos木马查杀指北 | Secer</title>
+  <title>标签: 代码审计 | Secer</title>
   
 
 
@@ -144,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -248,216 +249,54 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  
+  
+  
+  <div class="post-block tag">
 
-  
+    <div id="posts" class="posts-collapse">
+      <div class="collection-title">
+        <h1>代码审计<small>标签</small>
+        </h1>
+      </div>
 
-  
-  
-  
+      
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/10/XorDDos木马查杀指北/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="shiqian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Secer">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h2 class="post-title">
         
+            <a class="post-title-link" href="/2018/08/08/Phpstorm-phpstudy-xdebug代码审计平台/" itemprop="url">
+              
+                <span itemprop="name">Phpstorm+phpstudy+xdebug代码审计平台</span>
+              
+            </a>
         
-          <h1 class="post-title" itemprop="name headline">XorDDos木马查杀指北</h1>
-        
+      </h2>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-10T21:25:37+08:00">
-                2018-08-10
-              </time>
-            
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-08-08T21:20:01+08:00"
+              content="2018-08-08" >
+          08-08
+        </time>
+      </div>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/木马查杀/" itemprop="url" rel="index">
-                    <span itemprop="name">木马查杀</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <hr>
-<a id="more"></a>
-<h1 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h1><p>PKHunter检查工具，PKHunter的安装教程见木马查杀RKhunter安装指北</p>
-<p>VMware® Workstation 14 Pro</p>
-<p>注意：安装病毒之前请把虚拟机设置成NAT或host-only模式防止病毒传播或造成破坏！ </p>
-<h1 id="木马上传"><a href="#木马上传" class="headerlink" title="木马上传"></a>木马上传</h1><p>首先我们先把病毒样本上传至虚拟机并解压：</p>
-<p>我们可以利用rz命令上传文件，没有安装的请执行yum -y install lrzsz</p>
-<p>解压可以利用unzip命令，没有的请执行yum -y install unzip</p>
-<p><code>yum -y install lrzsz unzip</code></p>
-<p><code>rz</code></p>
-<p><code>unzip XorDDos样本.zip</code></p>
-<p>给木马文件赋予权限并执行文件： </p>
-<p><code>chmod +x a753cb1ff86c742bb497155362664c3b</code>  </p>
-<h1 id="查杀木马"><a href="#查杀木马" class="headerlink" title="查杀木马"></a>查杀木马</h1><p>利用lsof -i查看到可疑文件，PID为4294，协议使用的是UDP（PID可能不同机器不一样） </p>
-<p>如果没有lsof命令，可用yum安装</p>
-<p><code>yum -y install lsof.x86_64</code></p>
-<p>尝试关闭进程：kill -9  4294后在利用lsof -i查看下 </p>
-<p>发现又启动了个进程，PID为5383，怀疑这个木马病毒会自动改名启动 </p>
-<p>查看我们上传木马的目录发现，木马程序自毁了，现在我们可以尝试下使用RKHunter看看有哪些文件疑似被木马篡改过，用RKHunter检测一下</p>
-<p>排查步骤跳过（因为不是笔者发现的木马位置）</p>
-<p>木马位置为/etc/cron.hourly/，木马文件名可能每个人都不一样，我们先用chmod 000木马的权限取消掉而不是先干掉进程，避免他改名并且可以提取样本进行进一步的分析。 </p>
-<p><code>ll -a /etc/cron.hourly</code></p>
-<p><code>chmod 000 ytimkiztjldbrs.sh</code></p>
-<p>利用<code>ll -aR /etc/rc.d</code>查看木马文件的连接 </p>
-<p>先<code>chmod 000 /etc/init.d/ytimkiztjldbrs</code> 把可疑的连接权限都取消掉</p>
-<p>reboot重启后在利用<code>lsof -i</code>看看可疑进程有没有启动</p>
-<p>用<code>netstat -lnapt</code>查看下有无可疑的udp端口开放 </p>
-<h2 id="提取木马"><a href="#提取木马" class="headerlink" title="提取木马"></a>提取木马</h2><p>之后我们可以尝试吧机器联网，提取木马文件样本，首先我们关闭虚拟机然后把虚拟机设置成桥接（如果是NAT模式并且能上网的话忽略此步骤）关机命令：shutdown now</p>
-<p>使用xshell连接机器，查看之前木马释放出来的脚本<code>cat /etc/cron.hourly/ytimkiztjldbrs.sh</code></p>
-<p><code>#!/bin/sh</code><br><code>PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/X11R6/bin</code><br><code>cp &quot;/usr/bin/ytimkiztjldbrs&quot; &quot;/usr/bin/wgxkzcllem&quot;</code></p>
-<p><code>chmod 000 /usr/bin/wgxkzcllem</code>把可疑文件权限取消并尝试提取出来 </p>
-<p>发现在/usr/bin下也有木马脚本，先去掉权限</p>
-<p><code>chmod 000 ytimkiztjldbrs</code></p>
-<p><code>chmod 000 ytimkiztjldbrs.sh</code></p>
-<p>之后我们删除之前把权限都取消掉的文件</p>
-<p>利用rm -rf命令</p>
-<p>reboot重启系统</p>
-<p>最后重装系统</p>
-
-      
-    </div>
-	
-	<div>
-	
-		<div>
-    
-        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>史前感谢您的来访-------------</div>
-    
-</div>
-	
-	</div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/木马查杀/" rel="tag"># 木马查杀</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/08/10/应急响应/" rel="next" title="应急响应">
-                <i class="fa fa-chevron-left"></i> 应急响应
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
       
     </div>
+
   </div>
+  
+  
+  
+
+  
 
 
           </div>
@@ -465,10 +304,6 @@
 
 
           
-
-  
-
-
 
         </div>
         
@@ -489,17 +324,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -566,22 +392,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验环境"><span class="nav-number">1.</span> <span class="nav-text">实验环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#木马上传"><span class="nav-number">2.</span> <span class="nav-text">木马上传</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查杀木马"><span class="nav-number">3.</span> <span class="nav-text">查杀木马</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#提取木马"><span class="nav-number">3.1.</span> <span class="nav-text">提取木马</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -715,10 +525,6 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 

