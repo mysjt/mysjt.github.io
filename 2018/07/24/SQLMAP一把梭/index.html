@@ -81,17 +81,18 @@
 
 
 
+<meta name="description" content="SQL注入的类型1.基于布尔的盲注，即可以根据返回页面判断条件真假的注入 2.基于时间的盲注，即不能根据页面返回内容判断任何信息，用条件语句查看时间延迟语句是否执行（也就是根据页面返回时间是否增加）来判断 3.基于报错注入，即页面会返回错误信息，或者把注入的语句的结果直接返回在页面中 4.联合查询注入，可以使用union的情况下的注入 5.堆查询注入，可以同时执行多条语句的执行时的注入 SQLM">
 <meta name="keywords" content="安全工具">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQLMAP一把梭">
 <meta property="og:url" content="http://yoursite.com/2018/07/24/SQLMAP一把梭/index.html">
 <meta property="og:site_name" content="Secer">
+<meta property="og:description" content="SQL注入的类型1.基于布尔的盲注，即可以根据返回页面判断条件真假的注入 2.基于时间的盲注，即不能根据页面返回内容判断任何信息，用条件语句查看时间延迟语句是否执行（也就是根据页面返回时间是否增加）来判断 3.基于报错注入，即页面会返回错误信息，或者把注入的语句的结果直接返回在页面中 4.联合查询注入，可以使用union的情况下的注入 5.堆查询注入，可以同时执行多条语句的执行时的注入 SQLM">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/images/pasted-17.png">
-<meta property="og:updated_time" content="2018-08-12T12:33:43.499Z">
+<meta property="og:updated_time" content="2018-08-12T13:05:50.281Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQLMAP一把梭">
-<meta name="twitter:image" content="http://yoursite.com/images/pasted-17.png">
+<meta name="twitter:description" content="SQL注入的类型1.基于布尔的盲注，即可以根据返回页面判断条件真假的注入 2.基于时间的盲注，即不能根据页面返回内容判断任何信息，用条件语句查看时间延迟语句是否执行（也就是根据页面返回时间是否增加）来判断 3.基于报错注入，即页面会返回错误信息，或者把注入的语句的结果直接返回在页面中 4.联合查询注入，可以使用union的情况下的注入 5.堆查询注入，可以同时执行多条语句的执行时的注入 SQLM">
 
 
 
@@ -353,9 +354,7 @@
       
 
       
-        <hr>
-<a id="more"></a>
-<p><img src="\images\pasted-17.png" alt="upload successful"></p>
+        <a id="more"></a>
 <h1 id="SQL注入的类型"><a href="#SQL注入的类型" class="headerlink" title="SQL注入的类型"></a>SQL注入的类型</h1><p>1.基于布尔的盲注，即可以根据返回页面判断条件真假的注入</p>
 <p>2.基于时间的盲注，即不能根据页面返回内容判断任何信息，用条件语句查看时间延迟语句是否执行（也就是根据页面返回时间是否增加）来判断</p>
 <p>3.基于报错注入，即页面会返回错误信息，或者把注入的语句的结果直接返回在页面中</p>
@@ -652,7 +651,6 @@
 <th>编号</th>
 <th>脚本名称</th>
 <th>作用</th>
-<th>实现方式</th>
 </tr>
 </thead>
 <tbody>
@@ -661,55 +659,47 @@
 <td>1</td>
 <td>apostrophemask.py</td>
 <td>用utf8代替引号</td>
-<td>(“1 AND ‘1’=’1”)   ‘1 AND %EF%BC%871%EF%BC%87=%EF%BC%871’</td>
 </tr>
 <tr>
 <td>2</td>
 <td>base64encode.py</td>
 <td>用base64编码替换</td>
-<td>(“1’ AND SLEEP(5)#”)  ‘MScgQU5EIFNMRUVQKDUpIw==’</td>
 <td></td>
 </tr>
 <tr>
 <td>3</td>
 <td>multiplespaces.py</td>
 <td>围绕SQL关键字添加多个空格</td>
-<td>(‘1 UNION SELECT foobar’)  ‘1    UNION     SELECT   foobar’</td>
 <td></td>
 </tr>
 <tr>
 <td>4</td>
 <td>space2plus.py</td>
 <td>用+替换空格</td>
-<td>(‘SELECT id FROM users’)  ‘SELECT+id+FROM+users’</td>
 <td></td>
 </tr>
 <tr>
 <td>5</td>
 <td>nonrecursivereplacement.py</td>
-<td>双重查询语句。取代predefined SQL关键字with表示   suitable for替代（例如  .replace（“SELECT”、””)） filters</td>
-<td>(‘1 UNION SELECT 2–’)  ‘1 UNIOUNIONN SELESELECTCT 2–’</td>
+<td>双重查询语句。取代predefined SQL关键字with表示 suitable for替代（例如  .replace（“SELECT”、””)） filters</td>
 <td></td>
 </tr>
 <tr>
 <td>6</td>
 <td>space2randomblank.py</td>
-<td>代替空格字符（“”）从一个随机的空  白字符可选字符的有效集</td>
-<td>(‘SELECT id FROM users’)  ‘SELECT%0Did%0DFROM%0Ausers’</td>
+<td>代替空格字符（“”）从一个随机的空白字符可选字符的有效集</td>
 <td></td>
 </tr>
 <tr>
 <td>7</td>
 <td>unionalltounion.py</td>
 <td>替换UNION ALL SELECT UNION SELECT</td>
-<td>(‘-1 UNION ALL SELECT’)  ‘-1 UNION SELECT’</td>
 <td></td>
 </tr>
 <tr>
 <td>8</td>
 <td>securesphere.py</td>
 <td>追加特制的字符串</td>
-<td>(‘1 AND 1=1’)  “1 AND 1=1 and ‘0having’=’0having’”</td>
 <td></td>
 </tr>
 <tr>
@@ -717,76 +707,65 @@
 <td>1</td>
 <td>space2hash.py</td>
 <td>绕过过滤‘=’ 替换空格字符（”），（’ – ‘）后跟一个破折号注释，一个随机字符串和一个新行（’ n’）</td>
-<td>‘1 AND 9227=9227’   ‘1–nVNaVoPYeva%0AAND–ngNvzqu%0A9227=9227’</td>
 </tr>
 <tr>
 <td>2</td>
 <td>equaltolike.py</td>
 <td>like 代替等号</td>
-<td><em> Input: SELECT </em> FROM users WHERE id=1   2 <em> Output: SELECT </em> FROM users WHERE id LIKE 1</td>
 <td></td>
 </tr>
 <tr>
 <td>3</td>
 <td>space2mssqlblank.py(mssql)</td>
 <td>空格替换为其它空符号</td>
-<td>Input: SELECT id FROM users  Output: SELECT%08id%02FROM%0Fusers</td>
 <td></td>
 </tr>
 <tr>
 <td>4</td>
 <td>space2mssqlhash.py</td>
 <td>替换空格</td>
-<td>(‘1 AND 9227=9227’)  ‘1%23%0AAND%23%0A9227=9227’</td>
 <td></td>
 </tr>
 <tr>
 <td>5</td>
 <td>between.py</td>
 <td>用between替换大于号（&gt;）</td>
-<td>(‘1 AND A &gt; B–’)  ‘1 AND A NOT BETWEEN 0 AND B–’</td>
 <td></td>
 </tr>
 <tr>
 <td>6</td>
 <td>percentage.py</td>
 <td>asp允许每个字符前面添加一个%号</td>
-<td><em> Input: SELECT FIELD FROM TABLE  </em> Output: %S%E%L%E%C%T %F%I%E%L%D %F%R%O%M %T%A%B%L%E</td>
 <td></td>
 </tr>
 <tr>
 <td>7</td>
 <td>sp_password.py</td>
 <td>追加sp_password’从DBMS日志的自动模糊处理的有效载荷的末尾</td>
-<td>(‘1 AND 9227=9227– ‘)  ‘1 AND 9227=9227– sp_password’</td>
 <td></td>
 </tr>
 <tr>
 <td>8</td>
 <td>charencode.py</td>
 <td>url编码</td>
-<td><em> Input: SELECT FIELD FROM%20TABLE  </em> Output: %53%45%4c%45%43%54%20%46%49%45%4c%44%20%46%52%4f%4d%20%54%41%42%4c%45</td>
 <td></td>
 </tr>
 <tr>
 <td>9</td>
 <td>randomcase.py</td>
 <td>随机大小写</td>
-<td><em> Input: INSERT  </em> Output: InsERt</td>
 <td></td>
 </tr>
 <tr>
 <td>10</td>
 <td>charunicodeencode.py</td>
 <td>字符串 unicode 编码</td>
-<td><em> Input: SELECT FIELD%20FROM TABLE  </em> Output: %u0053%u0045%u004c%u0045%u0043%u0054%u0020%u0046%u0049%u0045%u004c%u0044%u0020%u0046%u0052%u004f%u004d%u0020%u0054%u0041%u0042%u004c%u0045′</td>
 <td></td>
 </tr>
 <tr>
 <td>11</td>
 <td>space2comment.py</td>
 <td>Replaces space character (‘ ‘) with comments ‘/**/’</td>
-<td><em> Input: SELECT id FROM users  </em> Output: SELECT//id//FROM/**/users</td>
 <td></td>
 </tr>
 <tr>
@@ -794,125 +773,107 @@
 <td>1</td>
 <td>equaltolike.py</td>
 <td>like 代替等号</td>
-<td><em> Input: SELECT </em> FROM users WHERE id=1   2 <em> Output: SELECT </em> FROM users WHERE id LIKE 1</td>
 </tr>
 <tr>
 <td>2</td>
 <td>greatest.py</td>
 <td>绕过过滤’&gt;’ ,用GREATEST替换大于号。</td>
-<td>(‘1 AND A &gt; B’)  ‘1 AND GREATEST(A,B+1)=A’</td>
 <td></td>
 </tr>
 <tr>
 <td>3</td>
 <td>apostrophenullencode.py</td>
 <td>绕过过滤双引号，替换字符和双引号。</td>
-<td>tamper(“1 AND ‘1’=’1”)   ‘1 AND %00%271%00%27=%00%271’</td>
 <td></td>
 </tr>
 <tr>
 <td>4</td>
 <td>ifnull2ifisnull.py</td>
-<td>绕过对 IFNULL 过滤。  替换类似’IFNULL(A, B)’为’IF(ISNULL(A), B, A)’</td>
-<td>(‘IFNULL(1, 2)’)  ‘IF(ISNULL(1),2,1)’</td>
+<td>绕过对 IFNULL 过滤。替换类似’IFNULL(A, B)’为’IF(ISNULL(A), B, A)’</td>
 <td></td>
 </tr>
 <tr>
 <td>5</td>
 <td>space2mssqlhash.py</td>
 <td>替换空格</td>
-<td>(‘1 AND 9227=9227’)  ‘1%23%0AAND%23%0A9227=9227’</td>
 <td></td>
 </tr>
 <tr>
 <td>6</td>
 <td>modsecurityversioned.py</td>
 <td>过滤空格，包含完整的查询版本注释</td>
-<td>(‘1 AND 2&gt;1–’)  ‘1 /<em>!30874AND 2&gt;1</em>/–’</td>
 <td></td>
 </tr>
 <tr>
 <td>7</td>
 <td>space2mysqlblank.py</td>
 <td>空格替换其它空白符号(mysql)</td>
-<td>Input: SELECT id FROM users  Output: SELECT%0Bid%0BFROM%A0users</td>
 <td></td>
 </tr>
 <tr>
 <td>8</td>
 <td>between.py</td>
 <td>用between替换大于号（&gt;）</td>
-<td>(‘1 AND A &gt; B–’)  ‘1 AND A NOT BETWEEN 0 AND B–’</td>
 <td></td>
 </tr>
 <tr>
 <td>9</td>
 <td>modsecurityzeroversioned.py</td>
 <td>包含了完整的查询与零版本注释</td>
-<td>(‘1 AND 2&gt;1–’)  ‘1 /<em>!00000AND 2&gt;1</em>/–’</td>
 <td></td>
 </tr>
 <tr>
 <td>10</td>
 <td>space2mysqldash.py</td>
 <td>替换空格字符（”）（’ – ‘）后跟一个破折号注释一个新行（’ n’）</td>
-<td>(‘1 AND 9227=9227’)  ‘1–%0AAND–%0A9227=9227’</td>
 <td></td>
 </tr>
 <tr>
 <td>11</td>
 <td>bluecoat.py</td>
-<td>代替空格字符后与一个有效的随机空白字符的SQL语句。  然后替换=为like</td>
-<td>(‘SELECT id FROM users where id = 1’)  ‘SELECT%09id FROM users where id LIKE 1’</td>
+<td>代替空格字符后与一个有效的随机空白字符的SQL语句。然后替换=为like</td>
 <td></td>
 </tr>
 <tr>
 <td>12</td>
 <td>percentage.py</td>
 <td>asp允许每个字符前面添加一个%号</td>
-<td><em> Input: SELECT FIELD FROM TABLE  </em> Output: %S%E%L%E%C%T %F%I%E%L%D %F%R%O%M %T%A%B%L%E</td>
 <td></td>
 </tr>
 <tr>
 <td>13</td>
 <td>charencode.py</td>
 <td>url编码</td>
-<td><em> Input: SELECT FIELD FROM%20TABLE  </em> Output: %53%45%4c%45%43%54%20%46%49%45%4c%44%20%46%52%4f%4d%20%54%41%42%4c%45</td>
 <td></td>
 </tr>
 <tr>
 <td>14</td>
 <td>randomcase.py</td>
 <td>随机大小写</td>
-<td><em> Input: INSERT  </em> Output: InsERt</td>
 <td></td>
 </tr>
 <tr>
 <td>15</td>
 <td>versionedkeywords.py</td>
 <td>Encloses each non-function keyword with versioned MySQL comment</td>
-<td><em> Input: 1 UNION ALL SELECT NULL, NULL, CONCAT(CHAR(58,104,116,116,58),IFNULL(CAST(CURRENT_USER() AS CHAR),CHAR(32)),CHAR(58,100,114,117,58))#  </em> Output: 1/<em>!UNION<strong>!ALL</strong>!SELECT**!NULL</em>/,/<em>!NULL</em>/, CONCAT(CHAR(58,104,116,116,58),IFNULL(CAST(CURRENT_USER()/<em>!AS**!CHAR</em>/),CHAR(32)),CHAR(58,100,114,117,58))#</td>
 <td></td>
 </tr>
 <tr>
 <td>16</td>
 <td>space2comment.py</td>
 <td>Replaces space character (‘ ‘) with comments ‘/**/’</td>
-<td><em> Input: SELECT id FROM users  </em> Output: SELECT//id//FROM/**/users</td>
 <td></td>
 </tr>
 <tr>
 <td>17</td>
 <td>charunicodeencode.py</td>
 <td>字符串 unicode 编码</td>
-<td><em> Input: SELECT FIELD%20FROM TABLE  </em> Output: %u0053%u0045%u004c%u0045%u0043%u0054%u0020%u0046%u0049%u0045%u004c%u0044%u0020%u0046%u0052%u004f%u004d%u0020%u0054%u0041%u0042%u004c%u0045′</td>
 <td></td>
 </tr>
 <tr>
 <td>18</td>
 <td>versionedmorekeywords.py</td>
 <td>注释绕过</td>
-<td><em> Input: 1 UNION ALL SELECT NULL, NULL, CONCAT(CHAR(58,122,114,115,58),IFNULL(CAST(CURRENT_USER() AS CHAR),CHAR(32)),CHAR(58,115,114,121,58))#  </em> Output: 1/<em>!UNION<strong>!ALL</strong>!SELECT**!NULL</em>/,/<em>!NULL</em>/,/<em>!CONCAT</em>/(/<em>!CHAR</em>/(58,122,114,115,58),/<em>!IFNULL</em>/(CAST(/<em>!CURRENT_USER</em>/()/<em>!AS**!CHAR</em>/),/<em>!CHAR</em>/(32)),/<em>!CHAR</em>/(58,115,114,121,58))#</td>
 <td></td>
 </tr>
 <tr>
@@ -920,13 +881,11 @@
 <td>19</td>
 <td>halfversionedmorekeywords.py</td>
 <td>关键字前加注释</td>
-<td><em> Input: value’ UNION ALL SELECT CONCAT(CHAR(58,107,112,113,58),IFNULL(CAST(CURRENT_USER() AS CHAR),CHAR(32)),CHAR(58,97,110,121,58)), NULL, NULL# AND ‘QDWa’=’QDWa  </em> Output: value’/<em>!0UNION/</em>!0ALL/<em>!0SELECT/</em>!0CONCAT(/<em>!0CHAR(58,107,112,113,58),/</em>!0IFNULL(CAST(/<em>!0CURRENT_USER()/</em>!0AS/<em>!0CHAR),/</em>!0CHAR(32)),/<em>!0CHAR(58,97,110,121,58)), NULL, NULL#/</em>!0AND ‘QDWa’=’QDWa</td>
 </tr>
 <tr>
 <td>20</td>
 <td>halfversionedmorekeywords.py</td>
-<td>当数据库为mysql时绕过防火墙，每个关键字之前添加  mysql版本评论</td>
-<td>1.(“value’ UNION ALL SELECT CONCAT(CHAR(58,107,112,113,58),IFNULL(CAST(CURRENT_USER() AS CHAR),CHAR(32)),CHAR(58,97,110,121,58)), NULL, NULL# AND ‘QDWa’=’QDWa”)  2.”value’/<em>!0UNION/</em>!0ALL/<em>!0SELECT/</em>!0CONCAT(/<em>!0CHAR(58,107,112,113,58),/</em>!0IFNULL(CAST(/<em>!0CURRENT_USER()/</em>!0AS/<em>!0CHAR),/</em>!0CHAR(32)),/<em>!0CHAR(58,97,110,121,58)),/</em>!0NULL,/<em>!0NULL#/</em>!0AND ‘QDWa’=’QDWa”</td>
+<td>当数据库为mysql时绕过防火墙，每个关键字之前添加mysql版本评论</td>
 <td></td>
 </tr>
 <tr>
@@ -934,55 +893,47 @@
 <td>21</td>
 <td>space2morehash.py</td>
 <td>空格替换为 #号 以及更多随机字符串 换行符</td>
-<td><em> Input: 1 AND 9227=9227  </em> Output: 1%23PTTmJopxdWJ%0AAND%23cWfcVRPV%0A9227=9227</td>
 </tr>
 <tr>
 <td>Oracle</td>
 <td>1</td>
 <td>greatest.py</td>
 <td>绕过过滤’&gt;’ ,用GREATEST替换大于号。</td>
-<td>(‘1 AND A &gt; B’)  ‘1 AND GREATEST(A,B+1)=A’</td>
 </tr>
 <tr>
 <td>2</td>
 <td>apostrophenullencode.py</td>
 <td>绕过过滤双引号，替换字符和双引号。</td>
-<td>tamper(“1 AND ‘1’=’1”)   ‘1 AND %00%271%00%27=%00%271’</td>
 <td></td>
 </tr>
 <tr>
 <td>3</td>
 <td>between.py</td>
 <td>用between替换大于号（&gt;）</td>
-<td>(‘1 AND A &gt; B–’)  ‘1 AND A NOT BETWEEN 0 AND B–’</td>
 <td></td>
 </tr>
 <tr>
 <td>4</td>
 <td>charencode.py</td>
 <td>url编码</td>
-<td><em> Input: SELECT FIELD FROM%20TABLE  </em> Output: %53%45%4c%45%43%54%20%46%49%45%4c%44%20%46%52%4f%4d%20%54%41%42%4c%45</td>
 <td></td>
 </tr>
 <tr>
 <td>5</td>
 <td>randomcase.py</td>
 <td>随机大小写</td>
-<td><em> Input: INSERT  </em> Output: InsERt</td>
 <td></td>
 </tr>
 <tr>
 <td>6</td>
 <td>charunicodeencode.py</td>
 <td>字符串 unicode 编码</td>
-<td><em> Input: SELECT FIELD%20FROM TABLE  </em> Output: %u0053%u0045%u004c%u0045%u0043%u0054%u0020%u0046%u0049%u0045%u004c%u0044%u0020%u0046%u0052%u004f%u004d%u0020%u0054%u0041%u0042%u004c%u0045′</td>
 <td></td>
 </tr>
 <tr>
 <td>7</td>
 <td>space2comment.py</td>
 <td>Replaces space character (‘ ‘) with comments ‘/**/’</td>
-<td><em> Input: SELECT id FROM users  </em> Output: SELECT//id//FROM/**/users</td>
 <td></td>
 </tr>
 <tr>
@@ -990,55 +941,47 @@
 <td>1</td>
 <td>greatest.py</td>
 <td>绕过过滤’&gt;’ ,用GREATEST替换大于号。</td>
-<td>(‘1 AND A &gt; B’)  ‘1 AND GREATEST(A,B+1)=A’</td>
 </tr>
 <tr>
 <td>2</td>
 <td>apostrophenullencode.py</td>
 <td>绕过过滤双引号，替换字符和双引号。</td>
-<td>tamper(“1 AND ‘1’=’1”)   ‘1 AND %00%271%00%27=%00%271’</td>
 <td></td>
 </tr>
 <tr>
 <td>3</td>
 <td>between.py</td>
 <td>用between替换大于号（&gt;）</td>
-<td>(‘1 AND A &gt; B–’)  ‘1 AND A NOT BETWEEN 0 AND B–’</td>
 <td></td>
 </tr>
 <tr>
 <td>4</td>
 <td>percentage.py</td>
 <td>asp允许每个字符前面添加一个%号</td>
-<td><em> Input: SELECT FIELD FROM TABLE  </em> Output: %S%E%L%E%C%T %F%I%E%L%D %F%R%O%M %T%A%B%L%E</td>
 <td></td>
 </tr>
 <tr>
 <td>5</td>
 <td>charencode.py</td>
 <td>url编码</td>
-<td><em> Input: SELECT FIELD FROM%20TABLE  </em> Output: %53%45%4c%45%43%54%20%46%49%45%4c%44%20%46%52%4f%4d%20%54%41%42%4c%45</td>
 <td></td>
 </tr>
 <tr>
 <td>6</td>
 <td>randomcase.py</td>
 <td>随机大小写</td>
-<td><em> Input: INSERT  </em> Output: InsERt</td>
 <td></td>
 </tr>
 <tr>
 <td>7</td>
 <td>charunicodeencode.py</td>
 <td>字符串 unicode 编码</td>
-<td><em> Input: SELECT FIELD%20FROM TABLE  </em> Output: %u0053%u0045%u004c%u0045%u0043%u0054%u0020%u0046%u0049%u0045%u004c%u0044%u0020%u0046%u0052%u004f%u004d%u0020%u0054%u0041%u0042%u004c%u0045′</td>
 <td></td>
 </tr>
 <tr>
 <td>8</td>
 <td>space2comment.py</td>
 <td>Replaces space character (‘ ‘) with comments ‘/**/’</td>
-<td><em> Input: SELECT id FROM users  </em> Output: SELECT//id//FROM/**/users</td>
 <td></td>
 </tr>
 <tr>
@@ -1046,27 +989,23 @@
 <td>1</td>
 <td>appendnullbyte.py</td>
 <td>在有效负荷结束位置加载零字节字符编码</td>
-<td>(‘1 AND 1=1’)  ‘1 AND 1=1%00’</td>
 </tr>
 <tr>
 <td>其他</td>
 <td></td>
 <td>chardoubleencode.py</td>
 <td>双url编码(不处理以编码的)</td>
-<td><em> Input: SELECT FIELD FROM%20TABLE  </em> Output: %2553%2545%254c%2545%2543%2554%2520%2546%2549%2545%254c%2544%2520%2546%2552%254f%254d%2520%2554%2541%2542%254c%2545</td>
 </tr>
 <tr>
 <td></td>
 <td>unmagicquotes.py</td>
 <td>宽字符绕过 GPC  addslashes</td>
-<td><em> Input: 1′ AND 1=1  </em> Output: 1%bf%27 AND 1=1–%20</td>
 <td></td>
 </tr>
 <tr>
 <td></td>
 <td>randomcomments.py</td>
 <td>用/**/分割sql关键字</td>
-<td>‘INSERT’ becomes ‘IN//S//ERT’</td>
 </tr>
 </tbody>
 </table>
