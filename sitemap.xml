@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2018/08/13/OWASP10/</loc>
+    
+    <lastmod>2018-08-13T13:34:53.685Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/08/13/Jumpserver%E5%A0%A1%E5%9E%92%E6%9C%BA/</loc>
     
     <lastmod>2018-08-13T09:18:29.069Z</lastmod>
