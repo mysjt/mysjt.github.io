@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-10T15:05:36.991Z</updated>
+  <updated>2018-08-13T08:36:47.017Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Jumpserver堡垒机</title>
+    <link href="http://yoursite.com/2018/08/13/Jumpserver%E5%A0%A1%E5%9E%92%E6%9C%BA/"/>
+    <id>http://yoursite.com/2018/08/13/Jumpserver堡垒机/</id>
+    <published>2018-08-13T08:48:02.000Z</published>
+    <updated>2018-08-13T08:36:47.017Z</updated>
+    
+    <content type="html"><![CDATA[<hr><a id="more"></a><p>我们采用的是docker的安装方式：</p><p>官方文档位置：<a href="https://jumpserver.readthedocs.io/zh/docs/dockerinstall.html" target="_blank" rel="noopener">https://jumpserver.readthedocs.io/zh/docs/dockerinstall.html</a></p><h2 id="环境："><a href="#环境：" class="headerlink" title="环境："></a>环境：</h2><p>centos7    Jumpserver    docker</p><h2 id="1-在centos安装docker，已经安装的可以跳过这一步"><a href="#1-在centos安装docker，已经安装的可以跳过这一步" class="headerlink" title="1.在centos安装docker，已经安装的可以跳过这一步"></a>1.在centos安装docker，已经安装的可以跳过这一步</h2><h4 id="系统要求"><a href="#系统要求" class="headerlink" title="系统要求"></a>系统要求</h4><p>64位，内核版本不低于3.10，推荐使用CentOS 7系统</p><p><code>uname -r</code>     #查看内核版本信息</p><h4 id="安装并启动Docker"><a href="#安装并启动Docker" class="headerlink" title="安装并启动Docker"></a>安装并启动Docker</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum   update  -y    #更新依赖</span><br><span class="line">yum   -y  install   docker</span><br><span class="line">systemctl   start   docker</span><br></pre></td></tr></table></figure><h4 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h4><p><code>docker version</code></p><p><img src="\images\pasted-49.png" alt="upload successful"></p><h4 id="配置Docker"><a href="#配置Docker" class="headerlink" title="配置Docker"></a>配置Docker</h4><p>设置镜像</p><p><code>vim /etc/docker/daemon.json</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https://aj2rgad5.mirror.aliyuncs.com&quot;]</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>重启Docker<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl restart docker.service</span><br></pre></td></tr></table></figure></p><p>\2. 用Jumpserver的源</p><p>快速启动</p><p>使用 root 命令行输入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 8080:80 -p 2222:2222 registry.jumpserver.org/public/jumpserver:1.0.0</span><br></pre></td></tr></table></figure></p><p><img src="\images\pasted-50.png" alt="upload successful"></p><p>这个过程有点漫长，可以挂个代理加速下载，centos7下挂代理的方法详情见下面链接：</p><p><a href="https://jingyan.baidu.com/article/148a1921f5c5fe4d71c3b105.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/148a1921f5c5fe4d71c3b105.html</a></p><p>下载好了以后我们看下docker仓库里的镜像有没有Jumpserver</p><p><code>docker  images</code></p><p><img src="\images\pasted-51.png" alt="upload successful"></p><p>我们在docker下启动jumpserver：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 8080:80 -p 2222:2222 -e DB_ENGINE=mysql -e DB_HOST=192.168.1.1 -e DB_PORT=3306 -e DB_USER=root -e DB_PASSWORD=xxx -e DB_NAME=jumpserver  registry.jumpserver.org/public/jumpserver:1.0.0</span><br></pre></td></tr></table></figure></p><p>在这里我们遇到了一个问题：</p><p><img src="\images\pasted-52.png" alt="upload successful"></p><p>这里提示我们端口被占用了</p><p>解决方法如下：</p><p>查看进程，发现相关的容器并没有在运行，而 docker-proxy 却依然绑定着端口</p><p>docker  ps</p><p>ps -aux | grep -v grep | grep docker-proxy</p><p>停止 doker 进程，删除所有容器，然后删除 local-kv.db 这个文件，再启动 docker 就可以了。</p><p>sudo service docker stop</p><p>docker rm $(docker ps -aq)</p><p>sudo rm /var/lib/docker/network/files/local-kv.db</p><p># sudo service docker start</p><p>成功启动起来</p><p>访问</p><p>浏览器访问: <a href="http:/" target="_blank" rel="noopener">http:/</a>/&lt;容器所在服务器IP&gt;:8080</p><p>SSH访问: ssh -p 2222 &lt;容器所在服务器IP&gt;</p><p>XShell等工具请添加connection连接</p><p>我们采用第一种方式访问看看</p><p><img src="\images\pasted-53.png" alt="upload successful"></p><p>默认</p><p>用户名：admin</p><p>密码：   admin</p><p><img src="\images\pasted-54.png" alt="upload successful"></p><p>如果要采用编译安装方式参考下面的文档：</p><p><a href="https://www.cnblogs.com/along21/p/8795907.html" target="_blank" rel="noopener">https://www.cnblogs.com/along21/p/8795907.html</a></p><p>设置详情见入门文档</p><p><a href="https://jumpserver.readthedocs.io/zh/docs/admin_create_asset.html" target="_blank" rel="noopener">https://jumpserver.readthedocs.io/zh/docs/admin_create_asset.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+    
+    </summary>
+    
+      <category term="用户审计" scheme="http://yoursite.com/categories/%E7%94%A8%E6%88%B7%E5%AE%A1%E8%AE%A1/"/>
+    
+    
+      <category term="用户审计" scheme="http://yoursite.com/tags/%E7%94%A8%E6%88%B7%E5%AE%A1%E8%AE%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>XorDDos木马查杀指北</title>

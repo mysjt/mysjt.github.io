@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="木马查杀," />
+  <meta name="keywords" content="用户审计," />
 
 
 
@@ -81,15 +81,22 @@
 
 
 
-<meta name="keywords" content="木马查杀">
+<meta name="keywords" content="用户审计">
 <meta property="og:type" content="article">
-<meta property="og:title" content="XorDDos木马查杀指北">
-<meta property="og:url" content="http://yoursite.com/2018/08/10/XorDDos木马查杀指北/index.html">
+<meta property="og:title" content="Jumpserver堡垒机">
+<meta property="og:url" content="http://yoursite.com/2018/08/13/Jumpserver堡垒机/index.html">
 <meta property="og:site_name" content="Secer">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-10T15:05:36.991Z">
+<meta property="og:image" content="http://yoursite.com/images/pasted-49.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-50.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-51.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-52.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-53.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-54.png">
+<meta property="og:updated_time" content="2018-08-13T08:36:47.017Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="XorDDos木马查杀指北">
+<meta name="twitter:title" content="Jumpserver堡垒机">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-49.png">
 
 
 
@@ -119,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/10/XorDDos木马查杀指北/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/13/Jumpserver堡垒机/"/>
 
 
 
 
 
-  <title>XorDDos木马查杀指北 | Secer</title>
+  <title>Jumpserver堡垒机 | Secer</title>
   
 
 
@@ -262,7 +269,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/10/XorDDos木马查杀指北/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/13/Jumpserver堡垒机/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="shiqian">
@@ -279,7 +286,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">XorDDos木马查杀指北</h1>
+          <h1 class="post-title" itemprop="name headline">Jumpserver堡垒机</h1>
         
 
         <div class="post-meta">
@@ -291,8 +298,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-10T21:25:37+08:00">
-                2018-08-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-13T16:48:02+08:00">
+                2018-08-13
               </time>
             
 
@@ -314,8 +321,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/木马查杀/" itemprop="url" rel="index">
-                    <span itemprop="name">木马查杀</span>
+                  <a href="/categories/用户审计/" itemprop="url" rel="index">
+                    <span itemprop="name">用户审计</span>
                   </a>
                 </span>
 
@@ -353,42 +360,54 @@
       
         <hr>
 <a id="more"></a>
-<h1 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h1><p>PKHunter检查工具，PKHunter的安装教程见木马查杀RKhunter安装指北</p>
-<p>VMware® Workstation 14 Pro</p>
-<p>注意：安装病毒之前请把虚拟机设置成NAT或host-only模式防止病毒传播或造成破坏！ </p>
-<h1 id="木马上传"><a href="#木马上传" class="headerlink" title="木马上传"></a>木马上传</h1><p>首先我们先把病毒样本上传至虚拟机并解压：</p>
-<p>我们可以利用rz命令上传文件，没有安装的请执行yum -y install lrzsz</p>
-<p>解压可以利用unzip命令，没有的请执行yum -y install unzip</p>
-<p><code>yum -y install lrzsz unzip</code></p>
-<p><code>rz</code></p>
-<p><code>unzip XorDDos样本.zip</code></p>
-<p>给木马文件赋予权限并执行文件： </p>
-<p><code>chmod +x a753cb1ff86c742bb497155362664c3b</code>  </p>
-<h1 id="查杀木马"><a href="#查杀木马" class="headerlink" title="查杀木马"></a>查杀木马</h1><p>利用lsof -i查看到可疑文件，PID为4294，协议使用的是UDP（PID可能不同机器不一样） </p>
-<p>如果没有lsof命令，可用yum安装</p>
-<p><code>yum -y install lsof.x86_64</code></p>
-<p>尝试关闭进程：kill -9  4294后在利用lsof -i查看下 </p>
-<p>发现又启动了个进程，PID为5383，怀疑这个木马病毒会自动改名启动 </p>
-<p>查看我们上传木马的目录发现，木马程序自毁了，现在我们可以尝试下使用RKHunter看看有哪些文件疑似被木马篡改过，用RKHunter检测一下</p>
-<p>排查步骤跳过（因为不是笔者发现的木马位置）</p>
-<p>木马位置为/etc/cron.hourly/，木马文件名可能每个人都不一样，我们先用chmod 000木马的权限取消掉而不是先干掉进程，避免他改名并且可以提取样本进行进一步的分析。 </p>
-<p><code>ll -a /etc/cron.hourly</code></p>
-<p><code>chmod 000 ytimkiztjldbrs.sh</code></p>
-<p>利用<code>ll -aR /etc/rc.d</code>查看木马文件的连接 </p>
-<p>先<code>chmod 000 /etc/init.d/ytimkiztjldbrs</code> 把可疑的连接权限都取消掉</p>
-<p>reboot重启后在利用<code>lsof -i</code>看看可疑进程有没有启动</p>
-<p>用<code>netstat -lnapt</code>查看下有无可疑的udp端口开放 </p>
-<h2 id="提取木马"><a href="#提取木马" class="headerlink" title="提取木马"></a>提取木马</h2><p>之后我们可以尝试吧机器联网，提取木马文件样本，首先我们关闭虚拟机然后把虚拟机设置成桥接（如果是NAT模式并且能上网的话忽略此步骤）关机命令：shutdown now</p>
-<p>使用xshell连接机器，查看之前木马释放出来的脚本<code>cat /etc/cron.hourly/ytimkiztjldbrs.sh</code></p>
-<p><code>#!/bin/sh</code><br><code>PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/X11R6/bin</code><br><code>cp &quot;/usr/bin/ytimkiztjldbrs&quot; &quot;/usr/bin/wgxkzcllem&quot;</code></p>
-<p><code>chmod 000 /usr/bin/wgxkzcllem</code>把可疑文件权限取消并尝试提取出来 </p>
-<p>发现在/usr/bin下也有木马脚本，先去掉权限</p>
-<p><code>chmod 000 ytimkiztjldbrs</code></p>
-<p><code>chmod 000 ytimkiztjldbrs.sh</code></p>
-<p>之后我们删除之前把权限都取消掉的文件</p>
-<p>利用rm -rf命令</p>
-<p>reboot重启系统</p>
-<p>最后重装系统</p>
+<p>我们采用的是docker的安装方式：</p>
+<p>官方文档位置：<a href="https://jumpserver.readthedocs.io/zh/docs/dockerinstall.html" target="_blank" rel="noopener">https://jumpserver.readthedocs.io/zh/docs/dockerinstall.html</a></p>
+<h2 id="环境："><a href="#环境：" class="headerlink" title="环境："></a>环境：</h2><p>centos7    Jumpserver    docker</p>
+<h2 id="1-在centos安装docker，已经安装的可以跳过这一步"><a href="#1-在centos安装docker，已经安装的可以跳过这一步" class="headerlink" title="1.在centos安装docker，已经安装的可以跳过这一步"></a>1.在centos安装docker，已经安装的可以跳过这一步</h2><h4 id="系统要求"><a href="#系统要求" class="headerlink" title="系统要求"></a>系统要求</h4><p>64位，内核版本不低于3.10，推荐使用CentOS 7系统</p>
+<p><code>uname -r</code>     #查看内核版本信息</p>
+<h4 id="安装并启动Docker"><a href="#安装并启动Docker" class="headerlink" title="安装并启动Docker"></a>安装并启动Docker</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum   update  -y    #更新依赖</span><br><span class="line">yum   -y  install   docker</span><br><span class="line">systemctl   start   docker</span><br></pre></td></tr></table></figure>
+<h4 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h4><p><code>docker version</code></p>
+<p><img src="\images\pasted-49.png" alt="upload successful"></p>
+<h4 id="配置Docker"><a href="#配置Docker" class="headerlink" title="配置Docker"></a>配置Docker</h4><p>设置镜像</p>
+<p><code>vim /etc/docker/daemon.json</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https://aj2rgad5.mirror.aliyuncs.com&quot;]</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>重启Docker<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl restart docker.service</span><br></pre></td></tr></table></figure></p>
+<p>\2. 用Jumpserver的源</p>
+<p>快速启动</p>
+<p>使用 root 命令行输入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 8080:80 -p 2222:2222 registry.jumpserver.org/public/jumpserver:1.0.0</span><br></pre></td></tr></table></figure></p>
+<p><img src="\images\pasted-50.png" alt="upload successful"></p>
+<p>这个过程有点漫长，可以挂个代理加速下载，centos7下挂代理的方法详情见下面链接：</p>
+<p><a href="https://jingyan.baidu.com/article/148a1921f5c5fe4d71c3b105.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/148a1921f5c5fe4d71c3b105.html</a></p>
+<p>下载好了以后我们看下docker仓库里的镜像有没有Jumpserver</p>
+<p><code>docker  images</code></p>
+<p><img src="\images\pasted-51.png" alt="upload successful"></p>
+<p>我们在docker下启动jumpserver：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 8080:80 -p 2222:2222 -e DB_ENGINE=mysql -e DB_HOST=192.168.1.1 -e DB_PORT=3306 -e DB_USER=root -e DB_PASSWORD=xxx -e DB_NAME=jumpserver  registry.jumpserver.org/public/jumpserver:1.0.0</span><br></pre></td></tr></table></figure></p>
+<p>在这里我们遇到了一个问题：</p>
+<p><img src="\images\pasted-52.png" alt="upload successful"></p>
+<p>这里提示我们端口被占用了</p>
+<p>解决方法如下：</p>
+<p>查看进程，发现相关的容器并没有在运行，而 docker-proxy 却依然绑定着端口</p>
+<p>docker  ps</p>
+<p>ps -aux | grep -v grep | grep docker-proxy</p>
+<p>停止 doker 进程，删除所有容器，然后删除 local-kv.db 这个文件，再启动 docker 就可以了。</p>
+<p>sudo service docker stop</p>
+<p>docker rm $(docker ps -aq)</p>
+<p>sudo rm /var/lib/docker/network/files/local-kv.db</p>
+<p># sudo service docker start</p>
+<p>成功启动起来</p>
+<p>访问</p>
+<p>浏览器访问: <a href="http:/" target="_blank" rel="noopener">http:/</a>/&lt;容器所在服务器IP&gt;:8080</p>
+<p>SSH访问: ssh -p 2222 &lt;容器所在服务器IP&gt;</p>
+<p>XShell等工具请添加connection连接</p>
+<p>我们采用第一种方式访问看看</p>
+<p><img src="\images\pasted-53.png" alt="upload successful"></p>
+<p>默认</p>
+<p>用户名：admin</p>
+<p>密码：   admin</p>
+<p><img src="\images\pasted-54.png" alt="upload successful"></p>
+<p>如果要采用编译安装方式参考下面的文档：</p>
+<p><a href="https://www.cnblogs.com/along21/p/8795907.html" target="_blank" rel="noopener">https://www.cnblogs.com/along21/p/8795907.html</a></p>
+<p>设置详情见入门文档</p>
+<p><a href="https://jumpserver.readthedocs.io/zh/docs/admin_create_asset.html" target="_blank" rel="noopener">https://jumpserver.readthedocs.io/zh/docs/admin_create_asset.html</a></p>
 
       
     </div>
@@ -416,7 +435,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/木马查杀/" rel="tag"># 木马查杀</a>
+            <a href="/tags/用户审计/" rel="tag"># 用户审计</a>
           
         </div>
       
@@ -429,8 +448,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/10/应急响应/" rel="next" title="应急响应">
-                <i class="fa fa-chevron-left"></i> 应急响应
+              <a href="/2018/08/10/XorDDos木马查杀指北/" rel="next" title="XorDDos木马查杀指北">
+                <i class="fa fa-chevron-left"></i> XorDDos木马查杀指北
               </a>
             
           </div>
@@ -438,10 +457,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/13/Jumpserver堡垒机/" rel="prev" title="Jumpserver堡垒机">
-                Jumpserver堡垒机 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -580,7 +595,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验环境"><span class="nav-number">1.</span> <span class="nav-text">实验环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#木马上传"><span class="nav-number">2.</span> <span class="nav-text">木马上传</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查杀木马"><span class="nav-number">3.</span> <span class="nav-text">查杀木马</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#提取木马"><span class="nav-number">3.1.</span> <span class="nav-text">提取木马</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境："><span class="nav-number">1.</span> <span class="nav-text">环境：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-在centos安装docker，已经安装的可以跳过这一步"><span class="nav-number">2.</span> <span class="nav-text">1.在centos安装docker，已经安装的可以跳过这一步</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#系统要求"><span class="nav-number">2.0.1.</span> <span class="nav-text">系统要求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装并启动Docker"><span class="nav-number">2.0.2.</span> <span class="nav-text">安装并启动Docker</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#验证安装"><span class="nav-number">2.0.3.</span> <span class="nav-text">验证安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置Docker"><span class="nav-number">2.0.4.</span> <span class="nav-text">配置Docker</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
