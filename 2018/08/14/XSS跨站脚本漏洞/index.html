@@ -89,7 +89,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/pasted-86.png">
 <meta property="og:image" content="http://yoursite.com/images/pasted-87.png">
-<meta property="og:updated_time" content="2018-08-14T12:22:54.070Z">
+<meta property="og:updated_time" content="2018-08-14T12:27:56.129Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XSS跨站脚本漏洞">
 <meta name="twitter:image" content="http://yoursite.com/images/pasted-86.png">
@@ -361,11 +361,11 @@
 <h1 id="XSS分类"><a href="#XSS分类" class="headerlink" title="XSS分类"></a>XSS分类</h1><p>第一种：反射型XSS 简单的把用户数据反射给浏览器，需要用户点击</p>
 <p>第二种：存储型XSS 把用户输入的数据存储在服务器中</p>
 <p>第三种：DOM Based XSS 通过修改DOM节点的反射型xss</p>
-<h1 id="检测漏洞存在"><a href="#检测漏洞存在" class="headerlink" title="检测漏洞存在"></a>检测漏洞存在</h1><p>1.<script>alert(“1”)</script></p>
-<p>2.&lt;img  src= javascript:alert(“1”)&gt;</p>
-<p>3 &lt;img   dynsrc= javascript:alert(“1”)&gt;</p>
-<p>3.<div style="background-image:url(javascript:alert('1'))"></div></p>
-<p>4.<font style="TEST:expression(alert('1'))"></font></p>
+<h1 id="检测漏洞存在"><a href="#检测漏洞存在" class="headerlink" title="检测漏洞存在"></a>检测漏洞存在</h1><p>1.<code>&lt;script&gt;alert(&quot;1&quot;)&lt;/script&gt;</code></p>
+<p>2.<code>&lt;img  src= javascript:alert(&quot;1&quot;)&gt;&lt;/img&gt;</code></p>
+<p>3.<code>&lt;img   dynsrc= javascript:alert(&quot;1&quot;)&gt;&lt;/img&gt;</code></p>
+<p>4.<code>&lt;div  style= &quot;background-image:url(  javascript:alert(&#39;1&#39;) )&quot; &gt;</code></p>
+<p>5.<code>&lt;font style=&quot;TEST:expression(alert(&#39;1&#39;))&quot;&gt;</code></p>
 <h1 id="利用流程"><a href="#利用流程" class="headerlink" title="利用流程"></a>利用流程</h1><p>存储式XSS构成：</p>
 <p><img src="\images\pasted-86.png" alt="upload successful"></p>
 <p>反射式XSS构成：</p>
