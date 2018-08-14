@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32x32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16x16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="web安全," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Secer" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="keywords" content="web安全">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文件上传漏洞">
+<meta property="og:url" content="http://yoursite.com/2018/08/14/文件上传漏洞/index.html">
+<meta property="og:site_name" content="Secer">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/images/pasted-93.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-92.png">
+<meta property="og:updated_time" content="2018-08-14T15:54:04.314Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="文件上传漏洞">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-93.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/14/文件上传漏洞/"/>
+
+
+
+
+
+  <title>文件上传漏洞 | Secer</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Secer</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/14/文件上传漏洞/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="shiqian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Secer">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">文件上传漏洞</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-14T22:59:05+08:00">
+                2018-08-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web安全/" itemprop="url" rel="index">
+                    <span itemprop="name">web安全</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<a id="more"></a>
+<p>繁华一场梦</p>
+<h1 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h1><p>在网站的运营过程中，不可避免地要对网站的某些页面或者内容 进行更新，这时便需要使用到网站的文件上传的功能。如果不对被上 传的文件进行限制或者限制被绕过，该功能便有可能会被利用于上传 可执行文件、脚本到服务器上，进而进一步导致服务器沦陷。 </p>
+<h1 id="网络渗透的本质-技术部分"><a href="#网络渗透的本质-技术部分" class="headerlink" title="网络渗透的本质(技术部分)"></a>网络渗透的本质(技术部分)</h1><p>主体就是代码注入+代码解析/执行，这种模式贯穿了几乎主流的技术性渗透攻击，像缓冲区溢出攻击，sql 注入攻击，文件上传攻击，文件包含攻击，脚本代码注入等等</p>
+<h1 id="漏洞原因"><a href="#漏洞原因" class="headerlink" title="漏洞原因"></a>漏洞原因</h1><p>   导致文件上传的漏洞的原因较多，主要包括以下几类: </p>
+<ol>
+<li>服务器配置不当</li>
+<li>开源编辑器上传漏洞</li>
+<li><p>本地文件上传限制被绕过 </p>
+</li>
+<li><p>过滤不严或被绕过</p>
+</li>
+<li>文件解析漏洞导致文件执行 </li>
+<li>文件路径截断 </li>
+</ol>
+<h1 id="上传检测流程"><a href="#上传检测流程" class="headerlink" title="上传检测流程"></a>上传检测流程</h1><h1 id="上传绕过"><a href="#上传绕过" class="headerlink" title="上传绕过"></a>上传绕过</h1><h3 id="客户端检测绕过-javascript-检测"><a href="#客户端检测绕过-javascript-检测" class="headerlink" title="客户端检测绕过(javascript 检测)"></a>客户端检测绕过(javascript 检测)</h3><p>这类检测通常在上传页面里含有专门检测文件上传的 javascript 代码 最常见的就是检测扩展名是否合法 </p>
+<p>通常post请求发送到web服务器，客户端javascript验证上传1.php弹窗说上传格式错误，只允许.jpg，.jpeg等格式的文件上传一句话1.php–&gt;1.jpg 然后burp抓包1.jpg–&gt;1.php，这样就绕过了js检测</p>
+<h3 id="服务器端检测MIME类型的绕过"><a href="#服务器端检测MIME类型的绕过" class="headerlink" title="服务器端检测MIME类型的绕过"></a>服务器端检测MIME类型的绕过</h3><p>​    服务端MIME类型检测（检测Content-Type内容），burp抓包，修改Content-Type</p>
+<p>​    Content-Type:text/plain –&gt;php</p>
+<p>​    Content-Type:image/jpeg –&gt;image</p>
+<p>​    上传1.jpg—&gt;修改image/jpeg为text/plain，成功绕过。</p>
+<h4 id="常见的MIME类型："><a href="#常见的MIME类型：" class="headerlink" title="常见的MIME类型："></a>常见的MIME类型：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">​    超文本标记语言文本 .html text/html 　　</span><br><span class="line"></span><br><span class="line">​    xml文档 .xml text/xml</span><br><span class="line"></span><br><span class="line">​    普通文本 .txt text/plain 　　</span><br><span class="line"></span><br><span class="line">​    RTF文本 .rtf application/rtf 　　</span><br><span class="line"></span><br><span class="line">​    PDF文档 .pdf application/pdf 　　</span><br><span class="line"></span><br><span class="line">​    Microsoft Word文件 .word application/msword 　　</span><br><span class="line"></span><br><span class="line">​    PNG图像 .png image/png 　　</span><br><span class="line"></span><br><span class="line">​    GIF图形 .gif image/gif 　　</span><br><span class="line"></span><br><span class="line">​    JPEG图形 .jpeg,.jpg image/jpeg 　　</span><br><span class="line"></span><br><span class="line">​    au声音文件 .au audio/basic 　　</span><br><span class="line"></span><br><span class="line">​    MIDI音乐文件 mid,.midi audio/midi,audio/x-midi 　　</span><br><span class="line"></span><br><span class="line">​    RealAudio音乐文件 .ra, .ram audio/x-pn-realaudio 　　</span><br><span class="line"></span><br><span class="line">​    MPEG文件 .mpg,.mpeg video/mpeg 　　</span><br><span class="line"></span><br><span class="line">​    AVI文件 .avi video/x-msvideo 　　</span><br><span class="line"></span><br><span class="line">​    GZIP文件 .gz application/x-gzip 　　</span><br><span class="line"></span><br><span class="line">​    TAR文件 .tar application/x-tar 　　</span><br><span class="line"></span><br><span class="line">​    任意的二进制数据 application/octet-stream</span><br></pre></td></tr></table></figure>
+<h3 id="服务器目录路径检测绕过"><a href="#服务器目录路径检测绕过" class="headerlink" title="服务器目录路径检测绕过"></a>服务器目录路径检测绕过</h3><p>目录路径检测，一般就检测路径是否合法，但稍微特殊一点的都没有防御。 </p>
+<p>上传1.jpg,burp进行抓包，Content-Disposition:from-data;name=”path”后面一行upload是我们保存的地址。</p>
+<p>现在我们将upload改为upload/1.php(空格) ，接着我们来到 Proxy-&gt;intercept-&gt;Hex找到1.php(空格)这个被修改   过的代码，找到同一行的数字20，改为00 ，成功绕过</p>
+<h3 id="服务器端黑名单检测绕过"><a href="#服务器端黑名单检测绕过" class="headerlink" title="服务器端黑名单检测绕过"></a>服务器端黑名单检测绕过</h3><p>黑名单的安全性比白名单的安全性低很多，攻击手法自然也比白名单多 一般有个专门的 blacklist 文件</p>
+<h5 id="1-文件名大小写绕过pHp-PhP"><a href="#1-文件名大小写绕过pHp-PhP" class="headerlink" title="1.文件名大小写绕过pHp,PhP"></a>1.文件名大小写绕过pHp,PhP</h5><p>混搭绕过<code>php1,php2,php3,php4,php5，phtml,pht</code> </p>
+<h5 id="2-名单列表绕过"><a href="#2-名单列表绕过" class="headerlink" title="2.名单列表绕过"></a>2.名单列表绕过</h5><p>用黑名单里没有的名单进行攻击， <code>cer,ashx,asa,cer,cdx,htr</code>,绕过(黑名单可能会漏掉的) </p>
+<h5 id="3-特殊文件名绕过"><a href="#3-特殊文件名绕过" class="headerlink" title="3.特殊文件名绕过"></a>3.特殊文件名绕过</h5><p>比如发送的 http 包里把文件名改成 <code>test.asp. 或 test.asp_(下划线为空格)</code>，这种命名方式 在 windows 系统里是不被允许的，所以需要在 burp 之类里进行修改，然后绕过验证后，会 被 windows 系统自动去掉后面的点和空格，但要注意 Unix/Linux 系统没有这个特性。</p>
+<h5 id="4-0x00-截断绕过"><a href="#4-0x00-截断绕过" class="headerlink" title="4.0x00 截断绕过"></a>4.0x00 截断绕过</h5><p>在扩展名检测这一块目前只遇到过 asp 的程序有这种漏洞，给个简单的伪代码<code>name = getname(http request) //</code>假如这时候获取到的文件名是 test.asp .jpg(asp 后面为 0x00)  <code>type = gettype(name) /</code>/而在 gettype()函数里处理方式是从后往前扫描扩展名，所以判断为 <code>jpg  if (type == jpg)SaveFileToPath(UploadPath.name, name)</code> //但在这里却是以 0x00 作为文件名截断                 //最后以 test.asp 存入路径里</p>
+<h5 id="5-htaccess-文件攻击"><a href="#5-htaccess-文件攻击" class="headerlink" title="5..htaccess 文件攻击"></a>5..htaccess 文件攻击</h5><p>配合名单列表绕过，上传一个自定义的.htaccess，就可以轻松绕过各种检测</p>
+<p>自定义.htaccess上传，下面是内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">​        &lt;FileMatch &quot;aaa&quot;&gt;</span><br><span class="line"></span><br><span class="line">​        SetHandler application/x-httpd-php</span><br><span class="line"></span><br><span class="line">​        &lt;/FileMatch&gt;</span><br></pre></td></tr></table></figure>
+<pre><code>同目录下，上传一个aaa文件，没有扩展名，内容是一句话，这个时候就成功绕过。
+</code></pre><h5 id="6-解析调用-漏洞绕过"><a href="#6-解析调用-漏洞绕过" class="headerlink" title="6.解析调用/漏洞绕过"></a>6.解析调用/漏洞绕过</h5><p>这类漏洞直接配合上传一个代码注入过的非黑名单文件即可，再利用解析调用/漏洞</p>
+<h3 id="服务器端白名单检测绕过"><a href="#服务器端白名单检测绕过" class="headerlink" title="服务器端白名单检测绕过"></a>服务器端白名单检测绕过</h3><p>白名单相对来说比黑名单安全一些，但也不见得就绝对安全了</p>
+<h5 id="1-0x00-截断绕过"><a href="#1-0x00-截断绕过" class="headerlink" title="1.0x00 截断绕过"></a>1.0x00 截断绕过</h5><p>用像 test.asp%00.jpg 的方式进行截断，属于白名单文件，再利用服务端代码的检测逻辑 漏洞进行攻击，目前我只遇到过 asp 的程序有这种漏洞</p>
+<h5 id="2-解析调用-漏洞绕过"><a href="#2-解析调用-漏洞绕过" class="headerlink" title="2.解析调用/漏洞绕过"></a>2.解析调用/漏洞绕过</h5><p>这类漏洞直接配合上传一个代码注入过的白名单文件即可，再利用解析调用/漏洞</p>
+<h5 id="htaccess-文件攻击"><a href="#htaccess-文件攻击" class="headerlink" title=".htaccess 文件攻击"></a>.htaccess 文件攻击</h5><p>无论是黑名单还是白名单</p>
+<p>再直接点就是直接攻击.htaccess 文件</p>
+<p>在 PHP manual 中提到了下面一段话</p>
+<p>move_uploaded_file section, there is a warning which states  ‘If the destination file already exists, it will be overwritten.’  如果 PHP 安全没配置好</p>
+<p>就可以通过 move_uploaded_file 函数把自己写的.htaccess 文件覆盖掉服务器上的 这样就能任意定义解析名单了</p>
+<h3 id="网络渗透本质：代码注入-代码解析-执行"><a href="#网络渗透本质：代码注入-代码解析-执行" class="headerlink" title="网络渗透本质：代码注入+代码解析/执行"></a>网络渗透本质：代码注入+代码解析/执行</h3><h4 id="主要是两类情况"><a href="#主要是两类情况" class="headerlink" title="主要是两类情况"></a>主要是两类情况</h4><h5 id="1-直接解析-执行攻击"><a href="#1-直接解析-执行攻击" class="headerlink" title="1.直接解析/执行攻击"></a>1.直接解析/执行攻击</h5><p>像缓冲区溢出和 sql 注入攻击，脚本代码注入就是很明显的属于这里攻击 直接将代码注入到一个解析/执行环境里，直接就能让代码得到执行所以危害性也来得最大，效果最明显</p>
+<p>shellcode 注入程序后，直接劫持 EIP，进行该系统环境权限做任何操作</p>
+<p>sql 命令注入数据库后，直接就能执行该数据库账号权限下的任何操作</p>
+<h5 id="2-配合解析-执行攻击"><a href="#2-配合解析-执行攻击" class="headerlink" title="2.配合解析/执行攻击"></a>2.配合解析/执行攻击</h5><p>算是一种组合攻击，在这类情况下</p>
+<p>往往不像第一种情况能拥有直接的解析/执行环境 比较明显的就是我们的上传攻击</p>
+<p>我们需要先上传数据(注入代码)到服务端上去</p>
+<p>然后想办法去调用解析/执行环境(比如 Web 应用程序解析漏洞)  来解析/执行已经注入到了服务端的代码</p>
+<h4 id="三种解析方式"><a href="#三种解析方式" class="headerlink" title="三种解析方式"></a>三种解析方式</h4><h5 id="直接解析"><a href="#直接解析" class="headerlink" title="-直接解析"></a>-直接解析</h5><p>能以 asp,php 之类的扩展名存储在服务器上</p>
+<h5 id="本地文件包含解析"><a href="#本地文件包含解析" class="headerlink" title="-本地文件包含解析"></a>-本地文件包含解析</h5><p>主要是 php 的本地文件包含 (远程文件包含不属于上传攻击绕过范畴)</p>
+<h5 id="htaccess-解析"><a href="#htaccess-解析" class="headerlink" title="-.htaccess 解析"></a>-.htaccess 解析</h5><p>.htaccess 文件 用户自己定义如何去调用解析器解析文件就可以了</p>
+<h3 id="Web应用程序解析漏洞"><a href="#Web应用程序解析漏洞" class="headerlink" title="Web应用程序解析漏洞"></a>Web应用程序解析漏洞</h3><h4 id="Apache-解析漏洞"><a href="#Apache-解析漏洞" class="headerlink" title="Apache 解析漏洞"></a>Apache 解析漏洞</h4><p>111.php.ddd</p>
+<p>解析 - test.php.任意不属于黑名单且也不属于 Apache 解析白名单的名称</p>
+<p>描述 - 一个文件名为 x1.x2.x3 的文件，Apache 会从 x3 的位置往 x1 的位置开始尝试解析 如果 x3 不属于 Apache 能解析的扩展名，那么 Apache 会尝试去解析 x2 的位置，  从后往前解析，直到遇到一个能解析的扩展名为止</p>
+<h4 id="IIS-解析漏洞"><a href="#IIS-解析漏洞" class="headerlink" title="IIS 解析漏洞"></a>IIS 解析漏洞</h4><p> 解析 - test.asp/任意文件名 | test.asp;任意文件名 | 任意文件名/任意文件名.php</p>
+<p> IIS6.0 在解析 asp 格式的时候有两个解析漏洞，一个是如果目录名包含”.asp”字符串，  那么这个目录下所有的文件都会按照 asp 去解析，另一个是只要文件名中含有”.asp;”  会优先按 asp 来解析</p>
+<p> IIS7.0/7.5 是对 php 解析时有一个类似于 Nginx 的解析漏洞，对任意文件名只要在 URL后面追加上字符串”/任意文件名.php”就会按照 php 的方式去解析</p>
+<h4 id="Nginx-解析漏洞"><a href="#Nginx-解析漏洞" class="headerlink" title="Nginx 解析漏洞"></a>Nginx 解析漏洞</h4><p>解析 - 任意文件名/任意文件名.php | 任意文件名%00.php</p>
+<p>描述 - 目前 Nginx 主要有这两种漏洞，一个是对任意文件名，在后面添加/任意文件名.php  的解析漏洞，比如原本文件名是 test.jpg，可以添加为 test.jpg/x.php 进行解析攻击。 还有一种是对低版本的 Nginx 可以在任意文件名后面添加%00.php 进行解析攻击。</p>
+<h3 id="总览"><a href="#总览" class="headerlink" title="总览"></a>总览</h3><p><img src="\images\pasted-93.png" alt="upload successful"></p>
+<h3 id="应用层上传漏洞攻击思路"><a href="#应用层上传漏洞攻击思路" class="headerlink" title="应用层上传漏洞攻击思路"></a>应用层上传漏洞攻击思路</h3><p><img src="\images\pasted-92.png" alt="upload successful"></p>
+<h3 id="一个不常见的绕过方式"><a href="#一个不常见的绕过方式" class="headerlink" title="一个不常见的绕过方式"></a>一个不常见的绕过方式</h3><p>文件上传绕过   上传一个php文件，用burp抓包   头部的Content-Type改成Multipart/form-data大小写绕过   请求内容里的Content-Type改成image，文件名改成php5就绕过了</p>
+
+      
+    </div>
+	
+	<div>
+	
+		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>史前感谢您的来访-------------</div>
+    
+</div>
+	
+	</div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/web安全/" rel="tag"># web安全</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/14/XSS跨站脚本漏洞/" rel="next" title="XSS跨站脚本漏洞">
+                <i class="fa fa-chevron-left"></i> XSS跨站脚本漏洞
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">shiqian</p>
+              <p class="site-description motion-element" itemprop="description">繁华一场梦</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#文件上传"><span class="nav-number">1.</span> <span class="nav-text">文件上传</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络渗透的本质-技术部分"><span class="nav-number">2.</span> <span class="nav-text">网络渗透的本质(技术部分)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#漏洞原因"><span class="nav-number">3.</span> <span class="nav-text">漏洞原因</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#上传检测流程"><span class="nav-number">4.</span> <span class="nav-text">上传检测流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#上传绕过"><span class="nav-number">5.</span> <span class="nav-text">上传绕过</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端检测绕过-javascript-检测"><span class="nav-number">5.0.1.</span> <span class="nav-text">客户端检测绕过(javascript 检测)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务器端检测MIME类型的绕过"><span class="nav-number">5.0.2.</span> <span class="nav-text">服务器端检测MIME类型的绕过</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常见的MIME类型："><span class="nav-number">5.0.2.1.</span> <span class="nav-text">常见的MIME类型：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务器目录路径检测绕过"><span class="nav-number">5.0.3.</span> <span class="nav-text">服务器目录路径检测绕过</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务器端黑名单检测绕过"><span class="nav-number">5.0.4.</span> <span class="nav-text">服务器端黑名单检测绕过</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-文件名大小写绕过pHp-PhP"><span class="nav-number">5.0.4.0.1.</span> <span class="nav-text">1.文件名大小写绕过pHp,PhP</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-名单列表绕过"><span class="nav-number">5.0.4.0.2.</span> <span class="nav-text">2.名单列表绕过</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-特殊文件名绕过"><span class="nav-number">5.0.4.0.3.</span> <span class="nav-text">3.特殊文件名绕过</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-0x00-截断绕过"><span class="nav-number">5.0.4.0.4.</span> <span class="nav-text">4.0x00 截断绕过</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-htaccess-文件攻击"><span class="nav-number">5.0.4.0.5.</span> <span class="nav-text">5..htaccess 文件攻击</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-解析调用-漏洞绕过"><span class="nav-number">5.0.4.0.6.</span> <span class="nav-text">6.解析调用/漏洞绕过</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务器端白名单检测绕过"><span class="nav-number">5.0.5.</span> <span class="nav-text">服务器端白名单检测绕过</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-0x00-截断绕过"><span class="nav-number">5.0.5.0.1.</span> <span class="nav-text">1.0x00 截断绕过</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-解析调用-漏洞绕过"><span class="nav-number">5.0.5.0.2.</span> <span class="nav-text">2.解析调用/漏洞绕过</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#htaccess-文件攻击"><span class="nav-number">5.0.5.0.3.</span> <span class="nav-text">.htaccess 文件攻击</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络渗透本质：代码注入-代码解析-执行"><span class="nav-number">5.0.6.</span> <span class="nav-text">网络渗透本质：代码注入+代码解析/执行</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#主要是两类情况"><span class="nav-number">5.0.6.1.</span> <span class="nav-text">主要是两类情况</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-直接解析-执行攻击"><span class="nav-number">5.0.6.1.1.</span> <span class="nav-text">1.直接解析/执行攻击</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-配合解析-执行攻击"><span class="nav-number">5.0.6.1.2.</span> <span class="nav-text">2.配合解析/执行攻击</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三种解析方式"><span class="nav-number">5.0.6.2.</span> <span class="nav-text">三种解析方式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#直接解析"><span class="nav-number">5.0.6.2.1.</span> <span class="nav-text">-直接解析</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#本地文件包含解析"><span class="nav-number">5.0.6.2.2.</span> <span class="nav-text">-本地文件包含解析</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#htaccess-解析"><span class="nav-number">5.0.6.2.3.</span> <span class="nav-text">-.htaccess 解析</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Web应用程序解析漏洞"><span class="nav-number">5.0.7.</span> <span class="nav-text">Web应用程序解析漏洞</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Apache-解析漏洞"><span class="nav-number">5.0.7.1.</span> <span class="nav-text">Apache 解析漏洞</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IIS-解析漏洞"><span class="nav-number">5.0.7.2.</span> <span class="nav-text">IIS 解析漏洞</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Nginx-解析漏洞"><span class="nav-number">5.0.7.3.</span> <span class="nav-text">Nginx 解析漏洞</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总览"><span class="nav-number">5.0.8.</span> <span class="nav-text">总览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用层上传漏洞攻击思路"><span class="nav-number">5.0.9.</span> <span class="nav-text">应用层上传漏洞攻击思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一个不常见的绕过方式"><span class="nav-number">5.0.10.</span> <span class="nav-text">一个不常见的绕过方式</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">shiqian</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
