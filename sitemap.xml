@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2018/08/14/XSS%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%BC%8F%E6%B4%9E/</loc>
+    
+    <lastmod>2018-08-14T12:22:54.070Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/08/14/Web%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80/</loc>
     
-    <lastmod>2018-08-14T08:37:12.973Z</lastmod>
+    <lastmod>2018-08-14T09:14:41.491Z</lastmod>
     
   </url>
   
