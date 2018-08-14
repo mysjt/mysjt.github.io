@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="Secer">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/pasted-18.png">
-<meta property="og:updated_time" content="2018-08-13T15:07:15.899Z">
+<meta property="og:updated_time" content="2018-08-14T01:16:51.584Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQLMAP一把梭">
 <meta name="twitter:image" content="http://yoursite.com/images/pasted-18.png">
@@ -379,10 +379,10 @@
 <p>6 同时显示HTTP相应页面</p>
 <h5 id="【如果想看到测试的payload就用等级3】"><a href="#【如果想看到测试的payload就用等级3】" class="headerlink" title="【如果想看到测试的payload就用等级3】"></a>【如果想看到测试的payload就用等级3】</h5><h2 id="二、获取目标方式"><a href="#二、获取目标方式" class="headerlink" title="二、获取目标方式"></a>二、获取目标方式</h2><h5 id="1-直接连接到数据库"><a href="#1-直接连接到数据库" class="headerlink" title="1.直接连接到数据库"></a>1.直接连接到数据库</h5><p>  参数：-d</p>
 <p>  对单个数据库实例运行sqlmap</p>
-<p>python sqlmap.py -d “mysql://admin:<a href="mailto:admin@192.168.1.2" target="_blank" rel="noopener">admin@192.168.1.2</a>:3306/testdb” -f –banner –dbs –users </p>
+<p><code>python sqlmap.py -d &quot;mysql://admin:admin@192.168.1.2:3306/testdb&quot; -f --banner --dbs --users</code> </p>
 <h5 id="2-目标URL"><a href="#2-目标URL" class="headerlink" title="2.目标URL"></a>2.目标URL</h5><p>  参数：-u或者—url</p>
 <p>  URL格式要求：http(s)://targeturl[:port]/[…]</p>
-<p>  python sqlmap.py -u “<a href="http://www.target.com/vuln.php?id=1&quot;" target="_blank" rel="noopener">http://www.target.com/vuln.php?id=1&quot;</a> -f –banner –dbs –users </p>
+<p>  <code>python sqlmap.py -u &quot;http://www.target.com/vuln.php?id=1&quot; -f --banner --dbs --users</code> </p>
 <h5 id="3-从Burp或WebScarab代理中获取日志"><a href="#3-从Burp或WebScarab代理中获取日志" class="headerlink" title="3.从Burp或WebScarab代理中获取日志"></a>3.从Burp或WebScarab代理中获取日志</h5><p>  参数：-l</p>
 <p>  把Burp proxy或者WebScarab proxy中的日志直接导出来交给sqlmap检测</p>
 <h5 id="4-从文本中获取多个目标扫描"><a href="#4-从文本中获取多个目标扫描" class="headerlink" title="4.从文本中获取多个目标扫描"></a>4.从文本中获取多个目标扫描</h5><p>  参数：-m</p>
@@ -392,12 +392,12 @@
 <p>  当请求是HTTPS的时候要配合—force-ssl参数来使用，或者你可以在Host头后面加上:443</p>
 <h5 id="6-处理Google的搜索结果"><a href="#6-处理Google的搜索结果" class="headerlink" title="6.处理Google的搜索结果"></a>6.处理Google的搜索结果</h5><p>  参数：-g</p>
 <p>  sqlmap可以测试注入Google的搜索结果中的GET参数</p>
-<p>  python sqlmap.py -g “inurl:\”.php?id=1\””</p>
+<p>  <code>python sqlmap.py -g &quot;inurl:\&quot;.php?id=1\&quot;&quot;</code></p>
 <h5 id="7-从一个配置加载选项INI文件"><a href="#7-从一个配置加载选项INI文件" class="headerlink" title="7.从一个配置加载选项INI文件"></a>7.从一个配置加载选项INI文件</h5><p>  参数：-c</p>
 <p>  加载sqlmap.conf文件里面的相关配置</p>
 <h2 id="三、请求方式"><a href="#三、请求方式" class="headerlink" title="三、请求方式"></a>三、请求方式</h2><h5 id="1-http数据"><a href="#1-http数据" class="headerlink" title="1.http数据"></a>1.http数据</h5><p>  参数：–data</p>
 <p>  此参数是把数据以POST方式提交，sqlmap会像检测GET参数一样检测POST的参数</p>
-<p>  python sqlmap.py -u “<a href="http://www.target.com/vuln.php&quot;" target="_blank" rel="noopener">http://www.target.com/vuln.php&quot;</a> –data=”id=1” -f –banner –dbs –users</p>
+<p>  <code>python sqlmap.py -u &quot;http://www.target.com/vuln.php&quot; --data=&quot;id=1&quot; -f --banner --dbs --users</code></p>
 <h5 id="2-参数拆分字符"><a href="#2-参数拆分字符" class="headerlink" title="2.参数拆分字符"></a>2.参数拆分字符</h5><p>  参数：–param-del</p>
 <p>  当GET或POST的数据需要用其他字符分割测试参数的时候需要用到此参数</p>
 <p>  python sqlmap.py -u “<a href="http://www.target.com/vuln.php&quot;" target="_blank" rel="noopener">http://www.target.com/vuln.php&quot;</a> –data=”query=foobar;id=1” –param-del=”;” -f –banner –dbs –users</p>
@@ -1049,7 +1049,6 @@
 <p><strong>8.绕过WAF的tamper插件使用：</strong></p>
 <p><code>sqlmap.py -u “url” –tamper “xxx.py”</code></p>
 <p><code>sqlmap.py -u “url” –tamper=”xxx.py”</code></p>
-<p>关于tamper脚本详细说明在本博客中有，链接为：<a href="http://www.matsec.cn/?id=5" target="_blank" rel="noopener">http://www.matsec.cn/?id=5</a></p>
 <p><strong>9.将注入语句插入到指定位置：</strong></p>
 <p><code>sqlmap.py -u “url([www.xxx.com/id/1](http://www.xxx.com/id/1)*.html)” –dbs</code></p>
 <p>有些网站是采用伪静态的页面使用SQLMAP的普通注入是不行的，所以SQLMAP提供了”*”参数将SQL语句插入指定位置，一般用于伪静态注入。</p>

@@ -89,7 +89,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/pasted-56.png">
 <meta property="og:image" content="http://yoursite.com/images/pasted-55.png">
-<meta property="og:updated_time" content="2018-08-13T15:05:58.352Z">
+<meta property="og:updated_time" content="2018-08-14T01:14:25.851Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OWASP TOP 10">
 <meta name="twitter:image" content="http://yoursite.com/images/pasted-56.png">
@@ -364,8 +364,8 @@
 <h4 id="影响"><a href="#影响" class="headerlink" title="影响"></a>影响</h4><p>注入能导致数据丢失、破坏或泄露给无授权方，缺乏可审计性或是拒绝服务。注入有时甚至能导致主机被完全接管</p>
 <h4 id="应用程序的脆弱性"><a href="#应用程序的脆弱性" class="headerlink" title="应用程序的脆弱性"></a>应用程序的脆弱性</h4><p>当您的应用在如下时点时，是脆弱的并易受到攻击：</p>
 <p>• 用户提供的数据没有经过应用程序的验证、过滤或净化。</p>
-<p>• 动态查询语句或非参数化的调用，在没有上下文感知转义的情况<br>下，被用于解释器。</p>
-<p>• 在ORM搜索参数中使用了恶意数据，这样搜索就获得包含敏感<br>或未授权的数据。</p>
+<p>• 动态查询语句或非参数化的调用，在没有上下文感知转义的情况下，被用于解释器。</p>
+<p>• 在ORM搜索参数中使用了恶意数据，这样搜索就获得包含敏感或未授权的数据。</p>
 <p>• 恶意数据直接被使用或连接，诸如SQL语句或命令在动态查询语<br>句、命令或存储过程中包含结构和恶意数据。</p>
 <h4 id="防御"><a href="#防御" class="headerlink" title="防御"></a>防御</h4><p>防止注入漏洞需要将数据与命令语句、查询语句分隔开来。<br>• 最佳选择是使用安全的API，完全避免使用解释器，或提供参数化界面的接口，或迁移到ORM或实体框架。</p>
 <p>• 注意： 当参数化时，存储过程仍然可以引入SQL注入，如果PL/SQL或T-SQL将查询和数据连接在一起，或者执行带有立即执行或exec()的恶意数据。</p>
