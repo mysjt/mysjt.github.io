@@ -103,7 +103,7 @@
 <meta property="og:image" content="http://yoursite.com/images/pasted-77.png">
 <meta property="og:image" content="http://yoursite.com/images/pasted-72.png">
 <meta property="og:image" content="http://yoursite.com/images/pasted-73.png">
-<meta property="og:updated_time" content="2018-08-14T06:50:56.445Z">
+<meta property="og:updated_time" content="2018-08-14T06:58:01.327Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AWVS使用指北">
 <meta name="twitter:image" content="http://yoursite.com/images/pasted-58.png">
@@ -402,6 +402,9 @@
 <p><img src="\images\pasted-77.png" alt="upload successful"><br>扫描的结果能看到发现漏洞所用的payload，对应的HTTP头信息、HTML、可发送到HTTP Editor中等</p>
 <h3 id="AWVS-新建扫描——结果（二）"><a href="#AWVS-新建扫描——结果（二）" class="headerlink" title="AWVS 新建扫描——结果（二）"></a>AWVS 新建扫描——结果（二）</h3><p><img src="\images\pasted-72.png" alt="upload successful"></p>
 <h3 id="AWVS-新建扫描——导出"><a href="#AWVS-新建扫描——导出" class="headerlink" title="AWVS 新建扫描——导出"></a>AWVS 新建扫描——导出</h3><p><img src="\images\pasted-73.png" alt="upload successful"></p>
+<h1 id="AWVS扫描小技巧"><a href="#AWVS扫描小技巧" class="headerlink" title="AWVS扫描小技巧"></a>AWVS扫描小技巧</h1><h3 id="1-文件头加"><a href="#1-文件头加" class="headerlink" title="1.文件头加"></a>1.文件头加</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)</span><br></pre></td></tr></table></figure>
+<p>可以绕过狗，waf等<br>另外如果很容易把对方扫死的话，可以在第一项limit number…..，这里是最大的并发连接数默认是10，可以改低为2-5， 某些WAF对访问请求时间太快会进行拦截，可以进行延迟发包，在Delay between 默认是0，改为1-5</p>
+<h3 id="2-设置cookie"><a href="#2-设置cookie" class="headerlink" title="2.设置cookie"></a>2.设置cookie</h3><p>表单验证用户某些页面，例如扫描后台、扫描用户登录后可访问的页面时候，需要登录用户密码验证再进行扫描，可以设置cookie 来解决</p>
 
       
     </div>
@@ -451,6 +454,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/14/Web安全基础/" rel="prev" title="Web安全基础">
+                Web安全基础 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -527,7 +534,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -538,7 +545,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -549,7 +556,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -589,7 +596,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#AWVS介绍"><span class="nav-number">1.</span> <span class="nav-text">AWVS介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AWVS优点"><span class="nav-number">2.</span> <span class="nav-text">AWVS优点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AWVS菜单栏"><span class="nav-number">3.</span> <span class="nav-text">AWVS菜单栏</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AWVS工具栏"><span class="nav-number">4.</span> <span class="nav-text">AWVS工具栏</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AWVS-新建扫描"><span class="nav-number">5.</span> <span class="nav-text">AWVS 新建扫描</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AWVS-新建扫描——Scan-type"><span class="nav-number">5.0.1.</span> <span class="nav-text">AWVS 新建扫描——Scan type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AWVS-新建扫描——Options"><span class="nav-number">5.0.2.</span> <span class="nav-text">AWVS 新建扫描——Options</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Options——Scanning-profile"><span class="nav-number">5.0.2.1.</span> <span class="nav-text">Options——Scanning profile</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Scanning-Profiles-scripts"><span class="nav-number">5.0.2.1.1.</span> <span class="nav-text">Scanning Profiles scripts</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Options——Scan-Setting"><span class="nav-number">5.0.3.</span> <span class="nav-text">Options——Scan Setting</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AWVS-新建扫描——Advanced"><span class="nav-number">5.0.4.</span> <span class="nav-text">AWVS 新建扫描——Advanced</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AWVS-新建扫描——Target"><span class="nav-number">5.0.5.</span> <span class="nav-text">AWVS 新建扫描——Target</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AWVS-新建扫描——Login"><span class="nav-number">5.0.6.</span> <span class="nav-text">AWVS 新建扫描——Login</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AWVS-新建扫描——Finish"><span class="nav-number">5.0.7.</span> <span class="nav-text">AWVS 新建扫描——Finish</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AWVS-新建扫描——结果（一）"><span class="nav-number">5.0.8.</span> <span class="nav-text">AWVS 新建扫描——结果（一）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AWVS-新建扫描——结果（二）"><span class="nav-number">5.0.9.</span> <span class="nav-text">AWVS 新建扫描——结果（二）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AWVS-新建扫描——导出"><span class="nav-number">5.0.10.</span> <span class="nav-text">AWVS 新建扫描——导出</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#AWVS介绍"><span class="nav-number">1.</span> <span class="nav-text">AWVS介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AWVS优点"><span class="nav-number">2.</span> <span class="nav-text">AWVS优点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AWVS菜单栏"><span class="nav-number">3.</span> <span class="nav-text">AWVS菜单栏</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AWVS工具栏"><span class="nav-number">4.</span> <span class="nav-text">AWVS工具栏</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AWVS-新建扫描"><span class="nav-number">5.</span> <span class="nav-text">AWVS 新建扫描</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AWVS-新建扫描——Scan-type"><span class="nav-number">5.0.1.</span> <span class="nav-text">AWVS 新建扫描——Scan type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AWVS-新建扫描——Options"><span class="nav-number">5.0.2.</span> <span class="nav-text">AWVS 新建扫描——Options</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Options——Scanning-profile"><span class="nav-number">5.0.2.1.</span> <span class="nav-text">Options——Scanning profile</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Scanning-Profiles-scripts"><span class="nav-number">5.0.2.1.1.</span> <span class="nav-text">Scanning Profiles scripts</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Options——Scan-Setting"><span class="nav-number">5.0.3.</span> <span class="nav-text">Options——Scan Setting</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AWVS-新建扫描——Advanced"><span class="nav-number">5.0.4.</span> <span class="nav-text">AWVS 新建扫描——Advanced</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AWVS-新建扫描——Target"><span class="nav-number">5.0.5.</span> <span class="nav-text">AWVS 新建扫描——Target</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AWVS-新建扫描——Login"><span class="nav-number">5.0.6.</span> <span class="nav-text">AWVS 新建扫描——Login</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AWVS-新建扫描——Finish"><span class="nav-number">5.0.7.</span> <span class="nav-text">AWVS 新建扫描——Finish</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AWVS-新建扫描——结果（一）"><span class="nav-number">5.0.8.</span> <span class="nav-text">AWVS 新建扫描——结果（一）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AWVS-新建扫描——结果（二）"><span class="nav-number">5.0.9.</span> <span class="nav-text">AWVS 新建扫描——结果（二）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AWVS-新建扫描——导出"><span class="nav-number">5.0.10.</span> <span class="nav-text">AWVS 新建扫描——导出</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AWVS扫描小技巧"><span class="nav-number">6.</span> <span class="nav-text">AWVS扫描小技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-文件头加"><span class="nav-number">6.0.1.</span> <span class="nav-text">1.文件头加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-设置cookie"><span class="nav-number">6.0.2.</span> <span class="nav-text">2.设置cookie</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
