@@ -87,12 +87,13 @@
 <meta property="og:url" content="http://yoursite.com/2018/08/14/文件上传漏洞/index.html">
 <meta property="og:site_name" content="Secer">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/images/pasted-94.png">
 <meta property="og:image" content="http://yoursite.com/images/pasted-93.png">
 <meta property="og:image" content="http://yoursite.com/images/pasted-92.png">
-<meta property="og:updated_time" content="2018-08-14T15:54:04.314Z">
+<meta property="og:updated_time" content="2018-08-15T01:15:58.925Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文件上传漏洞">
-<meta name="twitter:image" content="http://yoursite.com/images/pasted-93.png">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-94.png">
 
 
 
@@ -363,14 +364,13 @@
 <ol>
 <li>服务器配置不当</li>
 <li>开源编辑器上传漏洞</li>
-<li><p>本地文件上传限制被绕过 </p>
-</li>
-<li><p>过滤不严或被绕过</p>
-</li>
+<li>本地文件上传限制被绕过 </li>
+<li>过滤不严或被绕过</li>
 <li>文件解析漏洞导致文件执行 </li>
 <li>文件路径截断 </li>
 </ol>
-<h1 id="上传检测流程"><a href="#上传检测流程" class="headerlink" title="上传检测流程"></a>上传检测流程</h1><h1 id="上传绕过"><a href="#上传绕过" class="headerlink" title="上传绕过"></a>上传绕过</h1><h3 id="客户端检测绕过-javascript-检测"><a href="#客户端检测绕过-javascript-检测" class="headerlink" title="客户端检测绕过(javascript 检测)"></a>客户端检测绕过(javascript 检测)</h3><p>这类检测通常在上传页面里含有专门检测文件上传的 javascript 代码 最常见的就是检测扩展名是否合法 </p>
+<h1 id="上传检测流程"><a href="#上传检测流程" class="headerlink" title="上传检测流程"></a>上传检测流程</h1><p><img src="\images\pasted-94.png" alt="upload successful"></p>
+<h1 id="上传绕过"><a href="#上传绕过" class="headerlink" title="上传绕过"></a>上传绕过</h1><h3 id="客户端检测绕过-javascript-检测"><a href="#客户端检测绕过-javascript-检测" class="headerlink" title="客户端检测绕过(javascript 检测)"></a>客户端检测绕过(javascript 检测)</h3><p>这类检测通常在上传页面里含有专门检测文件上传的 javascript 代码 最常见的就是检测扩展名是否合法 </p>
 <p>通常post请求发送到web服务器，客户端javascript验证上传1.php弹窗说上传格式错误，只允许.jpg，.jpeg等格式的文件上传一句话1.php–&gt;1.jpg 然后burp抓包1.jpg–&gt;1.php，这样就绕过了js检测</p>
 <h3 id="服务器端检测MIME类型的绕过"><a href="#服务器端检测MIME类型的绕过" class="headerlink" title="服务器端检测MIME类型的绕过"></a>服务器端检测MIME类型的绕过</h3><p>​    服务端MIME类型检测（检测Content-Type内容），burp抓包，修改Content-Type</p>
 <p>​    Content-Type:text/plain –&gt;php</p>
