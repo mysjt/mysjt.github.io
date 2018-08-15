@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32x32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16x16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Python," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Secer" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="人生苦短，Python当歌-3">
+<meta property="og:url" content="http://yoursite.com/2018/08/15/人生苦短，python当歌-3/index.html">
+<meta property="og:site_name" content="Secer">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/images/pasted-95.png">
+<meta property="og:updated_time" content="2018-08-15T16:19:26.825Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="人生苦短，Python当歌-3">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-95.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/15/人生苦短，python当歌-3/"/>
+
+
+
+
+
+  <title>人生苦短，Python当歌-3 | Secer</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Secer</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/15/人生苦短，python当歌-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="shiqian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Secer">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">人生苦短，Python当歌-3</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-15T20:55:29+08:00">
+                2018-08-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<a id="more"></a>
+<p>繁华一场梦<br><img src="\images\pasted-95.png" alt="upload successful"></p>
+<h1 id="常用的系统库"><a href="#常用的系统库" class="headerlink" title="常用的系统库"></a>常用的系统库</h1><p>Python 的标准库包括了很多的模块, 从 Python 语言自身特定的类型和声明, 到一些只用于少数程序的不著名的模块.</p>
+<h3 id="sys模块"><a href="#sys模块" class="headerlink" title="sys模块"></a>sys模块</h3><p>可以通过help命令查看其文档</p>
+<p>sys.argv是变量，命令行参数，专门向Python解释器传递参数他的功能是获取程序外部向程序传递的参数</p>
+<p>#encoding=utf-8<br>import sys<br>print “THIS FILE NAME IS:”,sys.argv[0]</p>
+<p>结果是<code>THIS FILE NAME IS: D:/yinjijn.py</code></p>
+<p>sys.stdin,sys.stdout,sys.stderr<br>处理标准输入，标准输出，标准错误</p>
+<p>输出和错误是内建在每个unix系统中的管道<br>print的本质就是sys.stdout.write</p>
+<p>#encoding=utf-8<br>for i in range(6):<br>    print “attck”</p>
+<p>等同于</p>
+<p>#encoding=utf-8<br>import  sys<br>for i in range(6):<br>    sys.stdout.write(“just do it\n”)</p>
+<p>stdout是一个类文件对象，调用了它的write函数就可以打印任何的字符串了，它不会自己添加回车，要我们添加\n但是只有write的办法，木有read的方法<br>是由于是类文件对象，因此你可以将任何类文件赋值，然后重定向输出</p>
+<h3 id="os模块"><a href="#os模块" class="headerlink" title="os模块"></a><strong>os模块</strong></h3><p>常用的几个</p>
+<p>import os</p>
+<p>os.name      #判断现在正在实用的平台，Windows平台”nt”,linux平台”posix”</p>
+<p>os.getcwd()        #获取当前目录</p>
+<p>os.listdir(“D:/blog”)         #列D:/blog文件夹的目录</p>
+<p>os.mkdir(“D:/gooann”)        #在本文件x夹下建立一个叫gooann的文件夹</p>
+<p>os.listdir(“D:/gooann/items”)  #查看目录文件夹</p>
+<p> os.rmdir(“blog”) #删除叫blog的文件夹</p>
+<p>os.rename(“test.txt”,”test1.txt”) #将test.txt重名为test1.txt</p>
+<p>os.remove(“test1.txt”)  #删除test1.txt的文件</p>
+<p>os库提供了在Python中使用操作系统的命令的方法就是用os.system(）</p>
+<h3 id="time模块"><a href="#time模块" class="headerlink" title="time模块"></a><strong>time模块</strong></h3><p>time模块很常用的，可以精确的知道程序的运行长短，看看常用的 </p>
+<p>import time</p>
+<p>time.time()   #获取当前时间的时间戳</p>
+<p>1503480040.985</p>
+<p> time.clock()  #获取进程的时间</p>
+<p>60.641674890547975</p>
+<p> time.localtime()  #时间戳转换成当地的时间</p>
+<p>time.struct_time(tm_year=2017, tm_mon=8, tm_mday=23, tm_hour=17, tm_min=20, tm_sec=48, tm_wday=2, tm_yday=235, tm_isdst=0)</p>
+<p>time.asctime()  #将元祖表示为’Wed Aug 23 17:24:07 2017’这种形式</p>
+<h3 id="json模块"><a href="#json模块" class="headerlink" title="json模块"></a>json模块</h3><p>传递数据的XML和JSON</p>
+<p>JSON(JavaScript Object Notation, JS 对象标记) 是一种轻量级的数据交换格式。它基于 ECMAScript (w3c制定的js规范)的一个子集，采用完全独立于编程语言的文本格式来存储和表示数据。简洁和清晰的层次结构使得 JSON 成为理想的数据交换语言。 易于人阅读和编写，同时也易于机器解析和生成，并有效地提升网络传输效率。</p>
+<p>Python标准库中有JSON模块，主要是两个功能，序列化(encoding)与反序列化(decoding)</p>
+<h5 id="encoding操作-dumps"><a href="#encoding操作-dumps" class="headerlink" title="encoding操作 :dumps()"></a>encoding操作 :dumps()</h5><p>#encoding=utf-8<br>import json<br>data = [{“username”:”gooann”,”password”:”shiqian”,”content”:(“shiqian”,”secer”)}]<br>print data<br>[{‘username’: ‘gooann’, ‘content’: (‘shiqian’, ‘secer’), ‘password’: ‘shiqian’}]<br>data_json = json.dumps(data)  #将data进行格式的编码转换<br>print data_json<br>[{“username”: “gooann”, “content”: [“shiqian”, “secer”], “password”: “shiqian”}]</p>
+<p>这里的data_json是str类型，data是list类型</p>
+<h5 id="decoding操作：loads"><a href="#decoding操作：loads" class="headerlink" title="decoding操作：loads()"></a>decoding操作：loads()</h5><p>data_load = json.loads(data_json)<br>print data_load</p>
+<p>[{u’username’: u’gooann’, u’content’: [u’shiqian’, u’secer’], u’password’: u’shiqian’}]</p>
+<h3 id="hashlib模块"><a href="#hashlib模块" class="headerlink" title="hashlib模块"></a>hashlib模块</h3><p>Python中的hashlib库提供了大量的摘要算法，又叫散列算法，哈希算法</p>
+<p>口算一下MD5</p>
+<p>#encoding=utf-8<br>import hashlib<br>md5 = hashlib.md5( )<br>md5.update(‘admin’)<br>print md5.hexdigest( )</p>
+<p>21232f297a57a5a743894a0e4a801fc3</p>
+<h3 id="random模块"><a href="#random模块" class="headerlink" title="random模块"></a><strong>random模块</strong></h3><p>就是生成随机数的</p>
+<p>#encoding=utf-8<br>import random<br>random.random()  #生成大于等于0，小于等于1的随机浮点数<br>random.uniform(66,88)  #生成66到88之间的随机浮点数<br>80.51121638510607<br>random.randint(66,88)  #生成66到88的整数<br>88<br>random.choice(‘url’) #在url生成随机字符<br>‘u’<br>look = [1,2,3,4,5,6]<br>random.shuffle(look)  #打乱数字<br>look<br>[1, 4, 3, 5, 2, 6]</p>
+<h1 id="常用的第三方库"><a href="#常用的第三方库" class="headerlink" title="常用的第三方库"></a>常用的第三方库</h1><p>第三方库顾名思义，得下载安装</p>
+<p>安装第三方库</p>
+<h5 id="第一种方法："><a href="#第一种方法：" class="headerlink" title="第一种方法："></a>第一种方法：</h5><p>用源码安装，去哪找呢？百度，谷歌，GitHub下载，下载好了压缩包，解压<br>LINUX或者MAC就直接git clone，然后进入目录，大部分都是都有setup.py，然后执行命令</p>
+<p><code>python setup.py install</code></p>
+<p>如果是Windows系统</p>
+<p>打开目录，然后shift+右键，在此打开cmd/Powershell窗口，打开，然后执行命令</p>
+<p><code>python setup.py install</code></p>
+<h5 id="第二种方法："><a href="#第二种方法：" class="headerlink" title="第二种方法："></a>第二种方法：</h5><p>pip安装或者easy_install安装<br>简单粗暴，他们的第三方库都来自一个网站：<a href="http://pypi.python.org/pypi" target="_blank" rel="noopener">http://pypi.python.org/pypi</a><br>pip也要安装unix平台<br>$ sudo yum install python-pip<br>$ sudo apt-get install python-pip</p>
+<p>Windows平台<br>可以下载get-pip.py<br>地址：<a href="https://bootstrap.pypa.io/get-pip.py" target="_blank" rel="noopener">https://bootstrap.pypa.io/get-pip.py</a><br>然后python get-pip.py</p>
+<p>unix也可以用这种方法, pip install 第三方库的名称</p>
+<h3 id="requests模块"><a href="#requests模块" class="headerlink" title="requests模块"></a>requests模块</h3><p>用于程序进行http协议的get和post的模块 </p>
+<h5 id="GET请求"><a href="#GET请求" class="headerlink" title="GET请求"></a>GET请求</h5><p>尝试获取某个页面，得到了一个请求实例</p>
+<p>#encoding=utf-8<br>import requests<br>url = requests.get(“<a href="http://www.gooann.com&quot;" target="_blank" rel="noopener">http://www.gooann.com&quot;</a>)</p>
+<p>获取cookies       print url.cookies</p>
+<p>获取头部信息        url.headers</p>
+<p>http响应状态码       url.status_code</p>
+<p>网页内容              url.text</p>
+<p>以二进制的方式打开服务器并返回数据      url.content</p>
+<h5 id="POST请求"><a href="#POST请求" class="headerlink" title="POST请求"></a>POST请求</h5><p>payload = {‘key1’: ‘value1’, ‘key2’: ‘value2’}</p>
+<p> r = requests.post(“<a href="http://httpbin.org/post&quot;" target="_blank" rel="noopener">http://httpbin.org/post&quot;</a>, data=payload)</p>
+<p> print r.text</p>
+<p>{<br>  “args”: {},<br>  “data”: “”,<br>  “files”: {},<br>  “form”: {<br>    “key1”: “value1”,<br>    “key2”: “value2”<br>  },<br>  “headers”: {<br>    “Accept”: “<em>/</em>“,<br>    “Accept-Encoding”: “gzip, deflate”,<br>    “Connection”: “close”,<br>    “Content-Length”: “23”,<br>    “Content-Type”: “application/x-www-form-urlencoded”,<br>    “Host”: “httpbin.org”,<br>    “User-Agent”: “python-requests/2.18.4”<br>  },<br>  “json”: null,<br>  “origin”: “113.135.83.181”,<br>  “url”: “<a href="http://httpbin.org/post&quot;" target="_blank" rel="noopener">http://httpbin.org/post&quot;</a><br>}</p>
+<p>没有data参数</p>
+<p>r = requests.post(“<a href="http://httpbin.org/post&quot;" target="_blank" rel="noopener">http://httpbin.org/post&quot;</a>)</p>
+<p>print r.text</p>
+<p>{<br>  “args”: {},<br>  “data”: “”,<br>  “files”: {},<br>  “form”: {},<br>  “headers”: {<br>    “Accept”: “<em>/</em>“,<br>    “Accept-Encoding”: “gzip, deflate”,<br>    “Connection”: “close”,<br>    “Content-Length”: “0”,<br>    “Host”: “httpbin.org”,<br>    “User-Agent”: “python-requests/2.18.4”<br>  },<br>  “json”: null,<br>  “origin”: “113.135.83.181”,<br>  “url”: “<a href="http://httpbin.org/post&quot;" target="_blank" rel="noopener">http://httpbin.org/post&quot;</a><br>}</p>
+<p>当data被赋值了之后，结果中才会多了form值，而form值就是post给服务器的内容</p>
+<h3 id="PIL模块"><a href="#PIL模块" class="headerlink" title="PIL模块"></a>PIL模块</h3><p>python Imaging Library (PIL)是PythonWare公司提供的免费的图像处理工具包，是python下的图像处理模块，支持多种格式，并提供强大的图形与图像处理功能。</p>
+<p>安装：UNIX平台<br>sudo apt-get install python-imaging<br>MAC平台<br>sudo easy_install PIL<br>Windows：<br>去官网直接下载exe安装，傻瓜式操作，传送门:<a href="http://pythonware.com/products/pil/" target="_blank" rel="noopener">http://pythonware.com/products/pil/</a></p>
+<p>#####</p>
+
+      
+    </div>
+	
+	<div>
+	
+		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>史前感谢您的来访-------------</div>
+    
+</div>
+	
+	</div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/15/人生苦短，Python当歌-2/" rel="next" title="人生苦短，Python当歌-2">
+                <i class="fa fa-chevron-left"></i> 人生苦短，Python当歌-2
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/15/人生苦短，Python当歌-4/" rel="prev" title="人生苦短，Python当歌-4">
+                人生苦短，Python当歌-4 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">shiqian</p>
+              <p class="site-description motion-element" itemprop="description">繁华一场梦</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#常用的系统库"><span class="nav-number">1.</span> <span class="nav-text">常用的系统库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sys模块"><span class="nav-number">1.0.1.</span> <span class="nav-text">sys模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#os模块"><span class="nav-number">1.0.2.</span> <span class="nav-text">os模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#time模块"><span class="nav-number">1.0.3.</span> <span class="nav-text">time模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#json模块"><span class="nav-number">1.0.4.</span> <span class="nav-text">json模块</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#encoding操作-dumps"><span class="nav-number">1.0.4.0.1.</span> <span class="nav-text">encoding操作 :dumps()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#decoding操作：loads"><span class="nav-number">1.0.4.0.2.</span> <span class="nav-text">decoding操作：loads()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hashlib模块"><span class="nav-number">1.0.5.</span> <span class="nav-text">hashlib模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#random模块"><span class="nav-number">1.0.6.</span> <span class="nav-text">random模块</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用的第三方库"><span class="nav-number">2.</span> <span class="nav-text">常用的第三方库</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#第一种方法："><span class="nav-number">2.0.0.0.1.</span> <span class="nav-text">第一种方法：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第二种方法："><span class="nav-number">2.0.0.0.2.</span> <span class="nav-text">第二种方法：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#requests模块"><span class="nav-number">2.0.1.</span> <span class="nav-text">requests模块</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#GET请求"><span class="nav-number">2.0.1.0.1.</span> <span class="nav-text">GET请求</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#POST请求"><span class="nav-number">2.0.1.0.2.</span> <span class="nav-text">POST请求</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PIL模块"><span class="nav-number">2.0.2.</span> <span class="nav-text">PIL模块</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">shiqian</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

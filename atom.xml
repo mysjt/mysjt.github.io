@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-15T12:40:43.561Z</updated>
+  <updated>2018-08-15T16:20:08.938Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>人生苦短，Python当歌-4</title>
+    <link href="http://yoursite.com/2018/08/15/%E4%BA%BA%E7%94%9F%E8%8B%A6%E7%9F%AD%EF%BC%8CPython%E5%BD%93%E6%AD%8C-4/"/>
+    <id>http://yoursite.com/2018/08/15/人生苦短，Python当歌-4/</id>
+    <published>2018-08-15T14:46:29.000Z</published>
+    <updated>2018-08-15T16:20:08.938Z</updated>
+    
+    <content type="html"><![CDATA[<hr><a id="more"></a><p>繁华一场梦<br><img src="\images\pasted-95.png" alt="upload successful"></p><h1 id="爬虫"><a href="#爬虫" class="headerlink" title="爬虫"></a>爬虫</h1><p>爬虫，用Python写的很多的，re模块，BeautifulSoup模块，pyspider模块，pyquery等等</p><p>还要用到requests模块，urllib模块，urllib2模块，还有一个四叶草公司开发的hackhttp等等</p><p>BeautifulSoup模块和requests模块，Pyspider都要安装，因为是第三方库</p><p>目标网站：<a href="https://gaokao.chsi.com.cn/gkxx/zszcgd/dnzszc/201706/20170615/1611254988-%1.html" target="_blank" rel="noopener">https://gaokao.chsi.com.cn/gkxx/zszcgd/dnzszc/201706/20170615/1611254988-%1.html</a></p><p>要实现的目标是爬取学校的名字，并按省份分类放置</p><p>代码如下：</p><p>#encoding=utf-8</p><p>import  requests<br>import lxml<br>import json<br>import logging   #解决ssl错误的<br>import sys<br>from bs4 import BeautifulSoup as bs<br>logging.captureWarnings(True)<br>reload(sys)     #解决编码问题的<br>sys.setdefaultencoding(‘utf-8’)<br>def school():<br>    for i in range(2, 34, 1):<br>        try:<br>           url = ‘<a href="https://gaokao.chsi.com.cn/gkxx/zszcgd/dnzszc/201706/20170615/1611254988-%s.html&#39;%(str(i)" target="_blank" rel="noopener">https://gaokao.chsi.com.cn/gkxx/zszcgd/dnzszc/201706/20170615/1611254988-%s.html&#39;%(str(i)</a>)<br>           headers = {<br>               ‘User-Agent’: ‘Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0’}<br>           r = requests.get(url=url,headers=headers,verify=False)<br>           soup = bs(r.content,’lxml’)<br>           content2 = soup.find_all(name=”td”, attrs={“colspan”: “7”})[0].string<br>           f1 = open(“D:/%s.txt” % (content2), “wb”)<br>           content = soup.find_all(name=’tr’,attrs={“height”:”29”})<br>           for content1 in content:<br>             try:<br>               soup_content = bs(str(content1), “lxml”)<br>               soup_content1 = soup_content.find_all(name=”td”)<br>               f1.write(soup_content1[1].string +’\n’)<br>               print(soup_content1[1].string)<br>             except IndexError:<br>                 pass<br>        except IndexError:<br>            pass</p><p>if <strong>name</strong>==’<strong>main</strong>‘:<br>    school()</p><p>爬虫遇到的问题：</p><p><code>requests.exceptions.SSLError: HTTPSConnectionPool(host=&#39;gaokao.chsi.com.cn&#39;, port=443): Max retries</code> </p><p>解决方法：</p><p>import logging</p><p>logging.captureWarnings(True)</p><p>r = requests.get(url=url,verify=False)</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>人生苦短，Python当歌-3</title>
+    <link href="http://yoursite.com/2018/08/15/%E4%BA%BA%E7%94%9F%E8%8B%A6%E7%9F%AD%EF%BC%8Cpython%E5%BD%93%E6%AD%8C-3/"/>
+    <id>http://yoursite.com/2018/08/15/人生苦短，python当歌-3/</id>
+    <published>2018-08-15T12:55:29.000Z</published>
+    <updated>2018-08-15T16:19:26.825Z</updated>
+    
+    <content type="html"><![CDATA[<hr><a id="more"></a><p>繁华一场梦<br><img src="\images\pasted-95.png" alt="upload successful"></p><h1 id="常用的系统库"><a href="#常用的系统库" class="headerlink" title="常用的系统库"></a>常用的系统库</h1><p>Python 的标准库包括了很多的模块, 从 Python 语言自身特定的类型和声明, 到一些只用于少数程序的不著名的模块.</p><h3 id="sys模块"><a href="#sys模块" class="headerlink" title="sys模块"></a>sys模块</h3><p>可以通过help命令查看其文档</p><p>sys.argv是变量，命令行参数，专门向Python解释器传递参数他的功能是获取程序外部向程序传递的参数</p><p>#encoding=utf-8<br>import sys<br>print “THIS FILE NAME IS:”,sys.argv[0]</p><p>结果是<code>THIS FILE NAME IS: D:/yinjijn.py</code></p><p>sys.stdin,sys.stdout,sys.stderr<br>处理标准输入，标准输出，标准错误</p><p>输出和错误是内建在每个unix系统中的管道<br>print的本质就是sys.stdout.write</p><p>#encoding=utf-8<br>for i in range(6):<br>    print “attck”</p><p>等同于</p><p>#encoding=utf-8<br>import  sys<br>for i in range(6):<br>    sys.stdout.write(“just do it\n”)</p><p>stdout是一个类文件对象，调用了它的write函数就可以打印任何的字符串了，它不会自己添加回车，要我们添加\n但是只有write的办法，木有read的方法<br>是由于是类文件对象，因此你可以将任何类文件赋值，然后重定向输出</p><h3 id="os模块"><a href="#os模块" class="headerlink" title="os模块"></a><strong>os模块</strong></h3><p>常用的几个</p><p>import os</p><p>os.name      #判断现在正在实用的平台，Windows平台”nt”,linux平台”posix”</p><p>os.getcwd()        #获取当前目录</p><p>os.listdir(“D:/blog”)         #列D:/blog文件夹的目录</p><p>os.mkdir(“D:/gooann”)        #在本文件x夹下建立一个叫gooann的文件夹</p><p>os.listdir(“D:/gooann/items”)  #查看目录文件夹</p><p> os.rmdir(“blog”) #删除叫blog的文件夹</p><p>os.rename(“test.txt”,”test1.txt”) #将test.txt重名为test1.txt</p><p>os.remove(“test1.txt”)  #删除test1.txt的文件</p><p>os库提供了在Python中使用操作系统的命令的方法就是用os.system(）</p><h3 id="time模块"><a href="#time模块" class="headerlink" title="time模块"></a><strong>time模块</strong></h3><p>time模块很常用的，可以精确的知道程序的运行长短，看看常用的 </p><p>import time</p><p>time.time()   #获取当前时间的时间戳</p><p>1503480040.985</p><p> time.clock()  #获取进程的时间</p><p>60.641674890547975</p><p> time.localtime()  #时间戳转换成当地的时间</p><p>time.struct_time(tm_year=2017, tm_mon=8, tm_mday=23, tm_hour=17, tm_min=20, tm_sec=48, tm_wday=2, tm_yday=235, tm_isdst=0)</p><p>time.asctime()  #将元祖表示为’Wed Aug 23 17:24:07 2017’这种形式</p><h3 id="json模块"><a href="#json模块" class="headerlink" title="json模块"></a>json模块</h3><p>传递数据的XML和JSON</p><p>JSON(JavaScript Object Notation, JS 对象标记) 是一种轻量级的数据交换格式。它基于 ECMAScript (w3c制定的js规范)的一个子集，采用完全独立于编程语言的文本格式来存储和表示数据。简洁和清晰的层次结构使得 JSON 成为理想的数据交换语言。 易于人阅读和编写，同时也易于机器解析和生成，并有效地提升网络传输效率。</p><p>Python标准库中有JSON模块，主要是两个功能，序列化(encoding)与反序列化(decoding)</p><h5 id="encoding操作-dumps"><a href="#encoding操作-dumps" class="headerlink" title="encoding操作 :dumps()"></a>encoding操作 :dumps()</h5><p>#encoding=utf-8<br>import json<br>data = [{“username”:”gooann”,”password”:”shiqian”,”content”:(“shiqian”,”secer”)}]<br>print data<br>[{‘username’: ‘gooann’, ‘content’: (‘shiqian’, ‘secer’), ‘password’: ‘shiqian’}]<br>data_json = json.dumps(data)  #将data进行格式的编码转换<br>print data_json<br>[{“username”: “gooann”, “content”: [“shiqian”, “secer”], “password”: “shiqian”}]</p><p>这里的data_json是str类型，data是list类型</p><h5 id="decoding操作：loads"><a href="#decoding操作：loads" class="headerlink" title="decoding操作：loads()"></a>decoding操作：loads()</h5><p>data_load = json.loads(data_json)<br>print data_load</p><p>[{u’username’: u’gooann’, u’content’: [u’shiqian’, u’secer’], u’password’: u’shiqian’}]</p><h3 id="hashlib模块"><a href="#hashlib模块" class="headerlink" title="hashlib模块"></a>hashlib模块</h3><p>Python中的hashlib库提供了大量的摘要算法，又叫散列算法，哈希算法</p><p>口算一下MD5</p><p>#encoding=utf-8<br>import hashlib<br>md5 = hashlib.md5( )<br>md5.update(‘admin’)<br>print md5.hexdigest( )</p><p>21232f297a57a5a743894a0e4a801fc3</p><h3 id="random模块"><a href="#random模块" class="headerlink" title="random模块"></a><strong>random模块</strong></h3><p>就是生成随机数的</p><p>#encoding=utf-8<br>import random<br>random.random()  #生成大于等于0，小于等于1的随机浮点数<br>random.uniform(66,88)  #生成66到88之间的随机浮点数<br>80.51121638510607<br>random.randint(66,88)  #生成66到88的整数<br>88<br>random.choice(‘url’) #在url生成随机字符<br>‘u’<br>look = [1,2,3,4,5,6]<br>random.shuffle(look)  #打乱数字<br>look<br>[1, 4, 3, 5, 2, 6]</p><h1 id="常用的第三方库"><a href="#常用的第三方库" class="headerlink" title="常用的第三方库"></a>常用的第三方库</h1><p>第三方库顾名思义，得下载安装</p><p>安装第三方库</p><h5 id="第一种方法："><a href="#第一种方法：" class="headerlink" title="第一种方法："></a>第一种方法：</h5><p>用源码安装，去哪找呢？百度，谷歌，GitHub下载，下载好了压缩包，解压<br>LINUX或者MAC就直接git clone，然后进入目录，大部分都是都有setup.py，然后执行命令</p><p><code>python setup.py install</code></p><p>如果是Windows系统</p><p>打开目录，然后shift+右键，在此打开cmd/Powershell窗口，打开，然后执行命令</p><p><code>python setup.py install</code></p><h5 id="第二种方法："><a href="#第二种方法：" class="headerlink" title="第二种方法："></a>第二种方法：</h5><p>pip安装或者easy_install安装<br>简单粗暴，他们的第三方库都来自一个网站：<a href="http://pypi.python.org/pypi" target="_blank" rel="noopener">http://pypi.python.org/pypi</a><br>pip也要安装unix平台<br>$ sudo yum install python-pip<br>$ sudo apt-get install python-pip</p><p>Windows平台<br>可以下载get-pip.py<br>地址：<a href="https://bootstrap.pypa.io/get-pip.py" target="_blank" rel="noopener">https://bootstrap.pypa.io/get-pip.py</a><br>然后python get-pip.py</p><p>unix也可以用这种方法, pip install 第三方库的名称</p><h3 id="requests模块"><a href="#requests模块" class="headerlink" title="requests模块"></a>requests模块</h3><p>用于程序进行http协议的get和post的模块 </p><h5 id="GET请求"><a href="#GET请求" class="headerlink" title="GET请求"></a>GET请求</h5><p>尝试获取某个页面，得到了一个请求实例</p><p>#encoding=utf-8<br>import requests<br>url = requests.get(“<a href="http://www.gooann.com&quot;" target="_blank" rel="noopener">http://www.gooann.com&quot;</a>)</p><p>获取cookies       print url.cookies</p><p>获取头部信息        url.headers</p><p>http响应状态码       url.status_code</p><p>网页内容              url.text</p><p>以二进制的方式打开服务器并返回数据      url.content</p><h5 id="POST请求"><a href="#POST请求" class="headerlink" title="POST请求"></a>POST请求</h5><p>payload = {‘key1’: ‘value1’, ‘key2’: ‘value2’}</p><p> r = requests.post(“<a href="http://httpbin.org/post&quot;" target="_blank" rel="noopener">http://httpbin.org/post&quot;</a>, data=payload)</p><p> print r.text</p><p>{<br>  “args”: {},<br>  “data”: “”,<br>  “files”: {},<br>  “form”: {<br>    “key1”: “value1”,<br>    “key2”: “value2”<br>  },<br>  “headers”: {<br>    “Accept”: “<em>/</em>“,<br>    “Accept-Encoding”: “gzip, deflate”,<br>    “Connection”: “close”,<br>    “Content-Length”: “23”,<br>    “Content-Type”: “application/x-www-form-urlencoded”,<br>    “Host”: “httpbin.org”,<br>    “User-Agent”: “python-requests/2.18.4”<br>  },<br>  “json”: null,<br>  “origin”: “113.135.83.181”,<br>  “url”: “<a href="http://httpbin.org/post&quot;" target="_blank" rel="noopener">http://httpbin.org/post&quot;</a><br>}</p><p>没有data参数</p><p>r = requests.post(“<a href="http://httpbin.org/post&quot;" target="_blank" rel="noopener">http://httpbin.org/post&quot;</a>)</p><p>print r.text</p><p>{<br>  “args”: {},<br>  “data”: “”,<br>  “files”: {},<br>  “form”: {},<br>  “headers”: {<br>    “Accept”: “<em>/</em>“,<br>    “Accept-Encoding”: “gzip, deflate”,<br>    “Connection”: “close”,<br>    “Content-Length”: “0”,<br>    “Host”: “httpbin.org”,<br>    “User-Agent”: “python-requests/2.18.4”<br>  },<br>  “json”: null,<br>  “origin”: “113.135.83.181”,<br>  “url”: “<a href="http://httpbin.org/post&quot;" target="_blank" rel="noopener">http://httpbin.org/post&quot;</a><br>}</p><p>当data被赋值了之后，结果中才会多了form值，而form值就是post给服务器的内容</p><h3 id="PIL模块"><a href="#PIL模块" class="headerlink" title="PIL模块"></a>PIL模块</h3><p>python Imaging Library (PIL)是PythonWare公司提供的免费的图像处理工具包，是python下的图像处理模块，支持多种格式，并提供强大的图形与图像处理功能。</p><p>安装：UNIX平台<br>sudo apt-get install python-imaging<br>MAC平台<br>sudo easy_install PIL<br>Windows：<br>去官网直接下载exe安装，傻瓜式操作，传送门:<a href="http://pythonware.com/products/pil/" target="_blank" rel="noopener">http://pythonware.com/products/pil/</a></p><p>#####</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>人生苦短，Python当歌-2</title>
