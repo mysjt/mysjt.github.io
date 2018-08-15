@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32x32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16x16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Python," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Secer" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="人生苦短，Python当歌-2">
+<meta property="og:url" content="http://yoursite.com/2018/08/15/人生苦短，Python当歌-2/index.html">
+<meta property="og:site_name" content="Secer">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/images/pasted-95.png">
+<meta property="og:updated_time" content="2018-08-15T12:40:43.561Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="人生苦短，Python当歌-2">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-95.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/15/人生苦短，Python当歌-2/"/>
+
+
+
+
+
+  <title>人生苦短，Python当歌-2 | Secer</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Secer</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/15/人生苦短，Python当歌-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="shiqian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Secer">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">人生苦短，Python当歌-2</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-15T15:32:29+08:00">
+                2018-08-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<a id="more"></a>
+<p>繁华一场梦<br><img src="\images\pasted-95.png" alt="upload successful"></p>
+<h1 id="理解Python函数"><a href="#理解Python函数" class="headerlink" title="理解Python函数"></a>理解Python函数</h1><p>在高中时代，就可以这么定义函数—–f(x)=8x+8 </p>
+<p>在函数中，并没有规定函数是一个数，它可是任何东西，你想是啥就是啥，变量的本质，可以当作一个占位符</p>
+<h1 id="定义函数"><a href="#定义函数" class="headerlink" title="定义函数"></a>定义函数</h1><p>代码块以 def 关键词开头，def这个简写来自define，后接函数标识符名称和圆括号()。<br>定义函数内容以冒号起始，然后必须缩进（四个空格或者一个tab键）</p>
+<p>def 函数名(参数):<br>        函数体<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#encoding=utf-8</span><br><span class="line"></span><br><span class="line">def    geturl( ):</span><br><span class="line"></span><br><span class="line">​           print   &quot;get  it&quot;</span><br><span class="line"></span><br><span class="line">geturl( )</span><br></pre></td></tr></table></figure></p>
+<h4 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h4><p>一般情况，要将返回的值传给一个变量，然后通过变量打印出来，如果没有，那就没有回显了</p>
+<h1 id="全局变量and局部变量"><a href="#全局变量and局部变量" class="headerlink" title="全局变量and局部变量"></a>全局变量and局部变量</h1><p>局部变量：只在函数体内（某个范围内）起作用的就叫局部变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#coding = utf-8</span><br><span class="line"></span><br><span class="line">a = &apos;ad&apos;</span><br><span class="line">def  getit():</span><br><span class="line">        a = &apos;look&apos;</span><br><span class="line">        print &quot;this a is&quot;,a</span><br><span class="line">demo()</span><br><span class="line">print &quot;---------------&quot;</span><br><span class="line">print &quot;this a is&quot;,a</span><br></pre></td></tr></table></figure></p>
+<p>全局变量：在函数的内外都能用，变量前加global<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#coding = utf-8</span><br><span class="line"></span><br><span class="line">a = &apos;ad&apos;</span><br><span class="line">def  getit():</span><br><span class="line">        global a</span><br><span class="line">        a = &apos;look&apos;</span><br><span class="line">        print &quot;this a is&quot;,a</span><br><span class="line">demo()</span><br><span class="line">print &quot;---------------&quot;</span><br><span class="line">print &quot;this a is&quot;,a</span><br></pre></td></tr></table></figure></p>
+<h1 id="特殊函数"><a href="#特殊函数" class="headerlink" title="特殊函数"></a>特殊函数</h1><h3 id="lambda函数"><a href="#lambda函数" class="headerlink" title="lambda函数"></a>lambda函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def add(x,y):</span><br><span class="line">      a = x+y</span><br><span class="line">      print a</span><br><span class="line"></span><br><span class="line">add（3,5）</span><br></pre></td></tr></table></figure>
+<p>引入lambda函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">add = lambda  x,y  :  x+y</span><br><span class="line"></span><br><span class="line">add( 3,5 )</span><br></pre></td></tr></table></figure></p>
+<p>lambda函数是一个只用一行就能解决问题的函数。</p>
+<h5 id="lambda函数的使用方法："><a href="#lambda函数的使用方法：" class="headerlink" title="lambda函数的使用方法："></a>lambda函数的使用方法：</h5><p>在lambda函数后面直接加变量，变量后直接冒号，冒号后面是表达式，完美解决<br>来个表达式</p>
+<p>lambda arg1,arg2,….,argn : expression using arguments</p>
+<h3 id="map函数"><a href="#map函数" class="headerlink" title="map函数"></a>map函数</h3><h5 id="使用方法：-map-函数，序列对象"><a href="#使用方法：-map-函数，序列对象" class="headerlink" title="使用方法： map(函数，序列对象)"></a>使用方法： map(函数，序列对象)</h5><p>比如0-100的平方数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">numbers = range(101)</span><br><span class="line"></span><br><span class="line">map( lambda  x :  x**2,numbers)</span><br></pre></td></tr></table></figure></p>
+<p>另一个方法 <code>[ x**2  for  x  in  numbers ]</code></p>
+<h3 id="reduce函数"><a href="#reduce函数" class="headerlink" title="reduce函数"></a>reduce函数</h3><p>reduce()函数也是Python内置的一个高阶函数。</p>
+<p>reduce()函数接收的参数和 map()类似，一个函数 f，一个list，但行为和 map()不同，reduce()传入的函数 f 必须接收两个参数，reduce()对list的每个元素反复调用函数f，并返回最终结果值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">def f(x, y):</span><br><span class="line">    return x + y</span><br></pre></td></tr></table></figure></p>
+<p>调用 <strong>reduce(f, [1, 3, 5, 7, 9])</strong>时，reduce函数将做如下计算：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">先计算头两个元素：f(1, 3)，结果为4；</span><br><span class="line">再把结果和第3个元素计算：f(4, 5)，结果为9；</span><br><span class="line">再把结果和第4个元素计算：f(9, 7)，结果为16；</span><br><span class="line">再把结果和第5个元素计算：f(16, 9)，结果为25；</span><br><span class="line">由于没有更多的元素了，计算结束，返回结果25。</span><br></pre></td></tr></table></figure></p>
+<p>reduce()还可以接收第3个可选参数，作为计算的初始值。如果把初始值设为100，计算：</p>
+<p>reduce(f, [1,3,5,7,9], 100)</p>
+<p>结果将变为125，因为第一轮计算是：</p>
+<p>计算初始值和第一个元素：f(100, 1)，结果为101。</p>
+<h3 id="filter函数-过滤器"><a href="#filter函数-过滤器" class="headerlink" title="filter函数:过滤器"></a>filter函数:过滤器</h3><h5 id="用法：filter-函数-序列对象"><a href="#用法：filter-函数-序列对象" class="headerlink" title="用法：filter(函数,序列对象)"></a>用法：filter(函数,序列对象)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">numbers = range(-2,11)</span><br><span class="line"></span><br><span class="line">print   numbers</span><br><span class="line"></span><br><span class="line">[-2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span><br><span class="line"></span><br><span class="line">filter( lambda x:x&gt;5,numbers)</span><br><span class="line"></span><br><span class="line">[6, 7, 8, 9, 10]</span><br></pre></td></tr></table></figure>
+<h3 id="zip函数"><a href="#zip函数" class="headerlink" title="zip函数"></a>zip函数</h3><p>zip()是Python的一个内建函数，它接受一系列可迭代的对象作为参数，将对象中对应的元素打包成一个个tuple（元组），然后返回由这些tuples组成的list（列表）。若传入参数的长度不等，则返回list的长度和参数中长度最短的对象相同。利用*号操作符，可以将list unzip（解压）。</p>
+<p>比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = [1,2,3]</span><br><span class="line"></span><br><span class="line">b = [4,5,6]</span><br><span class="line"></span><br><span class="line"> zip(a,b)</span><br><span class="line"></span><br><span class="line">[(1, 4), (2, 5), (3, 6)]</span><br></pre></td></tr></table></figure></p>
+<h5 id="长度不等时，取长度最小的"><a href="#长度不等时，取长度最小的" class="headerlink" title="长度不等时，取长度最小的"></a>长度不等时，取长度最小的</h5><p>c = ‘HELL0’</p>
+<p> d = ‘look’</p>
+<p>zip(c,d)</p>
+<p>[(‘H’, ‘l’), (‘E’, ‘o’), (‘L’, ‘o’), (‘L’, ‘k’)</p>
+<h5 id="常用的是构造字典"><a href="#常用的是构造字典" class="headerlink" title="常用的是构造字典"></a>常用的是构造字典</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">url1 =  [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;]</span><br><span class="line"></span><br><span class="line">url2 =  [&apos;d&apos;,&apos;e&apos;,&apos;f&apos;]</span><br><span class="line"></span><br><span class="line">url3 =  zip(url1,url2)</span><br></pre></td></tr></table></figure>
+<h3 id="abs函数"><a href="#abs函数" class="headerlink" title="abs函数"></a>abs函数</h3><h5 id="abs-函数返回数字的绝对值。"><a href="#abs-函数返回数字的绝对值。" class="headerlink" title="abs() 函数返回数字的绝对值。"></a>abs() 函数返回数字的绝对值。</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/python</span><br><span class="line"></span><br><span class="line">print &quot;abs(-45) : &quot;, abs(-45)</span><br><span class="line">print &quot;abs(100.12) : &quot;, abs(100.12)</span><br><span class="line">print &quot;abs(119L) : &quot;, abs(119L)</span><br></pre></td></tr></table></figure>
+<p>输出结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">abs(-45) :  45</span><br><span class="line">abs(100.12) :  100.12</span><br><span class="line">abs(119L) :  119</span><br></pre></td></tr></table></figure></p>
+<h3 id="divmod-函数"><a href="#divmod-函数" class="headerlink" title="divmod() 函数"></a>divmod() 函数</h3><p>python divmod() 函数把除数和余数运算结果结合起来，返回一个包含商和余数的元组(a // b, a % b)。</p>
+<h5 id="divmod-a-b"><a href="#divmod-a-b" class="headerlink" title="divmod(a, b)"></a>divmod(a, b)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">divmod(7, 2)</span><br><span class="line"></span><br><span class="line">(3, 1)</span><br><span class="line"></span><br><span class="line">divmod(8, 2)</span><br><span class="line"></span><br><span class="line">(4, 0)</span><br></pre></td></tr></table></figure>
+<h3 id="input-函数"><a href="#input-函数" class="headerlink" title="input() 函数"></a>input() 函数</h3><p>Python3.x 中 input() 函数接受一个标准输入数据，返回为 string 类型。</p>
+<p>Python2.x 中 input() 相等于 eval(raw_input(prompt)) ，用来获取控制台的输入。</p>
+<p>注意：input() 和 raw_input() 这两个函数均能接收 字符串 ，但 raw_input() 直接读取控制台的输入（任何类型的输入它都可以接收）除非对 input() 有特别需要，否则一般情况下推荐使用 raw_input() 来与用户交互。</p>
+<h5 id="input-prompt"><a href="#input-prompt" class="headerlink" title="input([prompt])"></a>input([prompt])</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = input(&quot;input:&quot;)</span><br><span class="line"></span><br><span class="line">input:123  </span><br><span class="line"></span><br><span class="line">type(a)   </span><br><span class="line"></span><br><span class="line">type &apos;int&apos;</span><br></pre></td></tr></table></figure>
+<h3 id="open-函数"><a href="#open-函数" class="headerlink" title="open() 函数"></a>open() 函数</h3><p>open() 函数用于打开一个文件，创建一个 file 对象，相关的方法才可以调用它进行读写。</p>
+<h5 id="open（“-name”-”mode”）"><a href="#open（“-name”-”mode”）" class="headerlink" title="open（“$name”,”mode”）"></a>open（“$name”,”mode”）</h5><h5 id="file-对象方法"><a href="#file-对象方法" class="headerlink" title="file 对象方法"></a>file 对象方法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">file.read([size]) size未指定则返回整个文件,如果文件大小&gt;2倍内存则有问题.f.read()读到文件尾时返回&quot;&quot;(空字串)</span><br><span class="line"></span><br><span class="line">file.readline() 返回一行</span><br><span class="line"></span><br><span class="line">file.readlines([size]) 返回包含size行的列表,size 未指定则返回全部行</span><br><span class="line"></span><br><span class="line">for line in f: print line #通过循环访问</span><br><span class="line"></span><br><span class="line">f.write(&quot;hello\n&quot;) #如果要写入字符串以外的数据,先将他转换为字符串.</span><br><span class="line"></span><br><span class="line">f.tell() 返回一个整数,表示当前文件指针的位置(就是到文件头的比特数).</span><br><span class="line"></span><br><span class="line">f.close() 关闭文件</span><br></pre></td></tr></table></figure>
+<h3 id="staticmethod-函数"><a href="#staticmethod-函数" class="headerlink" title="staticmethod() 函数"></a>staticmethod() 函数</h3><p>python staticmethod 返回函数的静态方法。</p>
+<p>该方法不强制要求传递参数</p>
+<h3 id="all-函数"><a href="#all-函数" class="headerlink" title="all() 函数"></a>all() 函数</h3><p>all() 函数用于判断给定的可迭代参数 iterable 中的所有元素是否都为 TRUE，如果是返回 True，否则返回 False。</p>
+<p>元素除了是 0、空、FALSE 外都算 TRUE。iterable – 元组或列表。</p>
+<h5 id="比如"><a href="#比如" class="headerlink" title="比如"></a>比如</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">all([&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;])  # 列表list，元素都不为空或0</span><br><span class="line"></span><br><span class="line">True</span><br><span class="line"></span><br><span class="line">all([&apos;a&apos;, &apos;b&apos;, &apos;&apos;, &apos;d&apos;])   # 列表list，存在一个为空的元素</span><br><span class="line"></span><br><span class="line">False</span><br><span class="line"></span><br><span class="line">all((0, 1, 2, 3))          # 元组tuple，存在一个为0的元素</span><br><span class="line"></span><br><span class="line">False</span><br><span class="line"></span><br><span class="line"> all([])             # 空列表</span><br><span class="line"></span><br><span class="line">True </span><br><span class="line"></span><br><span class="line">all(())             # 空元组</span><br><span class="line"></span><br><span class="line">True</span><br></pre></td></tr></table></figure>
+<h3 id="enumerate-函数"><a href="#enumerate-函数" class="headerlink" title="enumerate() 函数"></a>enumerate() 函数</h3><p>enumerate() 函数用于将一个可遍历的数据对象(如列表、元组或字符串)组合为一个索引序列，同时列出数据和数据下标，一般用在 for 循环当中。</p>
+<p>比如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">seasons = [&apos;Spring&apos;, &apos;Summer&apos;, &apos;Fall&apos;, &apos;Winter&apos;]</span><br><span class="line"></span><br><span class="line">list(enumerate(seasons))</span><br><span class="line"></span><br><span class="line">[(0, &apos;Spring&apos;), (1, &apos;Summer&apos;), (2, &apos;Fall&apos;), (3, &apos;Winter&apos;)]</span><br><span class="line"></span><br><span class="line">list(enumerate(seasons, start=1))       # 小标从 1 开始</span><br><span class="line">[(1, &apos;Spring&apos;), (2, &apos;Summer&apos;), (3, &apos;Fall&apos;), (4, &apos;Winter&apos;)]</span><br></pre></td></tr></table></figure></p>
+<h3 id="tuple-方法"><a href="#tuple-方法" class="headerlink" title="tuple()方法"></a>tuple()方法</h3><p>元组 tuple() 函数将列表转换为元组。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tuple(&#123;1:2,3:4&#125;)    #针对字典 会返回字典的key组成的tuple</span><br><span class="line"></span><br><span class="line">(1, 3)</span><br><span class="line"></span><br><span class="line">tuple([1,2,3,4])</span><br><span class="line"></span><br><span class="line">(1, 2, 3, 4)</span><br></pre></td></tr></table></figure></p>
+<h3 id="compile-函数"><a href="#compile-函数" class="headerlink" title="compile() 函数"></a>compile() 函数</h3><p>compile() 函数将一个字符串编译为字节代码。</p>
+<h5 id="返回值-1"><a href="#返回值-1" class="headerlink" title="返回值"></a>返回值</h5><p>返回表达式执行结果。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">str = &quot;3 * 4 + 5&quot;</span><br><span class="line"></span><br><span class="line">a = compile(str,&apos;&apos;,&apos;eval&apos;)</span><br><span class="line"></span><br><span class="line">eval(a)</span><br></pre></td></tr></table></figure></p>
+<h3 id="dict-函数"><a href="#dict-函数" class="headerlink" title="dict() 函数"></a>dict() 函数</h3><p>dict() 函数用于创建一个字典。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">dict()                        # 创建空字典</span><br><span class="line"></span><br><span class="line"> dict(a=&apos;a&apos;, b=&apos;b&apos;, t=&apos;t&apos;)     # 传入关键字</span><br><span class="line"></span><br><span class="line">dict(zip([&apos;one&apos;, &apos;two&apos;, &apos;three&apos;], [1, 2, 3]))   # 映射函数方式来构造字典</span><br><span class="line"></span><br><span class="line">&#123;&apos;three&apos;: 3, &apos;two&apos;: 2, &apos;one&apos;: 1&#125; </span><br><span class="line"></span><br><span class="line">dict([(&apos;one&apos;, 1), (&apos;two&apos;, 2), (&apos;three&apos;, 3)])    # 可迭代对象方式来构造字典</span><br><span class="line"></span><br><span class="line">&#123;&apos;three&apos;: 3, &apos;two&apos;: 2, &apos;one&apos;: 1&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="file函数"><a href="#file函数" class="headerlink" title="file函数"></a>file函数</h3><p><strong>file()</strong> 函数用于创建一个 file 对象，它有一个别名叫open()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">f = file(&apos;test.txt&apos;)</span><br><span class="line"></span><br><span class="line">f.read()</span><br><span class="line"></span><br><span class="line">&apos;RUNOOB1\nRUNOOB2\n&apos;</span><br></pre></td></tr></table></figure></p>
+<h1 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h1><p>在Python中有一个概念叫做模块（module），这个和C语言中的头文件以及Java中的包很类似，比如在Python中要调用sqrt函数，必须用import关键字引入math这个模块</p>
+<h3 id="如何引入模块"><a href="#如何引入模块" class="headerlink" title="如何引入模块"></a>如何引入模块</h3><p>四种方法：</p>
+<h5 id="导入整个模块"><a href="#导入整个模块" class="headerlink" title="导入整个模块"></a>导入整个模块</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line"></span><br><span class="line">print sys.argv</span><br></pre></td></tr></table></figure>
+<h5 id="只导入我们要用到的"><a href="#只导入我们要用到的" class="headerlink" title="只导入我们要用到的"></a>只导入我们要用到的</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from sys import argv</span><br><span class="line"></span><br><span class="line">print argv</span><br></pre></td></tr></table></figure>
+<h5 id="模块名太长，可以起个别名"><a href="#模块名太长，可以起个别名" class="headerlink" title="模块名太长，可以起个别名"></a>模块名太长，可以起个别名</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import sys as s</span><br><span class="line"></span><br><span class="line">print s.argv</span><br></pre></td></tr></table></figure>
+<h5 id="从模块中导入所有"><a href="#从模块中导入所有" class="headerlink" title="从模块中导入所有"></a>从模块中导入所有</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from sys import *</span><br><span class="line"></span><br><span class="line">print path #输出sys模块中的path</span><br></pre></td></tr></table></figure>
+<h5 id="定义一个自己的模块"><a href="#定义一个自己的模块" class="headerlink" title="定义一个自己的模块"></a>定义一个自己的模块</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">在目录下创建一个myself.py作为模块</span><br><span class="line"></span><br><span class="line">#encoding=utf-8</span><br><span class="line">a =  &quot;just do it&quot;</span><br></pre></td></tr></table></figure>
+<p>接下来，创建一个py，引入这个模块<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#encoding=utf-8</span><br><span class="line"></span><br><span class="line">import myself</span><br><span class="line">print myself.a</span><br></pre></td></tr></table></figure></p>
+<p>如果在不同目录下，就要用到sys模块<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> import sys</span><br><span class="line"></span><br><span class="line">sys.path.append(&quot;C:\Users\20148\Desktop\myself.py&quot;)</span><br></pre></td></tr></table></figure></p>
+<p>用这种方法告诉Python解释器，我写的文件在哪里</p>
+<p>可以将myself.py改造为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#coding = utf-8</span><br><span class="line"></span><br><span class="line">def  a():</span><br><span class="line">        return &quot;just  do it!!!&quot;</span><br><span class="line"></span><br><span class="line">if ____name__ _== &apos;__main__&apos;:</span><br><span class="line">        print  a()</span><br></pre></td></tr></table></figure></p>
+<p>都是一个文件，我们可以把他当作程序执行，也可以当作模块引入</p>
+<p>如果是程序执行的话，<code>__name__==&quot;__main__&quot;</code></p>
+<p>如果是模块呢？<code>demo.__name__==“demo”</code>，即为模块的名称</p>
+<p>如果是模块的引入，就不用写<code>if __name==&quot;__main__&quot;</code>了</p>
+<h1 id="包and库"><a href="#包and库" class="headerlink" title="包and库"></a>包and库</h1><p>包(带 <strong>init</strong>.py 的文件夹)，一个包（就是熟悉的目录）里面有好多的模块（即为.py文件），库就更大了，一个Python的标准库有好多的包，包又有一堆的模块</p>
+<p>建立一个叫gooann的目录，里面放两个py文件，一个a.py，一个b.py，再建立一个空文件<strong>init</strong>.py<br>a.py源码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#coding = utf-8</span><br><span class="line"></span><br><span class="line">def  a():</span><br><span class="line">        print &apos;just  do it!!!&apos;</span><br></pre></td></tr></table></figure></p>
+<p>b.py源码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#coding = utf-8</span><br><span class="line"></span><br><span class="line">def  b():</span><br><span class="line">        print &apos;hello world!!&apos;</span><br></pre></td></tr></table></figure></p>
+<p>然后，在与gooann同级的目录中，创建一个c.py调用这个gooann的包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#coding = utf-8</span><br><span class="line"></span><br><span class="line">import  gooann.a</span><br><span class="line">import  gooann.b</span><br><span class="line"></span><br><span class="line">gooann.a.a( )</span><br><span class="line"></span><br><span class="line">gooann.b.b( )</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+	
+	<div>
+	
+		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>史前感谢您的来访-------------</div>
+    
+</div>
+	
+	</div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/15/人生苦短，Python当歌-1/" rel="next" title="人生苦短，Python当歌-1">
+                <i class="fa fa-chevron-left"></i> 人生苦短，Python当歌-1
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">shiqian</p>
+              <p class="site-description motion-element" itemprop="description">繁华一场梦</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#理解Python函数"><span class="nav-number">1.</span> <span class="nav-text">理解Python函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定义函数"><span class="nav-number">2.</span> <span class="nav-text">定义函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#返回值"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">返回值</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#全局变量and局部变量"><span class="nav-number">3.</span> <span class="nav-text">全局变量and局部变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#特殊函数"><span class="nav-number">4.</span> <span class="nav-text">特殊函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lambda函数"><span class="nav-number">4.0.1.</span> <span class="nav-text">lambda函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#lambda函数的使用方法："><span class="nav-number">4.0.1.0.1.</span> <span class="nav-text">lambda函数的使用方法：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#map函数"><span class="nav-number">4.0.2.</span> <span class="nav-text">map函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用方法：-map-函数，序列对象"><span class="nav-number">4.0.2.0.1.</span> <span class="nav-text">使用方法： map(函数，序列对象)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reduce函数"><span class="nav-number">4.0.3.</span> <span class="nav-text">reduce函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filter函数-过滤器"><span class="nav-number">4.0.4.</span> <span class="nav-text">filter函数:过滤器</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#用法：filter-函数-序列对象"><span class="nav-number">4.0.4.0.1.</span> <span class="nav-text">用法：filter(函数,序列对象)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zip函数"><span class="nav-number">4.0.5.</span> <span class="nav-text">zip函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#长度不等时，取长度最小的"><span class="nav-number">4.0.5.0.1.</span> <span class="nav-text">长度不等时，取长度最小的</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#常用的是构造字典"><span class="nav-number">4.0.5.0.2.</span> <span class="nav-text">常用的是构造字典</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#abs函数"><span class="nav-number">4.0.6.</span> <span class="nav-text">abs函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#abs-函数返回数字的绝对值。"><span class="nav-number">4.0.6.0.1.</span> <span class="nav-text">abs() 函数返回数字的绝对值。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#divmod-函数"><span class="nav-number">4.0.7.</span> <span class="nav-text">divmod() 函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#divmod-a-b"><span class="nav-number">4.0.7.0.1.</span> <span class="nav-text">divmod(a, b)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#input-函数"><span class="nav-number">4.0.8.</span> <span class="nav-text">input() 函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#input-prompt"><span class="nav-number">4.0.8.0.1.</span> <span class="nav-text">input([prompt])</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#open-函数"><span class="nav-number">4.0.9.</span> <span class="nav-text">open() 函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#open（“-name”-”mode”）"><span class="nav-number">4.0.9.0.1.</span> <span class="nav-text">open（“$name”,”mode”）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#file-对象方法"><span class="nav-number">4.0.9.0.2.</span> <span class="nav-text">file 对象方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#staticmethod-函数"><span class="nav-number">4.0.10.</span> <span class="nav-text">staticmethod() 函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#all-函数"><span class="nav-number">4.0.11.</span> <span class="nav-text">all() 函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#比如"><span class="nav-number">4.0.11.0.1.</span> <span class="nav-text">比如</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#enumerate-函数"><span class="nav-number">4.0.12.</span> <span class="nav-text">enumerate() 函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tuple-方法"><span class="nav-number">4.0.13.</span> <span class="nav-text">tuple()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#compile-函数"><span class="nav-number">4.0.14.</span> <span class="nav-text">compile() 函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#返回值-1"><span class="nav-number">4.0.14.0.1.</span> <span class="nav-text">返回值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dict-函数"><span class="nav-number">4.0.15.</span> <span class="nav-text">dict() 函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#file函数"><span class="nav-number">4.0.16.</span> <span class="nav-text">file函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模块"><span class="nav-number">5.</span> <span class="nav-text">模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何引入模块"><span class="nav-number">5.0.1.</span> <span class="nav-text">如何引入模块</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#导入整个模块"><span class="nav-number">5.0.1.0.1.</span> <span class="nav-text">导入整个模块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#只导入我们要用到的"><span class="nav-number">5.0.1.0.2.</span> <span class="nav-text">只导入我们要用到的</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#模块名太长，可以起个别名"><span class="nav-number">5.0.1.0.3.</span> <span class="nav-text">模块名太长，可以起个别名</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#从模块中导入所有"><span class="nav-number">5.0.1.0.4.</span> <span class="nav-text">从模块中导入所有</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#定义一个自己的模块"><span class="nav-number">5.0.1.0.5.</span> <span class="nav-text">定义一个自己的模块</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#包and库"><span class="nav-number">6.</span> <span class="nav-text">包and库</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">shiqian</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
