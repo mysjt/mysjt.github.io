@@ -83,16 +83,16 @@
 
 <meta name="keywords" content="web安全">
 <meta property="og:type" content="article">
-<meta property="og:title" content="文件上传漏洞">
+<meta property="og:title" content="文件上传攻击">
 <meta property="og:url" content="http://yoursite.com/2018/08/14/文件上传漏洞/index.html">
 <meta property="og:site_name" content="Secer">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/pasted-94.png">
 <meta property="og:image" content="http://yoursite.com/images/pasted-93.png">
 <meta property="og:image" content="http://yoursite.com/images/pasted-92.png">
-<meta property="og:updated_time" content="2018-08-15T01:15:58.925Z">
+<meta property="og:updated_time" content="2018-08-21T12:52:16.868Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="文件上传漏洞">
+<meta name="twitter:title" content="文件上传攻击">
 <meta name="twitter:image" content="http://yoursite.com/images/pasted-94.png">
 
 
@@ -129,7 +129,7 @@
 
 
 
-  <title>文件上传漏洞 | Secer</title>
+  <title>文件上传攻击 | Secer</title>
   
 
 
@@ -283,7 +283,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">文件上传漏洞</h1>
+          <h1 class="post-title" itemprop="name headline">文件上传攻击</h1>
         
 
         <div class="post-meta">
@@ -372,11 +372,14 @@
 <h1 id="上传检测流程"><a href="#上传检测流程" class="headerlink" title="上传检测流程"></a>上传检测流程</h1><p><img src="\images\pasted-94.png" alt="upload successful"></p>
 <h1 id="上传绕过"><a href="#上传绕过" class="headerlink" title="上传绕过"></a>上传绕过</h1><h3 id="客户端检测绕过-javascript-检测"><a href="#客户端检测绕过-javascript-检测" class="headerlink" title="客户端检测绕过(javascript 检测)"></a>客户端检测绕过(javascript 检测)</h3><p>这类检测通常在上传页面里含有专门检测文件上传的 javascript 代码 最常见的就是检测扩展名是否合法 </p>
 <p>通常post请求发送到web服务器，客户端javascript验证上传1.php弹窗说上传格式错误，只允许.jpg，.jpeg等格式的文件上传一句话1.php–&gt;1.jpg 然后burp抓包1.jpg–&gt;1.php，这样就绕过了js检测</p>
-<h3 id="服务器端检测MIME类型的绕过"><a href="#服务器端检测MIME类型的绕过" class="headerlink" title="服务器端检测MIME类型的绕过"></a>服务器端检测MIME类型的绕过</h3><p>​    服务端MIME类型检测（检测Content-Type内容），burp抓包，修改Content-Type</p>
-<p>​    Content-Type:text/plain –&gt;php</p>
-<p>​    Content-Type:image/jpeg –&gt;image</p>
-<p>​    上传1.jpg—&gt;修改image/jpeg为text/plain，成功绕过。</p>
-<h4 id="常见的MIME类型："><a href="#常见的MIME类型：" class="headerlink" title="常见的MIME类型："></a>常见的MIME类型：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">​    超文本标记语言文本 .html text/html 　　</span><br><span class="line"></span><br><span class="line">​    xml文档 .xml text/xml</span><br><span class="line"></span><br><span class="line">​    普通文本 .txt text/plain 　　</span><br><span class="line"></span><br><span class="line">​    RTF文本 .rtf application/rtf 　　</span><br><span class="line"></span><br><span class="line">​    PDF文档 .pdf application/pdf 　　</span><br><span class="line"></span><br><span class="line">​    Microsoft Word文件 .word application/msword 　　</span><br><span class="line"></span><br><span class="line">​    PNG图像 .png image/png 　　</span><br><span class="line"></span><br><span class="line">​    GIF图形 .gif image/gif 　　</span><br><span class="line"></span><br><span class="line">​    JPEG图形 .jpeg,.jpg image/jpeg 　　</span><br><span class="line"></span><br><span class="line">​    au声音文件 .au audio/basic 　　</span><br><span class="line"></span><br><span class="line">​    MIDI音乐文件 mid,.midi audio/midi,audio/x-midi 　　</span><br><span class="line"></span><br><span class="line">​    RealAudio音乐文件 .ra, .ram audio/x-pn-realaudio 　　</span><br><span class="line"></span><br><span class="line">​    MPEG文件 .mpg,.mpeg video/mpeg 　　</span><br><span class="line"></span><br><span class="line">​    AVI文件 .avi video/x-msvideo 　　</span><br><span class="line"></span><br><span class="line">​    GZIP文件 .gz application/x-gzip 　　</span><br><span class="line"></span><br><span class="line">​    TAR文件 .tar application/x-tar 　　</span><br><span class="line"></span><br><span class="line">​    任意的二进制数据 application/octet-stream</span><br></pre></td></tr></table></figure>
+<h3 id="服务器端检测MIME类型的绕过"><a href="#服务器端检测MIME类型的绕过" class="headerlink" title="服务器端检测MIME类型的绕过"></a>服务器端检测MIME类型的绕过</h3><pre><code>服务端MIME类型检测（检测Content-Type内容），burp抓包，修改Content-Type
+
+Content-Type:text/plain --&gt;php
+
+Content-Type:image/jpeg --&gt;image
+
+上传1.jpg---&gt;修改image/jpeg为text/plain，成功绕过。
+</code></pre><h4 id="常见的MIME类型："><a href="#常见的MIME类型：" class="headerlink" title="常见的MIME类型："></a>常见的MIME类型：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">​    超文本标记语言文本 .html text/html 　　</span><br><span class="line"></span><br><span class="line">​    xml文档 .xml text/xml</span><br><span class="line"></span><br><span class="line">​    普通文本 .txt text/plain 　　</span><br><span class="line"></span><br><span class="line">​    RTF文本 .rtf application/rtf 　　</span><br><span class="line"></span><br><span class="line">​    PDF文档 .pdf application/pdf 　　</span><br><span class="line"></span><br><span class="line">​    Microsoft Word文件 .word application/msword 　　</span><br><span class="line"></span><br><span class="line">​    PNG图像 .png image/png 　　</span><br><span class="line"></span><br><span class="line">​    GIF图形 .gif image/gif 　　</span><br><span class="line"></span><br><span class="line">​    JPEG图形 .jpeg,.jpg image/jpeg 　　</span><br><span class="line"></span><br><span class="line">​    au声音文件 .au audio/basic 　　</span><br><span class="line"></span><br><span class="line">​    MIDI音乐文件 mid,.midi audio/midi,audio/x-midi 　　</span><br><span class="line"></span><br><span class="line">​    RealAudio音乐文件 .ra, .ram audio/x-pn-realaudio 　　</span><br><span class="line"></span><br><span class="line">​    MPEG文件 .mpg,.mpeg video/mpeg 　　</span><br><span class="line"></span><br><span class="line">​    AVI文件 .avi video/x-msvideo 　　</span><br><span class="line"></span><br><span class="line">​    GZIP文件 .gz application/x-gzip 　　</span><br><span class="line"></span><br><span class="line">​    TAR文件 .tar application/x-tar 　　</span><br><span class="line"></span><br><span class="line">​    任意的二进制数据 application/octet-stream</span><br></pre></td></tr></table></figure>
 <h3 id="服务器目录路径检测绕过"><a href="#服务器目录路径检测绕过" class="headerlink" title="服务器目录路径检测绕过"></a>服务器目录路径检测绕过</h3><p>目录路径检测，一般就检测路径是否合法，但稍微特殊一点的都没有防御。 </p>
 <p>上传1.jpg,burp进行抓包，Content-Disposition:from-data;name=”path”后面一行upload是我们保存的地址。</p>
 <p>现在我们将upload改为upload/1.php(空格) ，接着我们来到 Proxy-&gt;intercept-&gt;Hex找到1.php(空格)这个被修改   过的代码，找到同一行的数字20，改为00 ，成功绕过</p>
@@ -548,7 +551,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
