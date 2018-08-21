@@ -87,9 +87,13 @@
 <meta property="og:url" content="http://yoursite.com/2018/08/21/请求伪造漏洞/index.html">
 <meta property="og:site_name" content="Secer">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-21T12:23:46.344Z">
+<meta property="og:image" content="http://yoursite.com/images/pasted-99.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-100.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-101.png">
+<meta property="og:updated_time" content="2018-08-21T12:45:35.135Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="请求伪造漏洞">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-99.png">
 
 
 
@@ -354,11 +358,13 @@
         <hr>
 <a id="more"></a>
 <p>繁华一场梦</p>
+<p><img src="\images\pasted-99.png" alt="upload successful"></p>
 <p>请求伪造漏洞，分为服务端请求伪造漏洞（SSRF）和跨站请求伪造漏洞（CSRF）</p>
 <h1 id="SSRF漏洞"><a href="#SSRF漏洞" class="headerlink" title="SSRF漏洞"></a>SSRF漏洞</h1><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>服务端请求伪造漏洞是一种构造由服务端发起请求的一种安全漏洞，SSRF攻击的目标是从外网无法访问的内部系统，很多web应用都提供从其他服务器上获取数据的功能，使用用户指定的URL，web应用可以下载文件，读取文件内容，攻击者恶意利用存在缺陷的web应用作为代理来攻击远程和本地的服务器。</p>
 <p>如果应用对用户的url和远程返回的信息没有进行验证和过滤，就可能存在这种服务端请求伪造攻击。</p>
 <p>该攻击主要为绕过网络限制，攻击企业内网。</p>
-<h3 id="攻击过程图"><a href="#攻击过程图" class="headerlink" title="攻击过程图"></a>攻击过程图</h3><h3 id="可以实现的攻击"><a href="#可以实现的攻击" class="headerlink" title="可以实现的攻击"></a>可以实现的攻击</h3><h5 id="信息收集："><a href="#信息收集：" class="headerlink" title="信息收集："></a>信息收集：</h5><p>端口扫描，获取banner信息，对内网应用进行指纹识别，file协议读取本地文件</p>
+<h3 id="攻击过程图"><a href="#攻击过程图" class="headerlink" title="攻击过程图"></a>攻击过程图</h3><p><img src="\images\pasted-100.png" alt="upload successful"></p>
+<h3 id="可以实现的攻击"><a href="#可以实现的攻击" class="headerlink" title="可以实现的攻击"></a>可以实现的攻击</h3><h5 id="信息收集："><a href="#信息收集：" class="headerlink" title="信息收集："></a>信息收集：</h5><p>端口扫描，获取banner信息，对内网应用进行指纹识别，file协议读取本地文件</p>
 <h5 id="执行指令："><a href="#执行指令：" class="headerlink" title="执行指令："></a>执行指令：</h5><p>利用get参数，攻击内外网应用程序</p>
 <h3 id="防御"><a href="#防御" class="headerlink" title="防御"></a>防御</h3><p>过滤返回的信息</p>
 <p>统一错误信息</p>
@@ -372,7 +378,8 @@
 <p>盗账号</p>
 <p>购买商品</p>
 <p>虚拟货币转账</p>
-<h3 id="攻击过程图-1"><a href="#攻击过程图-1" class="headerlink" title="攻击过程图"></a>攻击过程图</h3><p>所需的特定条件：</p>
+<h3 id="攻击过程图-1"><a href="#攻击过程图-1" class="headerlink" title="攻击过程图"></a>攻击过程图</h3><p><img src="\images\pasted-101.png" alt="upload successful"></p>
+<p>所需的特定条件：</p>
 <p>受害者必须登录过正常的网站</p>
 <p>受害者必须打开黑客提供的恶意链接</p>
 <p>网站没有如验证码之类的特殊验证方法</p>
@@ -385,7 +392,7 @@
 <p>使用token时的原则：</p>
 <p>足够的随机性，使用安全的随机数生成器生成token</p>
 <p>保密性，token尽量放在表单中，把敏感操作由get改为post，由表单提交</p>
-<p>### </p>
+<p>###</p>
 
       
     </div>
