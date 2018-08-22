@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-21T15:04:56.354Z</updated>
+  <updated>2018-08-22T07:11:42.449Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>应急响应手工查杀</title>
+    <link href="http://yoursite.com/2018/08/22/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E6%89%8B%E5%B7%A5%E6%8E%92%E6%9F%A5/"/>
+    <id>http://yoursite.com/2018/08/22/应急响应手工排查/</id>
+    <published>2018-08-22T07:05:42.000Z</published>
+    <updated>2018-08-22T07:11:42.449Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a><p>繁华一场梦</p><h1 id="什么是应急响应"><a href="#什么是应急响应" class="headerlink" title="什么是应急响应"></a>什么是应急响应</h1><p>应急响应的目的:恢复系统的CIA</p><h3 id="应急响应6个阶段："><a href="#应急响应6个阶段：" class="headerlink" title="应急响应6个阶段："></a>应急响应6个阶段：</h3><p>pdcerf</p><p>准备、检测、遏制、根除、恢复、跟踪</p><h3 id="安全事件分类："><a href="#安全事件分类：" class="headerlink" title="安全事件分类："></a>安全事件分类：</h3><p>1.僵  木  蠕  等有害程序</p><p>2.网络攻击类 : DOS   DDOS  扫描</p><p>3.信息破坏类：网站内容篡改、假冒信息</p><p>4.信息内容安全：不良言论</p><p>5.设备的软硬件故障</p><p>6.自然灾害</p><p>7.其他</p><h3 id="事件分级（四级）"><a href="#事件分级（四级）" class="headerlink" title="事件分级（四级）:"></a>事件分级（四级）:</h3><p>原则：根据信息系统的危害程度，信息系统的重要性、以及对社会的影响等</p><p>1.特大</p><p>2.重大</p><p>3.严重</p><p>4.一般</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;繁华一场梦&lt;/p&gt;
+&lt;h1 id=&quot;什么是应急响应&quot;&gt;&lt;a href=&quot;#什么是应急响应&quot; class=&quot;headerlink&quot; title=&quot;什么是应急响应&quot;&gt;&lt;/a&gt;什么是应急响应&lt;/h1&gt;&lt;p&gt;应急响应的目的:恢复系统的CIA&lt;/p
+      
+    
+    </summary>
+    
+      <category term="木马查杀" scheme="http://yoursite.com/categories/%E6%9C%A8%E9%A9%AC%E6%9F%A5%E6%9D%80/"/>
+    
+    
+      <category term="木马查杀" scheme="http://yoursite.com/tags/%E6%9C%A8%E9%A9%AC%E6%9F%A5%E6%9D%80/"/>
+    
+  </entry>
   
   <entry>
     <title>手注mssql</title>
@@ -43,9 +70,9 @@
     <link href="http://yoursite.com/2018/08/21/web%E7%BB%88%E6%9E%81%E5%8A%A0%E5%9B%BA-mssqlserver/"/>
     <id>http://yoursite.com/2018/08/21/web终极加固-mssqlserver/</id>
     <published>2018-08-21T14:18:05.000Z</published>
-    <updated>2018-08-21T14:46:43.653Z</updated>
+    <updated>2018-08-22T07:13:06.787Z</updated>
     
-    <content type="html"><![CDATA[<hr><a id="more"></a><p>繁华一场梦</p><p><img src="\images\pasted-108.png" alt="upload successful"></p><h2 id="一-中间件加固：tomcat-weblogic-iis"><a href="#一-中间件加固：tomcat-weblogic-iis" class="headerlink" title="一.中间件加固：tomcat,weblogic,iis"></a>一.中间件加固：tomcat,weblogic,iis</h2><p>iis服务管理器-网站–dvbbs–右键–属性</p><h4 id="1-更改默认日志的路径："><a href="#1-更改默认日志的路径：" class="headerlink" title="1.更改默认日志的路径："></a>1.更改默认日志的路径：</h4><p>c:\windows\system32\logfiles:改为d:\dvbbslog:仅system可读写，administrator:读</p><p>日志存放&gt;6个月      w3c:  biglog（日志分析）   ,splunk(日志分析)</p><p>网站–属性</p><h3 id="2-高级：必选协议版本："><a href="#2-高级：必选协议版本：" class="headerlink" title="2.高级：必选协议版本："></a>2.高级：必选协议版本：</h3><p>客户端，cookie:取证</p><p>wireshark:</p><h4 id="3-不要给写入权限："><a href="#3-不要给写入权限：" class="headerlink" title="3.不要给写入权限："></a>3.不要给写入权限：</h4><p>防上传webshell:<br>主目录</p><h4 id="4-不要给目录浏览权限："><a href="#4-不要给目录浏览权限：" class="headerlink" title="4.不要给目录浏览权限："></a>4.不要给目录浏览权限：</h4><p>产生目录遍历</p><p>主目录：</p><h4 id="5-删除不必要映射："><a href="#5-删除不必要映射：" class="headerlink" title="5.删除不必要映射："></a>5.删除不必要映射：</h4><p>主目录–配置：不用到扩展名映射删除，上传.cer</p><h4 id="6-向客户端发送自定义错误信息："><a href="#6-向客户端发送自定义错误信息：" class="headerlink" title="6.向客户端发送自定义错误信息："></a>6.向客户端发送自定义错误信息：</h4><p>反制黑客：<code>&lt;iframe src=http://ip&gt;&lt;/iframe&gt;</code></p><p>主目录–配置–调试：</p><h4 id="7-中层安全策略："><a href="#7-中层安全策略：" class="headerlink" title="7.中层安全策略："></a>7.中层安全策略：</h4><p>限制后台登录ip:<br>admin右键–目录安全性–ip或域名限制<br>允许：192.168.2.6</p><h4 id="8-删除所有自定义错误信息：防黑客："><a href="#8-删除所有自定义错误信息：防黑客：" class="headerlink" title="8.删除所有自定义错误信息：防黑客："></a>8.删除所有自定义错误信息：防黑客：</h4><p>302：挂马页面<br>C:\WINDOWS\help\iisHelp\common\</p><h2 id="二-数据库加固"><a href="#二-数据库加固" class="headerlink" title="二.数据库加固"></a>二.数据库加固</h2><h4 id="1-安全架构："><a href="#1-安全架构：" class="headerlink" title="1.安全架构："></a>1.安全架构：</h4><p>禁止数据库和web同台，web–&gt;dmz,ids,数据库内网</p><h4 id="2-数据库加固："><a href="#2-数据库加固：" class="headerlink" title="2.数据库加固："></a>2.数据库加固：</h4><h5 id="a-鉴别："><a href="#a-鉴别：" class="headerlink" title="a.鉴别："></a>a.鉴别：</h5><p>单因素，双因素：网银：<br>who:你是谁：生物特征，指纹，虹膜，视网膜<br>错误接受率小，交叉错判率小<br>have:卡，证书<br>know:知识，口令，密保问题</p><p>pin码，指纹<br>密码：8-10-14 量子 ecc,rsa</p><h5 id="b-授权：访问控制："><a href="#b-授权：访问控制：" class="headerlink" title="b.授权：访问控制："></a>b.授权：访问控制：</h5><p>最小特权：<br>dac:自主访问：ACL:访问控制列表：客体：文件<br>cl:能力表：主体：用户<br>mac:强制访问：敏感标签：文件：绝密，用户：绝密 安全模型：blp:机密性：禁止上读下写<br>rbac:基于角色:最小特权<br>group:<br>基于上下文：TCP,基于时间，基于内容：邮件过滤<br>everyone,administrators,users</p><h5 id="c-完整性：hash-摘要"><a href="#c-完整性：hash-摘要" class="headerlink" title="c.完整性：hash:摘要"></a>c.完整性：hash:摘要</h5><p>任意长度的消息生成 等长的摘要<br>两个不同的消息产生相同的摘要：碰撞<br>md5:10^42,10^21,10^10 128<br>sha1:160<br>sha256<br>过杀毒软件：<br>头同尾不同，md5相同：<br>头不同尾相同，md5相同</p><h5 id="d-机密性：加密"><a href="#d-机密性：加密" class="headerlink" title="d.机密性：加密"></a>d.机密性：加密</h5><p>https:ssl:安全套接层：握手：身份认证及算法密钥协商，记录：加密<br>cipher suite:算法套件<br>ecdhe(密钥交换)-RSA(签名)-AES(加密)-sha256<br>降级：ecdhe-rsa-3des-md5<br>ssl strip:中间人<br><a href="http://www.taobao.com" target="_blank" rel="noopener">http://www.taobao.com</a><br>arp -a:ip–mac:攻击者<br>ssldos:<br>算法弱点：drown rsa<br>rsa:伪随机数算法：后门：ec-dual-drbg:NSA:-1000万美元，常量–推出密钥，bsafe:<br>高级会话复制：黑产<br>证书伪造<br>证书劫持<br>ukey高级克隆，远程映射，内存泄露<br>网银大盗：3 UKEY</p><h5 id="E-抗抵赖："><a href="#E-抗抵赖：" class="headerlink" title="E:抗抵赖："></a>E:抗抵赖：</h5><p>数字签名：私钥+hash 伪造<br>粒度越小越灵活越安全<br>库—表：行，列：学生，老师，<br>事前检测：运行环境漏洞；数据库漏洞：<br>事中监测：sql语句：查询，返回<br>事后审计：日志</p><h4 id="3-更改默认数据库名字及路径：数据库的配置文件"><a href="#3-更改默认数据库名字及路径：数据库的配置文件" class="headerlink" title="3.更改默认数据库名字及路径：数据库的配置文件"></a>3.更改默认数据库名字及路径：数据库的配置文件</h4><p>防下载：数据库重定向到url:<a href="http://www.dvbbs.com" target="_blank" rel="noopener">http://www.dvbbs.com</a><br>iis服务管理器–网站-dvbbs–data–dvbbs7.mdb<br>右键–重定向到url</p><h2 id="三-权限加固："><a href="#三-权限加固：" class="headerlink" title="三.权限加固："></a>三.权限加固：</h2><p>网站源码目录：c:\bbsbak–右键–安全 ntfs</p><p>1.删除所有默认权限<br>2.添加administrator:完全控制<br>3.添加iis_wpg:完全控制<br>4.添加iusr_benet:只读<br>5.判断哪些目录需要写入权限<br>upload,data,databackup,uploadface—给iusr_benet 写入<br>防webshell<br>6.给以上有写入目录权限的文件夹，执行权限：无<br>iis服务管理器–网站—dvbbs–uploadface–右键–目录–执行权限：无</p><blockquote><p>6个月 w3c:biglog,splunk<br>网站–属性<br>2.高级：必选协议版本：客户端，cookie:取证<br>wireshark:<br>3.不要给写入权限：防上传webshell:<br>主目录<br>4.不要给目录浏览权限：产生目录遍历<br>主目录：<br>5.删除不必要映射：主目录–配置：不用到扩展名映射删除，上传.cer<br>6.向客户端发送自定义错误信息：</p></blockquote><blockquote><p>6个月 w3c:biglog,splunk<br>网站–属性<br>2.高级：必选协议版本：客户端，cookie:取证<br>wireshark:<br>3.不要给写入权限：防上传webshell:<br>主目录<br>4.不要给目录浏览权限：产生目录遍历<br>主目录：<br>5.删除不必要映射：主目录–配置：不用到扩展名映射删除，上传.cer<br>6.向客户端发送自定义错误信息：</p></blockquote><blockquote><p>6个月 w3c:biglog,splunk<br>网站–属性<br>2.高级：必选协议版本：客户端，cookie:取证<br>wireshark:<br>3.不要给写入权限：防上传webshell:<br>主目录<br>4.不要给目录浏览权限：产生目录遍历<br>主目录：<br>5.删除不必要映射：主目录–配置：不用到扩展名映射删除，上传.cer<br>6.向客户端发送自定义错误信息：</p></blockquote><blockquote><p>6个月 w3c:biglog,splunk<br>网站–属性<br>2.高级：必选协议版本：客户端，cookie:取证<br>wireshark:<br>3.不要给写入权限：防上传webshell:<br>主目录<br>4.不要给目录浏览权限：产生目录遍历<br>主目录：<br>5.删除不必要映射：主目录–配置：不用到扩展名映射删除，上传.cer<br>6.向客户端发送自定义错误信息：</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<hr><a id="more"></a><p>繁华一场梦</p><p><img src="\images\pasted-108.png" alt="upload successful"></p><h2 id="一-中间件加固：tomcat-weblogic-iis"><a href="#一-中间件加固：tomcat-weblogic-iis" class="headerlink" title="一.中间件加固：tomcat,weblogic,iis"></a>一.中间件加固：tomcat,weblogic,iis</h2><p>iis服务管理器-网站–dvbbs–右键–属性</p><h4 id="1-更改默认日志的路径："><a href="#1-更改默认日志的路径：" class="headerlink" title="1.更改默认日志的路径："></a>1.更改默认日志的路径：</h4><p>c:\windows\system32\logfiles:改为d:\dvbbslog:仅system可读写，administrator:读</p><p>日志存放&gt;6个月      w3c:  biglog（日志分析）   ,splunk(日志分析)</p><p>网站–属性</p><h3 id="2-高级：必选协议版本："><a href="#2-高级：必选协议版本：" class="headerlink" title="2.高级：必选协议版本："></a>2.高级：必选协议版本：</h3><p>客户端，cookie:取证</p><p>wireshark:</p><h4 id="3-不要给写入权限："><a href="#3-不要给写入权限：" class="headerlink" title="3.不要给写入权限："></a>3.不要给写入权限：</h4><p>防上传webshell:<br>主目录</p><h4 id="4-不要给目录浏览权限："><a href="#4-不要给目录浏览权限：" class="headerlink" title="4.不要给目录浏览权限："></a>4.不要给目录浏览权限：</h4><p>产生目录遍历</p><p>主目录：</p><h4 id="5-删除不必要映射："><a href="#5-删除不必要映射：" class="headerlink" title="5.删除不必要映射："></a>5.删除不必要映射：</h4><p>主目录–配置：不用到扩展名映射删除，上传.cer</p><h4 id="6-向客户端发送自定义错误信息："><a href="#6-向客户端发送自定义错误信息：" class="headerlink" title="6.向客户端发送自定义错误信息："></a>6.向客户端发送自定义错误信息：</h4><p>反制黑客：<code>&lt;iframe src=http://ip&gt;&lt;/iframe&gt;</code></p><p>主目录–配置–调试：</p><h4 id="7-中层安全策略："><a href="#7-中层安全策略：" class="headerlink" title="7.中层安全策略："></a>7.中层安全策略：</h4><p>限制后台登录ip:<br>admin右键–目录安全性–ip或域名限制<br>允许：192.168.2.6</p><h4 id="8-删除所有自定义错误信息：防黑客："><a href="#8-删除所有自定义错误信息：防黑客：" class="headerlink" title="8.删除所有自定义错误信息：防黑客："></a>8.删除所有自定义错误信息：防黑客：</h4><p>302：挂马页面<br>C:\WINDOWS\help\iisHelp\common\</p><h2 id="二-数据库加固"><a href="#二-数据库加固" class="headerlink" title="二.数据库加固"></a>二.数据库加固</h2><h4 id="1-安全架构："><a href="#1-安全架构：" class="headerlink" title="1.安全架构："></a>1.安全架构：</h4><p>禁止数据库和web同台，web–&gt;dmz,ids,数据库内网</p><h4 id="2-数据库加固："><a href="#2-数据库加固：" class="headerlink" title="2.数据库加固："></a>2.数据库加固：</h4><h5 id="a-鉴别："><a href="#a-鉴别：" class="headerlink" title="a.鉴别："></a>a.鉴别：</h5><p>单因素，双因素：网银：<br>who:你是谁：生物特征，指纹，虹膜，视网膜<br>错误接受率小，交叉错判率小<br>have:卡，证书<br>know:知识，口令，密保问题</p><p>pin码，指纹<br>密码：8-10-14 量子 ecc,rsa</p><h5 id="b-授权：访问控制："><a href="#b-授权：访问控制：" class="headerlink" title="b.授权：访问控制："></a>b.授权：访问控制：</h5><p>最小特权：<br>dac:自主访问：ACL:访问控制列表：客体：文件<br>cl:能力表：主体：用户<br>mac:强制访问：敏感标签：文件：绝密，用户：绝密 安全模型：blp:机密性：禁止上读下写<br>rbac:基于角色:最小特权<br>group:<br>基于上下文：TCP,基于时间，基于内容：邮件过滤<br>everyone,administrators,users</p><h5 id="c-完整性：hash-摘要"><a href="#c-完整性：hash-摘要" class="headerlink" title="c.完整性：hash:摘要"></a>c.完整性：hash:摘要</h5><p>任意长度的消息生成 等长的摘要<br>两个不同的消息产生相同的摘要：碰撞<br>md5:10^42,10^21,10^10 128<br>sha1:160<br>sha256<br>过杀毒软件：<br>头同尾不同，md5相同：<br>头不同尾相同，md5相同</p><h5 id="d-机密性：加密"><a href="#d-机密性：加密" class="headerlink" title="d.机密性：加密"></a>d.机密性：加密</h5><p>https:ssl:安全套接层：握手：身份认证及算法密钥协商，记录：加密<br>cipher suite:算法套件<br>ecdhe(密钥交换)-RSA(签名)-AES(加密)-sha256<br>降级：ecdhe-rsa-3des-md5<br>ssl strip:中间人<br><a href="http://www.taobao.com" target="_blank" rel="noopener">http://www.taobao.com</a><br>arp -a:ip–mac:攻击者<br>ssldos:<br>算法弱点：drown rsa<br>rsa:伪随机数算法：后门：ec-dual-drbg:NSA:-1000万美元，常量–推出密钥，bsafe:<br>高级会话复制：黑产<br>证书伪造<br>证书劫持<br>ukey高级克隆，远程映射，内存泄露<br>网银大盗：3 UKEY</p><h5 id="E-抗抵赖："><a href="#E-抗抵赖：" class="headerlink" title="E:抗抵赖："></a>E:抗抵赖：</h5><p>数字签名：私钥+hash 伪造<br>粒度越小越灵活越安全<br>库—表：行，列：学生，老师，<br>事前检测：运行环境漏洞；数据库漏洞：<br>事中监测：sql语句：查询，返回<br>事后审计：日志</p><h4 id="3-更改默认数据库名字及路径：数据库的配置文件"><a href="#3-更改默认数据库名字及路径：数据库的配置文件" class="headerlink" title="3.更改默认数据库名字及路径：数据库的配置文件"></a>3.更改默认数据库名字及路径：数据库的配置文件</h4><p>防下载：数据库重定向到url:<a href="http://www.dvbbs.com" target="_blank" rel="noopener">http://www.dvbbs.com</a><br>iis服务管理器–网站-dvbbs–data–dvbbs7.mdb<br>右键–重定向到url</p><h2 id="三-权限加固："><a href="#三-权限加固：" class="headerlink" title="三.权限加固："></a>三.权限加固：</h2><p>网站源码目录：c:\bbsbak–右键–安全 ntfs</p><p>1.删除所有默认权限<br>2.添加administrator:完全控制<br>3.添加iis_wpg:完全控制<br>4.添加iusr_benet:只读<br>5.判断哪些目录需要写入权限<br>upload,data,databackup,uploadface—给iusr_benet 写入<br>防webshell<br>6.给以上有写入目录权限的文件夹，执行权限：无<br>iis服务管理器–网站—dvbbs–uploadface–右键–目录–执行权限：无</p>]]></content>
     
     <summary type="html">
     
@@ -431,28 +458,6 @@
     
     
       <category term="用户审计" scheme="http://yoursite.com/tags/%E7%94%A8%E6%88%B7%E5%AE%A1%E8%AE%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>XorDDos木马查杀指北</title>
-    <link href="http://yoursite.com/2018/08/10/XorDDos%E6%9C%A8%E9%A9%AC%E6%9F%A5%E6%9D%80%E6%8C%87%E5%8C%97/"/>
-    <id>http://yoursite.com/2018/08/10/XorDDos木马查杀指北/</id>
-    <published>2018-08-10T13:25:37.000Z</published>
-    <updated>2018-08-13T15:06:43.854Z</updated>
-    
-    <content type="html"><![CDATA[<hr><a id="more"></a><p>繁华一场梦</p><h1 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h1><p>PKHunter检查工具，PKHunter的安装教程见木马查杀RKhunter安装指北</p><p>VMware® Workstation 14 Pro</p><p>注意：安装病毒之前请把虚拟机设置成NAT或host-only模式防止病毒传播或造成破坏！ </p><h1 id="木马上传"><a href="#木马上传" class="headerlink" title="木马上传"></a>木马上传</h1><p>首先我们先把病毒样本上传至虚拟机并解压：</p><p>我们可以利用rz命令上传文件，没有安装的请执行yum -y install lrzsz</p><p>解压可以利用unzip命令，没有的请执行yum -y install unzip</p><p><code>yum -y install lrzsz unzip</code></p><p><code>rz</code></p><p><code>unzip XorDDos样本.zip</code></p><p>给木马文件赋予权限并执行文件： </p><p><code>chmod +x a753cb1ff86c742bb497155362664c3b</code>  </p><h1 id="查杀木马"><a href="#查杀木马" class="headerlink" title="查杀木马"></a>查杀木马</h1><p>利用lsof -i查看到可疑文件，PID为4294，协议使用的是UDP（PID可能不同机器不一样） </p><p>如果没有lsof命令，可用yum安装</p><p><code>yum -y install lsof.x86_64</code></p><p>尝试关闭进程：kill -9  4294后在利用lsof -i查看下 </p><p>发现又启动了个进程，PID为5383，怀疑这个木马病毒会自动改名启动 </p><p>查看我们上传木马的目录发现，木马程序自毁了，现在我们可以尝试下使用RKHunter看看有哪些文件疑似被木马篡改过，用RKHunter检测一下</p><p>排查步骤跳过（因为不是笔者发现的木马位置）</p><p>木马位置为/etc/cron.hourly/，木马文件名可能每个人都不一样，我们先用chmod 000木马的权限取消掉而不是先干掉进程，避免他改名并且可以提取样本进行进一步的分析。 </p><p><code>ll -a /etc/cron.hourly</code></p><p><code>chmod 000 ytimkiztjldbrs.sh</code></p><p>利用<code>ll -aR /etc/rc.d</code>查看木马文件的连接 </p><p>先<code>chmod 000 /etc/init.d/ytimkiztjldbrs</code> 把可疑的连接权限都取消掉</p><p>reboot重启后在利用<code>lsof -i</code>看看可疑进程有没有启动</p><p>用<code>netstat -lnapt</code>查看下有无可疑的udp端口开放 </p><h2 id="提取木马"><a href="#提取木马" class="headerlink" title="提取木马"></a>提取木马</h2><p>之后我们可以尝试吧机器联网，提取木马文件样本，首先我们关闭虚拟机然后把虚拟机设置成桥接（如果是NAT模式并且能上网的话忽略此步骤）关机命令：shutdown now</p><p>使用xshell连接机器，查看之前木马释放出来的脚本<code>cat /etc/cron.hourly/ytimkiztjldbrs.sh</code></p><p><code>#!/bin/sh</code><br><code>PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/X11R6/bin</code><br><code>cp &quot;/usr/bin/ytimkiztjldbrs&quot; &quot;/usr/bin/wgxkzcllem&quot;</code></p><p><code>chmod 000 /usr/bin/wgxkzcllem</code>把可疑文件权限取消并尝试提取出来 </p><p>发现在/usr/bin下也有木马脚本，先去掉权限</p><p><code>chmod 000 ytimkiztjldbrs</code></p><p><code>chmod 000 ytimkiztjldbrs.sh</code></p><p>之后我们删除之前把权限都取消掉的文件</p><p>利用rm -rf命令</p><p>reboot重启系统</p><p>最后重装系统</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-    
-    </summary>
-    
-      <category term="木马查杀" scheme="http://yoursite.com/categories/%E6%9C%A8%E9%A9%AC%E6%9F%A5%E6%9D%80/"/>
-    
-    
-      <category term="木马查杀" scheme="http://yoursite.com/tags/%E6%9C%A8%E9%A9%AC%E6%9F%A5%E6%9D%80/"/>
     
   </entry>
   
