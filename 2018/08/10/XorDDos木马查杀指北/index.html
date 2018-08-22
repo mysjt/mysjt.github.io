@@ -87,7 +87,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/08/10/XorDDos木马查杀指北/index.html">
 <meta property="og:site_name" content="Secer">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-13T15:06:43.854Z">
+<meta property="og:updated_time" content="2018-08-22T12:33:27.208Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XorDDos木马查杀指北">
 
@@ -368,7 +368,7 @@
 <h1 id="查杀木马"><a href="#查杀木马" class="headerlink" title="查杀木马"></a>查杀木马</h1><p>利用lsof -i查看到可疑文件，PID为4294，协议使用的是UDP（PID可能不同机器不一样） </p>
 <p>如果没有lsof命令，可用yum安装</p>
 <p><code>yum -y install lsof.x86_64</code></p>
-<p>尝试关闭进程：kill -9  4294后在利用lsof -i查看下 </p>
+<p>尝试关闭进程：kill -9  4294后在利用lsof -p  pid查看下 </p>
 <p>发现又启动了个进程，PID为5383，怀疑这个木马病毒会自动改名启动 </p>
 <p>查看我们上传木马的目录发现，木马程序自毁了，现在我们可以尝试下使用RKHunter看看有哪些文件疑似被木马篡改过，用RKHunter检测一下</p>
 <p>排查步骤跳过（因为不是笔者发现的木马位置）</p>
