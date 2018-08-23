@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2018/08/23/Appscan%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8C%97/</loc>
+    
+    <lastmod>2018-08-23T15:18:31.684Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/08/21/web%E7%BB%88%E6%9E%81%E5%8A%A0%E5%9B%BA-mssqlserver/</loc>
     
     <lastmod>2018-08-23T14:40:21.488Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://yoursite.com/2018/08/21/mssql/</loc>
     
     <lastmod>2018-08-23T14:38:10.165Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/08/23/Appscan%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8C%97/</loc>
-    
-    <lastmod>2018-08-23T14:35:55.774Z</lastmod>
     
   </url>
   
