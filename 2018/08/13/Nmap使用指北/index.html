@@ -87,7 +87,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/08/13/Nmap使用指北/index.html">
 <meta property="og:site_name" content="Secer">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-13T15:19:24.153Z">
+<meta property="og:updated_time" content="2018-08-25T14:16:51.106Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nmap使用指北">
 
@@ -385,6 +385,28 @@
 <p>如果远程主机有防火墙，IDS和IPS系统，你可以使用-PN命令来确保不ping远程主机，因为有时候防火墙会挡掉ping请求.-PN命令告诉Nmap不用ping远程主机。 使用-PN参数可以绕过PING命令,但是不影响主机的系统的发现 </p>
 <h4 id="猜测功能"><a href="#猜测功能" class="headerlink" title="猜测功能"></a>猜测功能</h4><p><code>nmap -O –osscan-guess 192.168.1.1</code></p>
 <p>通过Nmap准确的检测到远程操作系统是比较困难的，需要使用到Nmap的猜测功能选项, –osscan-guess 猜测认为最接近目标的匹配操作系统类型</p>
+<h1 id="NMAP-脚本"><a href="#NMAP-脚本" class="headerlink" title="NMAP-脚本"></a>NMAP-脚本</h1><p>Nmap提供的脚本命令行参数如下：<br>-sC: 等价于–script=default，使用默认类别的脚本进行扫描。<br>–script=: 使用某个或某类脚本进行扫描，支持通配符描述<br>–script-args=</p>
+<h4 id="类别扫描"><a href="#类别扫描" class="headerlink" title="类别扫描"></a>类别扫描</h4><p>在扫描时可根据需要设置–script=类别这种方式进行比较笼统的扫描：</p>
+<p>auth: 负责处理鉴权证书（绕开鉴权）的脚本<br>broadcast: 在局域网内探查更多服务开启状况，如dhcp/dns/sqlserver等服务<br>brute: 提供暴力破解方式，针对常见的应用如http/snmp等<br>default: 使用-sC或-A选项扫描时候默认的脚本，提供基本脚本扫描能力<br>discovery: 对网络进行更多的信息，如SMB枚举、SNMP查询等<br>dos: 用于进行拒绝服务攻击<br>exploit: 利用已知的漏洞入侵系统<br>external: 利用第三方的数据库或资源，例如进行whois解析<br>fuzzer: 模糊测试的脚本，发送异常的包到目标机，探测出潜在漏洞<br>intrusive: 入侵性的脚本，此类脚本可能引发对方的IDS/IPS的记录或屏蔽<br>malware: 探测目标机是否感染了病毒、开启了后门等信息<br>safe: 此类与intrusive相反，属于安全性脚本<br>version: 负责增强服务与版本扫描（Version Detection）功能的脚本<br>vuln: 负责检查目标机是否有常见的漏洞（Vulnerability）</p>
+<h4 id="具体如下："><a href="#具体如下：" class="headerlink" title="具体如下："></a>具体如下：</h4><p>1.使用nmap 进行信息挖掘</p>
+<p>nmap –script discovery 203.195.139.153</p>
+<p>2.使用nmap 进行拒绝服务攻击</p>
+<p>nmap –script dos 203.195.139.153</p>
+<p>3.使用nmap 利用已知的漏洞入侵系统</p>
+<p>nmap –script exploit 203.195.139.153</p>
+<p>4.使用nmap 进行利用第三方的数据库或资源进行信息收集或者攻击</p>
+<p>nmap –script external 203.195.139.153</p>
+<p>5.使用nmap 进行模糊测试，发送异常的包到目标机，探测出潜在漏洞 </p>
+<p>nmap –script fuzzer 203.195.139.153</p>
+<p>6.使用nmap 探测目标机是否感染了病毒、开启了后门等信息</p>
+<p>nmap –script malware 203.195.139.153</p>
+<p>7.使用nmap 对系统进行安全检查</p>
+<p>nmap –script safe 203.195.139.153</p>
+<p>8.使用nmap 对目标机进行检查是否存在常见的漏洞</p>
+<p>nmap –script vuln 203.195.139.153</p>
+<p>9.使用nmap 负责增强服务与版本扫描（Version Detection）功能的脚本</p>
+<p>nmap –script version 203.195.139.153</p>
+<p>#### </p>
 <h1 id="官网文档："><a href="#官网文档：" class="headerlink" title="官网文档："></a>官网文档：</h1><p>Nmap 7.60SVN（<a href="https://nmap.org）" target="_blank" rel="noopener">https://nmap.org）</a></p>
 <p>用法：nmap [扫描类型] [选项] {目标规范}</p>
 <h4 id="目标规格："><a href="#目标规格：" class="headerlink" title="目标规格："></a>目标规格：</h4><p> 可以传递主机名，IP地址，网络等。</p>
@@ -412,8 +434,8 @@
 <p>  -sO：IP协议扫描</p>
 <p>  -b &lt;FTP中继主机&gt;：FTP反弹扫描</p>
 <h4 id="港口规格和扫描令："><a href="#港口规格和扫描令：" class="headerlink" title="港口规格和扫描令："></a>港口规格和扫描令：</h4><p>  -p &lt;端口范围&gt;：仅扫描指定的端口</p>
-<p>​    例如：-p22; -p1-65535; -p U：53,111,137，T：21-25,80,139,8080，S：9</p>
-<p>  –exclude-ports &lt;端口范围&gt;：从扫描中排除指定的端口</p>
+<pre><code>例如：-p22; -p1-65535; -p U：53,111,137，T：21-25,80,139,8080，S：9
+</code></pre><p>  –exclude-ports &lt;端口范围&gt;：从扫描中排除指定的端口</p>
 <p>  -F：快速模式 - 扫描比默认扫描更少的端口</p>
 <p>  -r：连续扫描端口 - 不要随机化</p>
 <p>  –top-ports <number>：扫描<number>最常见的端口</number></number></p>
@@ -425,15 +447,16 @@
 <p>  –version-trace：显示详细的版本扫描活动（用于调试）</p>
 <h4 id="脚本扫描："><a href="#脚本扫描：" class="headerlink" title="脚本扫描："></a>脚本扫描：</h4><p>  -sC：相当于–script = default</p>
 <p>  –script = <lua scripts="">：<lua scripts="">是逗号分隔的列表</lua></lua></p>
-<p>​           目录，脚本文件或脚本类别</p>
-<p>  –script-args = <n1 =="" v1，[n2="v2，...]">：为脚本提供参数</n1></p>
+<pre><code>目录，脚本文件或脚本类别
+</code></pre><p>  –script-args = <n1 =="" v1，[n2="v2，...]">：为脚本提供参数</n1></p>
 <p>  –script-args-file = filename：在文件中提供NSE脚本args</p>
 <p>  –script-trace：显示发送和接收的所有数据</p>
 <p>  –script-updatedb：更新脚本数据库。</p>
 <p>  –script-help = <lua scripts="">：显示有关脚本的帮助。</lua></p>
-<p>​           <lua scripts="">是以逗号分隔的脚本文件列表或</lua></p>
-<p>​           脚本的类别。</p>
-<h4 id="操作系统检测："><a href="#操作系统检测：" class="headerlink" title="操作系统检测："></a>操作系统检测：</h4><p>  -O：启用OS检测</p>
+<pre><code>&lt;Lua scripts&gt;是以逗号分隔的脚本文件列表或
+
+脚本的类别。
+</code></pre><h4 id="操作系统检测："><a href="#操作系统检测：" class="headerlink" title="操作系统检测："></a>操作系统检测：</h4><p>  -O：启用OS检测</p>
 <p>  –osscan-limit：将OS检测限制为有希望的目标</p>
 <p>  –osscan-guess：更积极地猜测操作系统</p>
 <h4 id="时间和性能："><a href="#时间和性能：" class="headerlink" title="时间和性能："></a>时间和性能：</h4><p>  采用<time>的选项以秒为单位，或追加’ms’（毫秒），</time></p>
@@ -442,8 +465,8 @@
 <p>  –min-hostgroup / max-hostgroup <size>：并行主机扫描组大小</size></p>
 <p>  –min-parallelism / max-parallelism <numprobes>：探测并行化</numprobes></p>
 <p>  –min-rtt-timeout / max-rtt-timeout / initial-rtt-timeout <time>：指定</time></p>
-<p>​      探测往返时间。</p>
-<p>  –max-retries <tries>：端口扫描探测重新传输的上限数量。</tries></p>
+<pre><code>探测往返时间。
+</code></pre><p>  –max-retries <tries>：端口扫描探测重新传输的上限数量。</tries></p>
 <p>  –host-timeout <time>：在此之后放弃目标</time></p>
 <p>  –scan-delay /  -  max-scan-delay <time>：调整探针之间的延迟</time></p>
 <p>  –min-rate <number>：发送数据包的速度不低于每秒<number></number></number></p>
@@ -463,8 +486,8 @@
 <p>  –badsum：使用伪TCP / UDP / SCTP校验和发送数据包</p>
 <p>OUTPUT：</p>
 <p>  -oN / -oX / -oS / -oG <file>：正常输出扫描，XML，s | &lt;rIpt kIddi3，</file></p>
-<p>​     和Grepable格式，分别为给定的文件名。</p>
-<p>  -oA <basename>：一次输出三种主要格式</basename></p>
+<pre><code>和Grepable格式，分别为给定的文件名。
+</code></pre><p>  -oA <basename>：一次输出三种主要格式</basename></p>
 <p>  -v：增加详细级别（使用-vv或更高级别以获得更好的效果）</p>
 <p>  -d：提高调试级别（使用-dd或更多以获得更好的效果）</p>
 <p>  –reason：显示端口处于特定状态的原因</p>
@@ -489,6 +512,11 @@
 <p>  nmap -v -A scanme.nmap.org</p>
 <p>  nmap -v -sn 192.168.0.0/16 10.0.0.0/8</p>
 <p>  nmap -v -iR 10000 -Pn -p 80</p>
+<h1 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h1><ol>
+<li>-Pn 禁ping扫描</li>
+<li>-sS(使用TCP SYN)  -sT(全连接Connect)   -sV -O -p- -v  -T4(4个线程)</li>
+<li>–script=vuln     使用nmap 对目标机进行检查是否存在常见的漏洞</li>
+</ol>
 
       
     </div>
@@ -680,7 +708,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#NMAP"><span class="nav-number">1.</span> <span class="nav-text">NMAP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#参数使用"><span class="nav-number">1.1.</span> <span class="nav-text">参数使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#扫描单一的一个主机："><span class="nav-number">1.1.0.1.</span> <span class="nav-text">扫描单一的一个主机：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扫描整个子网"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">扫描整个子网:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扫描多个目标："><span class="nav-number">1.1.0.3.</span> <span class="nav-text">扫描多个目标：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扫描一个范围内的目标："><span class="nav-number">1.1.0.4.</span> <span class="nav-text">扫描一个范围内的目标：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如果你有一个ip地址列表，将这个保存为一个txt文件，和namp在同一目录下-扫描这个txt内的所有主机："><span class="nav-number">1.1.0.5.</span> <span class="nav-text">如果你有一个ip地址列表，将这个保存为一个txt文件，和namp在同一目录下,扫描这个txt内的所有主机：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扫描的所有主机的列表"><span class="nav-number">1.1.0.6.</span> <span class="nav-text">扫描的所有主机的列表:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扫描除过某一个ip外的所有子网主机："><span class="nav-number">1.1.0.7.</span> <span class="nav-text">扫描除过某一个ip外的所有子网主机：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扫描除过某一个文件中的ip外的子网主机命令："><span class="nav-number">1.1.0.8.</span> <span class="nav-text">扫描除过某一个文件中的ip外的子网主机命令：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扫描特定主机上的80-21-23端口："><span class="nav-number">1.1.0.9.</span> <span class="nav-text">扫描特定主机上的80,21,23端口：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深入扫描"><span class="nav-number">1.2.</span> <span class="nav-text">深入扫描</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#半开放扫描-，不会在目标主机上产生任何日志记录"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">半开放扫描 ，不会在目标主机上产生任何日志记录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#找出TCP和UDP端口"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">找出TCP和UDP端口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#找目标主机打开的UDP端口，不需要发送任何的SYN包"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">找目标主机打开的UDP端口，不需要发送任何的SYN包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为规避防火墙，发送一个设置了FIN标志且不需要完成TCP的握手的数据包"><span class="nav-number">1.2.0.4.</span> <span class="nav-text">为规避防火墙，发送一个设置了FIN标志且不需要完成TCP的握手的数据包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ping扫描，只用于找出主机是否是存在在网络中"><span class="nav-number">1.2.0.5.</span> <span class="nav-text">ping扫描，只用于找出主机是否是存在在网络中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#版本检测"><span class="nav-number">1.2.0.6.</span> <span class="nav-text">版本检测</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#匿名扫描技术"><span class="nav-number">1.2.0.7.</span> <span class="nav-text">匿名扫描技术</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OS检测（O）"><span class="nav-number">1.2.0.8.</span> <span class="nav-text">OS检测（O）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不ping远程主机"><span class="nav-number">1.2.0.9.</span> <span class="nav-text">不ping远程主机</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#猜测功能"><span class="nav-number">1.2.0.10.</span> <span class="nav-text">猜测功能</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#官网文档："><span class="nav-number">2.</span> <span class="nav-text">官网文档：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#目标规格："><span class="nav-number">2.0.0.1.</span> <span class="nav-text">目标规格：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#主机发现："><span class="nav-number">2.0.0.2.</span> <span class="nav-text">主机发现：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扫描技术："><span class="nav-number">2.0.0.3.</span> <span class="nav-text">扫描技术：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#港口规格和扫描令："><span class="nav-number">2.0.0.4.</span> <span class="nav-text">港口规格和扫描令：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#服务-版本检测："><span class="nav-number">2.0.0.5.</span> <span class="nav-text">服务/版本检测：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#脚本扫描："><span class="nav-number">2.0.0.6.</span> <span class="nav-text">脚本扫描：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#操作系统检测："><span class="nav-number">2.0.0.7.</span> <span class="nav-text">操作系统检测：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时间和性能："><span class="nav-number">2.0.0.8.</span> <span class="nav-text">时间和性能：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#防火墙-IDS逃脱和防御："><span class="nav-number">2.0.0.9.</span> <span class="nav-text">防火墙/ IDS逃脱和防御：</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#NMAP"><span class="nav-number">1.</span> <span class="nav-text">NMAP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#参数使用"><span class="nav-number">1.1.</span> <span class="nav-text">参数使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#扫描单一的一个主机："><span class="nav-number">1.1.0.1.</span> <span class="nav-text">扫描单一的一个主机：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扫描整个子网"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">扫描整个子网:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扫描多个目标："><span class="nav-number">1.1.0.3.</span> <span class="nav-text">扫描多个目标：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扫描一个范围内的目标："><span class="nav-number">1.1.0.4.</span> <span class="nav-text">扫描一个范围内的目标：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如果你有一个ip地址列表，将这个保存为一个txt文件，和namp在同一目录下-扫描这个txt内的所有主机："><span class="nav-number">1.1.0.5.</span> <span class="nav-text">如果你有一个ip地址列表，将这个保存为一个txt文件，和namp在同一目录下,扫描这个txt内的所有主机：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扫描的所有主机的列表"><span class="nav-number">1.1.0.6.</span> <span class="nav-text">扫描的所有主机的列表:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扫描除过某一个ip外的所有子网主机："><span class="nav-number">1.1.0.7.</span> <span class="nav-text">扫描除过某一个ip外的所有子网主机：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扫描除过某一个文件中的ip外的子网主机命令："><span class="nav-number">1.1.0.8.</span> <span class="nav-text">扫描除过某一个文件中的ip外的子网主机命令：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扫描特定主机上的80-21-23端口："><span class="nav-number">1.1.0.9.</span> <span class="nav-text">扫描特定主机上的80,21,23端口：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深入扫描"><span class="nav-number">1.2.</span> <span class="nav-text">深入扫描</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#半开放扫描-，不会在目标主机上产生任何日志记录"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">半开放扫描 ，不会在目标主机上产生任何日志记录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#找出TCP和UDP端口"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">找出TCP和UDP端口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#找目标主机打开的UDP端口，不需要发送任何的SYN包"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">找目标主机打开的UDP端口，不需要发送任何的SYN包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为规避防火墙，发送一个设置了FIN标志且不需要完成TCP的握手的数据包"><span class="nav-number">1.2.0.4.</span> <span class="nav-text">为规避防火墙，发送一个设置了FIN标志且不需要完成TCP的握手的数据包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ping扫描，只用于找出主机是否是存在在网络中"><span class="nav-number">1.2.0.5.</span> <span class="nav-text">ping扫描，只用于找出主机是否是存在在网络中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#版本检测"><span class="nav-number">1.2.0.6.</span> <span class="nav-text">版本检测</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#匿名扫描技术"><span class="nav-number">1.2.0.7.</span> <span class="nav-text">匿名扫描技术</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OS检测（O）"><span class="nav-number">1.2.0.8.</span> <span class="nav-text">OS检测（O）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不ping远程主机"><span class="nav-number">1.2.0.9.</span> <span class="nav-text">不ping远程主机</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#猜测功能"><span class="nav-number">1.2.0.10.</span> <span class="nav-text">猜测功能</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NMAP-脚本"><span class="nav-number">2.</span> <span class="nav-text">NMAP-脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类别扫描"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">类别扫描</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#具体如下："><span class="nav-number">2.0.0.2.</span> <span class="nav-text">具体如下：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#官网文档："><span class="nav-number">3.</span> <span class="nav-text">官网文档：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#目标规格："><span class="nav-number">3.0.0.1.</span> <span class="nav-text">目标规格：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#主机发现："><span class="nav-number">3.0.0.2.</span> <span class="nav-text">主机发现：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扫描技术："><span class="nav-number">3.0.0.3.</span> <span class="nav-text">扫描技术：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#港口规格和扫描令："><span class="nav-number">3.0.0.4.</span> <span class="nav-text">港口规格和扫描令：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#服务-版本检测："><span class="nav-number">3.0.0.5.</span> <span class="nav-text">服务/版本检测：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#脚本扫描："><span class="nav-number">3.0.0.6.</span> <span class="nav-text">脚本扫描：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#操作系统检测："><span class="nav-number">3.0.0.7.</span> <span class="nav-text">操作系统检测：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时间和性能："><span class="nav-number">3.0.0.8.</span> <span class="nav-text">时间和性能：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#防火墙-IDS逃脱和防御："><span class="nav-number">3.0.0.9.</span> <span class="nav-text">防火墙/ IDS逃脱和防御：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用"><span class="nav-number">4.</span> <span class="nav-text">常用</span></a></li></ol></div>
             
 
           </div>
