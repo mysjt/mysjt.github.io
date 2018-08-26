@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-26T13:41:54.829Z</updated>
+  <updated>2018-08-26T13:45:37.655Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>运维知识</title>
+    <title>centos7初始化硬盘分区、挂载</title>
     <link href="http://yoursite.com/2018/08/26/%E2%80%9Ccentos7-%E5%88%9D%E5%A7%8B%E5%8C%96%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA%E3%80%81%E6%8C%82%E8%BD%BD/"/>
     <id>http://yoursite.com/2018/08/26/“centos7-初始化硬盘分区、挂载/</id>
     <published>2018-08-26T13:30:05.000Z</published>
-    <updated>2018-08-26T13:41:54.829Z</updated>
+    <updated>2018-08-26T13:45:37.655Z</updated>
     
     <content type="html"><![CDATA[<hr><a id="more"></a><p>繁华一场梦</p><h2 id="linux硬盘知识："><a href="#linux硬盘知识：" class="headerlink" title="linux硬盘知识："></a>linux硬盘知识：</h2><p>linux下硬盘设备名为（IDE硬盘为hdx（x为从a—d）因为IDE硬盘最多四个，SCSI，SATA，USB硬盘为sdx（x为a—z）），硬盘主分区最多为4个.所以主分区从sdb1开始到sdb4，其中sdb4为扩展分区，逻辑分区从sdb5开始，（逻辑分区永远从sdb5开始…）设备名可以使用fdisk –l查看</p><h2 id="开始分区"><a href="#开始分区" class="headerlink" title="开始分区"></a>开始分区</h2><h4 id="1-查看新增磁盘信息"><a href="#1-查看新增磁盘信息" class="headerlink" title="1.查看新增磁盘信息"></a>1.查看新增磁盘信息</h4><p>lsblk</p><h4 id="2-查看分区信息"><a href="#2-查看分区信息" class="headerlink" title="2.查看分区信息"></a>2.查看分区信息</h4><p>fdisk -l</p><h4 id="3-将sdb分区，键入m获取帮助"><a href="#3-将sdb分区，键入m获取帮助" class="headerlink" title="3.将sdb分区，键入m获取帮助"></a>3.将sdb分区，键入m获取帮助</h4>]]></content>
     
