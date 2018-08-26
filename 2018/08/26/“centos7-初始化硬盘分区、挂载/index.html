@@ -87,9 +87,26 @@
 <meta property="og:url" content="http://yoursite.com/2018/08/26/“centos7-初始化硬盘分区、挂载/index.html">
 <meta property="og:site_name" content="Secer">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-26T13:45:37.655Z">
+<meta property="og:image" content="http://yoursite.com/images/pasted-135.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-137.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-138.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-139.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-140.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-141.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-142.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-143.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-144.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-145.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-146.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-147.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-148.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-150.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-149.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-151.png">
+<meta property="og:updated_time" content="2018-08-26T14:57:37.988Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="centos7初始化硬盘分区、挂载">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-135.png">
 
 
 
@@ -354,10 +371,35 @@
         <hr>
 <a id="more"></a>
 <p>繁华一场梦</p>
+<p><img src="\images\pasted-135.png" alt="upload successful"></p>
 <h2 id="linux硬盘知识："><a href="#linux硬盘知识：" class="headerlink" title="linux硬盘知识："></a>linux硬盘知识：</h2><p>linux下硬盘设备名为（IDE硬盘为hdx（x为从a—d）因为IDE硬盘最多四个，SCSI，SATA，USB硬盘为sdx（x为a—z）），硬盘主分区最多为4个.所以主分区从sdb1开始到sdb4，其中sdb4为扩展分区，逻辑分区从sdb5开始，（逻辑分区永远从sdb5开始…）设备名可以使用fdisk –l查看</p>
-<h2 id="开始分区"><a href="#开始分区" class="headerlink" title="开始分区"></a>开始分区</h2><h4 id="1-查看新增磁盘信息"><a href="#1-查看新增磁盘信息" class="headerlink" title="1.查看新增磁盘信息"></a>1.查看新增磁盘信息</h4><p>lsblk</p>
-<h4 id="2-查看分区信息"><a href="#2-查看分区信息" class="headerlink" title="2.查看分区信息"></a>2.查看分区信息</h4><p>fdisk -l</p>
-<h4 id="3-将sdb分区，键入m获取帮助"><a href="#3-将sdb分区，键入m获取帮助" class="headerlink" title="3.将sdb分区，键入m获取帮助"></a>3.将sdb分区，键入m获取帮助</h4>
+<h2 id="开始分区"><a href="#开始分区" class="headerlink" title="开始分区"></a>开始分区</h2><h4 id="1-查看新增磁盘信息"><a href="#1-查看新增磁盘信息" class="headerlink" title="1.查看新增磁盘信息"></a>1.查看新增磁盘信息</h4><p> <code>lsblk</code></p>
+<p><img src="\images\pasted-137.png" alt="upload successful"></p>
+<h4 id="2-查看分区信息"><a href="#2-查看分区信息" class="headerlink" title="2.查看分区信息"></a>2.查看分区信息</h4><p><code>fdisk -l</code></p>
+<p><img src="\images\pasted-138.png" alt="upload successful"></p>
+<h4 id="3-将sdb分区，键入m获取帮助"><a href="#3-将sdb分区，键入m获取帮助" class="headerlink" title="3.将sdb分区，键入m获取帮助"></a>3.将sdb分区，键入m获取帮助</h4><p><img src="\images\pasted-139.png" alt="upload successful"></p>
+<h4 id="4-键入n添加新的分区"><a href="#4-键入n添加新的分区" class="headerlink" title="4.键入n添加新的分区"></a>4.键入n添加新的分区</h4><p>p表示主分区，e表示扩展分区</p>
+<p><img src="\images\pasted-140.png" alt="upload successful"></p>
+<h4 id="5-创建主分区"><a href="#5-创建主分区" class="headerlink" title="5.创建主分区"></a>5.创建主分区</h4><p><img src="\images\pasted-141.png" alt="upload successful"><br>第一条红框处按回车就好了，第二条红框处，我想设2G的一个空间，键入+2G</p>
+<p>继续设置第二个主分区大小2G，第三个主分区大小3G</p>
+<p><img src="\images\pasted-142.png" alt="upload successful"></p>
+<h4 id="6-创建扩展分区"><a href="#6-创建扩展分区" class="headerlink" title="6.创建扩展分区"></a>6.创建扩展分区</h4><p>创建第四个分区为扩展分区</p>
+<p><img src="\images\pasted-143.png" alt="upload successful"></p>
+<h4 id="7-创建逻辑分区"><a href="#7-创建逻辑分区" class="headerlink" title="7.创建逻辑分区"></a>7.创建逻辑分区</h4><p>创建第五个分区为逻辑分区</p>
+<p><img src="\images\pasted-144.png" alt="upload successful"><br>完成后一定要w进行写入磁盘并退出，否则上面的操作将白费</p>
+<p><img src="\images\pasted-145.png" alt="upload successful"></p>
+<h2 id="对分区操作"><a href="#对分区操作" class="headerlink" title="对分区操作"></a>对分区操作</h2><h4 id="1-查看分区情况"><a href="#1-查看分区情况" class="headerlink" title="1.查看分区情况"></a>1.查看分区情况</h4><p><img src="\images\pasted-146.png" alt="upload successful"></p>
+<h4 id="2-删除分区"><a href="#2-删除分区" class="headerlink" title="2.删除分区"></a>2.删除分区</h4><p>删除分区5即逻辑分区</p>
+<p><img src="\images\pasted-147.png" alt="upload successful"></p>
+<h4 id="3-格式化分区"><a href="#3-格式化分区" class="headerlink" title="3.格式化分区"></a>3.格式化分区</h4><p>首先查看文件类型  df -hT<br><code>mkfs -t ext4 /dev/sdb</code></p>
+<p><img src="\images\pasted-148.png" alt="upload successful"></p>
+<h2 id="挂载磁盘"><a href="#挂载磁盘" class="headerlink" title="挂载磁盘"></a>挂载磁盘</h2><h4 id="临时挂载"><a href="#临时挂载" class="headerlink" title="临时挂载"></a>临时挂载</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /data/gz</span><br><span class="line">mount /dev/sdb /data/gz</span><br><span class="line">df -hT</span><br></pre></td></tr></table></figure>
+<p><img src="\images\pasted-150.png" alt="upload successful"><br>取消挂载就是umount<br>这种方式只临时挂载到/opt目录下，下次开机时不会自动挂载<br>注意：挂载后/opt目录下的文件会被临时删除，注意备份</p>
+<h4 id="开机自动挂载"><a href="#开机自动挂载" class="headerlink" title="开机自动挂载"></a>开机自动挂载</h4><p>1.查询磁盘分区的UUID    <code>blkid /dev/sdb</code></p>
+<p><img src="\images\pasted-149.png" alt="upload successful"></p>
+<p>2.通过vim编辑<code>vim /etc/fstab/</code><br><code>UUID=870d929c-dbce-40c8-9e9e-f1933a6f422c /data/gz ext4</code><br>保存<br>3.重启，查看 <code>df-hT</code></p>
+<p><img src="\images\pasted-151.png" alt="upload successful"><br>自动挂载成功</p>
+
       
     </div>
 	
@@ -544,7 +586,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#linux硬盘知识："><span class="nav-number">1.</span> <span class="nav-text">linux硬盘知识：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始分区"><span class="nav-number">2.</span> <span class="nav-text">开始分区</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-查看新增磁盘信息"><span class="nav-number">2.0.1.</span> <span class="nav-text">1.查看新增磁盘信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-查看分区信息"><span class="nav-number">2.0.2.</span> <span class="nav-text">2.查看分区信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-将sdb分区，键入m获取帮助"><span class="nav-number">2.0.3.</span> <span class="nav-text">3.将sdb分区，键入m获取帮助</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#linux硬盘知识："><span class="nav-number">1.</span> <span class="nav-text">linux硬盘知识：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始分区"><span class="nav-number">2.</span> <span class="nav-text">开始分区</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-查看新增磁盘信息"><span class="nav-number">2.0.1.</span> <span class="nav-text">1.查看新增磁盘信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-查看分区信息"><span class="nav-number">2.0.2.</span> <span class="nav-text">2.查看分区信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-将sdb分区，键入m获取帮助"><span class="nav-number">2.0.3.</span> <span class="nav-text">3.将sdb分区，键入m获取帮助</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-键入n添加新的分区"><span class="nav-number">2.0.4.</span> <span class="nav-text">4.键入n添加新的分区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-创建主分区"><span class="nav-number">2.0.5.</span> <span class="nav-text">5.创建主分区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-创建扩展分区"><span class="nav-number">2.0.6.</span> <span class="nav-text">6.创建扩展分区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-创建逻辑分区"><span class="nav-number">2.0.7.</span> <span class="nav-text">7.创建逻辑分区</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对分区操作"><span class="nav-number">3.</span> <span class="nav-text">对分区操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-查看分区情况"><span class="nav-number">3.0.1.</span> <span class="nav-text">1.查看分区情况</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-删除分区"><span class="nav-number">3.0.2.</span> <span class="nav-text">2.删除分区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-格式化分区"><span class="nav-number">3.0.3.</span> <span class="nav-text">3.格式化分区</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#挂载磁盘"><span class="nav-number">4.</span> <span class="nav-text">挂载磁盘</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#临时挂载"><span class="nav-number">4.0.1.</span> <span class="nav-text">临时挂载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开机自动挂载"><span class="nav-number">4.0.2.</span> <span class="nav-text">开机自动挂载</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
