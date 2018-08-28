@@ -91,7 +91,7 @@
 <meta property="og:image" content="http://yoursite.com/images/pasted-174.png">
 <meta property="og:image" content="http://yoursite.com/images/pasted-175.png">
 <meta property="og:image" content="http://yoursite.com/images/pasted-176.png">
-<meta property="og:updated_time" content="2018-08-28T11:50:01.331Z">
+<meta property="og:updated_time" content="2018-08-28T11:55:46.341Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="代码注入漏洞">
 <meta name="twitter:image" content="http://yoursite.com/images/pasted-178.png">
@@ -364,8 +364,7 @@
 <p>直接输入127.0.0.1，显示可以执行</p>
 <p><img src="\images\pasted-174.png" alt="upload successful"></p>
 <h4 id="攻击绕过"><a href="#攻击绕过" class="headerlink" title="攻击绕过"></a>攻击绕过</h4><p>在linux上绕过：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">；</span><br><span class="line">|</span><br><span class="line">||</span><br><span class="line">&amp;</span><br><span class="line">空格</span><br><span class="line">tac</span><br></pre></td></tr></table></figure></p>
-<p>windows上绕过</p>
-<p>|<br>||<br>&amp;<br>&amp;&amp;</p>
+<p>windows上绕过<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|</span><br><span class="line">||</span><br><span class="line">&amp;</span><br><span class="line">&amp;&amp;</span><br></pre></td></tr></table></figure></p>
 <p>一些区别<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&amp;前面的语句为假则直接执行后面的</span><br><span class="line">&amp;&amp;前面的语句为假则直接出错，后面的也不执行</span><br><span class="line">|直接执行后面的语句</span><br><span class="line">||前面出错执行后面的</span><br></pre></td></tr></table></figure></p>
 <h4 id="漏洞修复："><a href="#漏洞修复：" class="headerlink" title="漏洞修复："></a>漏洞修复：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">尽量少用执行命令的函数或者直接禁用</span><br><span class="line">参数值尽量使用引号包括</span><br><span class="line">在进入执行命令的函数/方法之前，对参数进行过滤，对敏感字符进行转义</span><br></pre></td></tr></table></figure>
 <h1 id="本地文件包含"><a href="#本地文件包含" class="headerlink" title="本地文件包含"></a>本地文件包含</h1><h4 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h4><p>本地包含漏洞是PHP中一种典型的高危漏洞。由于程序员未对用户可控的变量进行输入检查，导致用户可以控制被包含的文件，成功利用时可以使web server会将特定文件当成php执行，从而导致用户可获取一定的服务器权限。</p>
