@@ -264,6 +264,171 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/Python3-7安装scrapy框架/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="shiqian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Secer">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/02/Python3-7安装scrapy框架/" itemprop="url">Python3.7 安装scrapy框架</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-02T15:32:45+08:00">
+                2018-09-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>繁华一场梦<br><img src="\images\pasted-95.png" alt="upload successful"></p>
+<h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><p>安装scrapy爬虫框架</p>
+<h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Python 3.7</span><br><span class="line">windows 8.1 x64位</span><br></pre></td></tr></table></figure>
+<h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><h4 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h4><p>在命令行下输入<code>pip install scrapy</code><br>报错，提示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">microsoft visual c++ 14.0 is required</span><br><span class="line">twisted is required</span><br></pre></td></tr></table></figure></p>
+<h4 id="解决过程"><a href="#解决过程" class="headerlink" title="解决过程"></a>解决过程</h4><h5 id="升级pip："><a href="#升级pip：" class="headerlink" title="升级pip："></a>升级pip：</h5><p><code>python -m pip install --upgrade pip</code><br>如果已经是最新的，可以略过这一步</p>
+<h5 id="安装-microsoft-visual-c-14-0"><a href="#安装-microsoft-visual-c-14-0" class="headerlink" title="安装 microsoft visual c++ 14.0"></a>安装 microsoft visual c++ 14.0</h5><p>下载网址：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://visualstudio.microsoft.com/downloads/?rr=https%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3DFkkrTc4jgi8McqJvBvl3DAreZXK4qM6ctZqszBy3NThiXmxsy8UIboRgnBY5oBNGOcfoPYESqoRiz2TYq1nFm_%26ie%3Dutf-8%26f%3D8%26tn%3Dmonline_3_dg%26wd%3Dvisual%2520studio%25E4%25B8%258B%25E8%25BD%25BD%26oq%3Dpython%2525E7%252588%2525AC%2525E5%25258F%252596%2525E5%2525A6%2525B9%2525E5%2525AD%252590%2525E5%25259B%2525BE%2525E7%252589%252587%26rqlang%3Dcn%26inputT%3D8064%26sug%3Dvisual%252520studio</span><br></pre></td></tr></table></figure></p>
+<p><img src="\images\pasted-185.png" alt="upload successful"><br>然后下载对应的操作系统版本即可，安装下一步即可</p>
+<h5 id="安装wheel"><a href="#安装wheel" class="headerlink" title="安装wheel"></a>安装wheel</h5><p><code>pip install wheel</code><br>安装完，在命令行下输入wheel，看到下面结果即为成功：</p>
+<p><img src="\images\pasted-187.png" alt="upload successful"></p>
+<h5 id="安装对应版本的Twisted"><a href="#安装对应版本的Twisted" class="headerlink" title="安装对应版本的Twisted"></a>安装对应版本的Twisted</h5><p>下载网址：<br><code>https://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted</code></p>
+<p><img src="\images\pasted-186.png" alt="upload successful"><br>注: cp37中的37代表python3.7版本，win后面代表操作系统的版本，笔者的是64位系统，以及python3.7版本，自行选择32 或者64位。<br>安装时，运行cmd，输入pip install + 文件路径 即可。</p>
+<p>如：<br><code>pip install C:\Users\name\Downloads\Twisted-18.7.0-cp37-cp37m-win_amd64.whl</code></p>
+<h5 id="安装Lxml"><a href="#安装Lxml" class="headerlink" title="安装Lxml"></a>安装Lxml</h5><p>下载网址:<br><code>https://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml</code></p>
+<p><img src="\images\pasted-188.png" alt="upload successful"><br>注: cp37中的37代表python3.7版本，win后面代表操作系统的版本，笔者的是64位系统，以及python3.7版本，自行选择32 或者64位。<br>安装方法同安装Twisted</p>
+<h5 id="安装Pywin32"><a href="#安装Pywin32" class="headerlink" title="安装Pywin32"></a>安装Pywin32</h5><p>下载网址：<br><code>https://sourceforge.net/projects/pywin32/files/pywin32/Build%20221/</code><br>切记要下载对应的python版本和对应的操作系统</p>
+<p><img src="\images\pasted-189.png" alt="upload successful"><br>安装直接下一步即可</p>
+<h5 id="安装scrapy框架"><a href="#安装scrapy框架" class="headerlink" title="安装scrapy框架"></a>安装scrapy框架</h5><p>安装完以上几项之后，在cmd里输入<br><code>pip install scrapy</code></p>
+<p><img src="\images\pasted-190.png" alt="upload successful"><br>安装完毕，cmd里输入scrapy出现安装成功</p>
+<p><img src="\images\pasted-191.png" alt="upload successful"></p>
+<p>至此，Python3.7和对应的scrapy安装完毕</p>
+
+          
+        
+      
+    </div>
+	
+	<div>
+	
+	</div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/URL采集/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1601,156 +1766,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/22/应急响应手工杀马/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="shiqian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Secer">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/22/应急响应手工杀马/" itemprop="url">应急响应手工杀马</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-22T15:05:42+08:00">
-                2018-08-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/木马查杀/" itemprop="url" rel="index">
-                    <span itemprop="name">木马查杀</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <hr>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/22/应急响应手工杀马/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-	
-	<div>
-	
-	</div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1801,7 +1816,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
