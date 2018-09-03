@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32x32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16x16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="网络," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Secer" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="keywords" content="网络">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VPN">
+<meta property="og:url" content="http://yoursite.com/2018/09/03/VPN/index.html">
+<meta property="og:site_name" content="Secer">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/images/pasted-193.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-194.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-195.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-196.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-197.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-198.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-199.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-200.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-201.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-202.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-203.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-204.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-205.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-206.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-207.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-208.png">
+<meta property="og:updated_time" content="2018-09-03T03:27:53.105Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="VPN">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-193.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/09/03/VPN/"/>
+
+
+
+
+
+  <title>VPN | Secer</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Secer</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/03/VPN/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="shiqian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Secer">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">VPN</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-03T09:49:05+08:00">
+                2018-09-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/网络/" itemprop="url" rel="index">
+                    <span itemprop="name">网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<a id="more"></a>
+<p>繁华一场梦</p>
+<p><img src="\images\pasted-193.png" alt="upload successful"></p>
+<h1 id="VPN产生背景"><a href="#VPN产生背景" class="headerlink" title="VPN产生背景"></a>VPN产生背景</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">企业、组织、商家等对专用网有强大的需求</span><br><span class="line"></span><br><span class="line">高性能、 高速度和高安全性是专用网明显的优势</span><br><span class="line"></span><br><span class="line">物理专用网价格高昂，物理架设实施有难度。 传统的通过租用专线或拨号网络的方式越来越不适用。 （性价比较低）</span><br><span class="line"></span><br><span class="line">TCP/IP 协议簇本身的局限性，不能保证信息直接传输的保密性。 TCP/IP协议在设计之初是基于可信环境的，没有考虑安全问题，所以在TCP/IP协议簇本身存在许多固有的安全缺陷</span><br></pre></td></tr></table></figure>
+<p><img src="\images\pasted-194.png" alt="upload successful"></p>
+<h1 id="VPN定义"><a href="#VPN定义" class="headerlink" title="VPN定义"></a>VPN定义</h1><p>（Vitual Private Network，虚拟私有网）：是指依靠ISP或其他NSP在公用网络基础设施之上构建的专用的安全数据通信网络，只不过这个专线网络是逻辑上的而不是物理的，所以称为虚拟专用网</p>
+<h5 id="虚拟："><a href="#虚拟：" class="headerlink" title="虚拟："></a>虚拟：</h5><p>用户不再需要拥有实际的长途数据线路，而是使用公共网络资源建立自己的私有网络</p>
+<h5 id="专用："><a href="#专用：" class="headerlink" title="专用："></a>专用：</h5><p>用户可以定制最符合自身需求的网络</p>
+<h5 id="核心技术："><a href="#核心技术：" class="headerlink" title="核心技术："></a>核心技术：</h5><p>隧道技术</p>
+<h1 id="VPN分类"><a href="#VPN分类" class="headerlink" title="VPN分类"></a>VPN分类</h1><h4 id="按业务类型"><a href="#按业务类型" class="headerlink" title="按业务类型"></a>按业务类型</h4><ol>
+<li><p>Client-LAN VPN（Acceess VPN）</p>
+<p>使用基于Internet远程访问的 VPN</p>
+<p>出差在外的员工、 有远程办公需要的分支机构，都可以利用这种类型的 VPN ，实现对<br>企业内部网络资源进行安全地远程访问</p>
+</li>
+</ol>
+<p><img src="\images\pasted-195.png" alt="upload successful"></p>
+<ol start="2">
+<li><p>LAN-LAN VPN</p>
+<p>为了在不同局域网络之间建立安全的数据传输通道，例如在企业内部各分支机构之间<br>或者企业与其合作者之间的网络进行互联，则可以采用 LAN－LAN 类型的 VPN 。</p>
+</li>
+</ol>
+<p><img src="\images\pasted-196.png" alt="upload successful"></p>
+<h4 id="按网络层次分类"><a href="#按网络层次分类" class="headerlink" title="按网络层次分类"></a>按网络层次分类</h4><p><img src="\images\pasted-197.png" alt="upload successful"></p>
+<h1 id="VPN常用技术"><a href="#VPN常用技术" class="headerlink" title="VPN常用技术"></a>VPN常用技术</h1><p><img src="\images\pasted-198.png" alt="upload successful"></p>
+<h3 id="隧道技术"><a href="#隧道技术" class="headerlink" title="隧道技术"></a>隧道技术</h3><h5 id="隧道："><a href="#隧道：" class="headerlink" title="隧道："></a>隧道：</h5><p>是在公共通信网络上构建的一条数据路径，可以提供与专用通信线路等同的连接特性。</p>
+<h5 id="隧道技术："><a href="#隧道技术：" class="headerlink" title="隧道技术："></a>隧道技术：</h5><p>是指在隧道的两端通过封装以及解封装技术在公网上建立一条数据通道，使用这条通道对数据报文进行传输。 隧道是由隧道协议构建形成的。 隧道技术是VPN技术中最关键的技术。</p>
+<p><img src="\images\pasted-199.png" alt="upload successful"></p>
+<h3 id="多种隧道技术比较"><a href="#多种隧道技术比较" class="headerlink" title="多种隧道技术比较"></a>多种隧道技术比较</h3><p><img src="\images\pasted-200.png" alt="upload successful"></p>
+<h3 id="加解密技术"><a href="#加解密技术" class="headerlink" title="加解密技术"></a>加解密技术</h3><p>目的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">即使信息被窃听或者截取，攻击者也无法知晓信息的真实内容。 可以对抗网络攻击中的被动攻击。</span><br><span class="line"></span><br><span class="line">通常使用加密机制来保护信息的保密性，防止信息泄密。 信息的加密机制通常是建立在`密码学的基础上</span><br></pre></td></tr></table></figure></p>
+<h3 id="密码学基础"><a href="#密码学基础" class="headerlink" title="密码学基础"></a>密码学基础</h3><p>从明文到密文的过程一般是通过加密算法加密进行的。<br>• 从变密文到明文，称为脱密（解密）变换。</p>
+<h5 id="主流加密算法分为："><a href="#主流加密算法分为：" class="headerlink" title="主流加密算法分为："></a>主流加密算法分为：</h5><p>对称加密算法<br>非对称加密算法（公钥加密算法）</p>
+<h5 id="对称加密："><a href="#对称加密：" class="headerlink" title="对称加密："></a>对称加密：</h5><p>加密和解密的密钥相同</p>
+<h5 id="对称算法的缺陷"><a href="#对称算法的缺陷" class="headerlink" title="对称算法的缺陷"></a>对称算法的缺陷</h5><ol>
+<li>密钥传输风险：消息传递的通信链路是不安全的</li>
+<li>密钥多难管理</li>
+</ol>
+<h5 id="常见的对称加密算法"><a href="#常见的对称加密算法" class="headerlink" title="常见的对称加密算法"></a>常见的对称加密算法</h5><p><img src="\images\pasted-201.png" alt="upload successful"></p>
+<h5 id="非对称加密算法"><a href="#非对称加密算法" class="headerlink" title="非对称加密算法"></a>非对称加密算法</h5><p>加密和解密使用的是不同的密钥（公钥、 私钥），两个密钥之间存在着<br>相互依存关系：用其中任一个密钥加密的信息只能用另一个密钥进行解<br>密：<br>即用公钥加密，用私钥解密就可以得到明文；<br>如果用私钥加密，用公钥解密也可以得到原来的明文<br>这使得通信双方无需事先交换密钥就可进行保密通信。</p>
+<h5 id="非对称加密过程"><a href="#非对称加密过程" class="headerlink" title="非对称加密过程"></a>非对称加密过程</h5><p><img src="\images\pasted-202.png" alt="upload successful"></p>
+<h5 id="常见的非对称加密算法"><a href="#常见的非对称加密算法" class="headerlink" title="常见的非对称加密算法"></a>常见的非对称加密算法</h5><p><img src="\images\pasted-203.png" alt="upload successful"></p>
+<h5 id="非对称与对称算法的比较"><a href="#非对称与对称算法的比较" class="headerlink" title="非对称与对称算法的比较"></a>非对称与对称算法的比较</h5><p><img src="\images\pasted-204.png" alt="upload successful"></p>
+<p>综上所述：<br>（1）数据传输采用对称加密算法；<br>（2）对称加密的密钥通过非对称加密算法进行加解密。</p>
+<h3 id="身份认证技术"><a href="#身份认证技术" class="headerlink" title="身份认证技术"></a>身份认证技术</h3><h5 id="身份认证："><a href="#身份认证：" class="headerlink" title="身份认证："></a>身份认证：</h5><p>通过标识和鉴别用户的身份，防止攻击者假冒合法用户来获取访问权限。</p>
+<h5 id="身份认证技术："><a href="#身份认证技术：" class="headerlink" title="身份认证技术："></a>身份认证技术：</h5><p>是在网络中确认操作者身份的过程而产生的有效解决方法。</p>
+<h3 id="PKI体系"><a href="#PKI体系" class="headerlink" title="PKI体系"></a>PKI体系</h3><p>PKI（公开密钥体系，Public Key Infrastructure）是一种遵循标准的利用非对称加密技术为电子商务的开展提供一套安全基础平台的技术和规范。</p>
+<p>简单来说，PKI就是利用公钥理论和技术建立的提供安全服务的基础设施。 用户可利用PKI平台提供的服务进行安全的电子交易、 通信和互联网上的各种活动。</p>
+<p>PKI 技术采用证书管理公钥，通过第三方的可信任机构——CA认证中心把用户的公钥和用户的其他标识信息捆绑在一起放在用户证书中，在互联网上验证用户的身份。</p>
+<p>目前，通用的办法是采用建立在PKI基础之上的数字证书，通过把要传输的数字信息进行加密和签名，保证信息传输的机密性、 真实性、 完整性和不可否认性，从而保证信息的安全传输。</p>
+<h3 id="PKI体系组成"><a href="#PKI体系组成" class="headerlink" title="PKI体系组成"></a>PKI体系组成</h3><p>PKI是创建、 颁发、 管理、 注销公钥证书所涉及到的所有软件、 硬件的集合体。 其核心元素是数字证书，核心执行者是CA认证机构。</p>
+<p><img src="\images\pasted-205.png" alt="upload successful"></p>
+<h3 id="CA中心"><a href="#CA中心" class="headerlink" title="CA中心"></a>CA中心</h3><p>CA中心，即证书授权中心(Certificate Authority )，或称证书授权机构，作为电子商务交易中受信任的第三方。</p>
+<p>CA中心的作用：签发证书、 规定证书的有效期和通过发布证书废除列表（CRL）确保必要时可以废除证书，以及对证书和密钥进行管理。<br>• CA中心为每个使用公开密钥的用户发放一个数字证书，数字证书的作用是证明证书中列出的用户合法拥有证书中列出的公钥。<br>• CA中心的数字签名使得攻击者不能伪造和篡改证书。</p>
+<p><img src="\images\pasted-206.png" alt="upload successful"></p>
+<h3 id="数字证书认证技术原理"><a href="#数字证书认证技术原理" class="headerlink" title="数字证书认证技术原理"></a>数字证书认证技术原理</h3><h5 id="数字证书"><a href="#数字证书" class="headerlink" title="数字证书"></a>数字证书</h5><p>一个经证书授权中心数字签名的包含公开密钥拥有者信息和公开密钥的文件</p>
+<p>数字证书是一般包含：<br>• 用户身份信息<br>• 用户公钥信息<br>• 身份验证机构数字签名的数据<br>从证书用途来看，数字证书可分为签名证书和加密证书。</p>
+<p><img src="\images\pasted-207.png" alt="upload successful"></p>
+<h5 id="签名证书："><a href="#签名证书：" class="headerlink" title="签名证书："></a>签名证书：</h5><p>主要用于对用户信息进行签名，以保证信息的真实性和不可否认性。</p>
+<h5 id="加密证书："><a href="#加密证书：" class="headerlink" title="加密证书："></a>加密证书：</h5><p>主要用于对用户传送的信息进行加密，以保证信息的机密性和完整性。</p>
+<h5 id="数字证书："><a href="#数字证书：" class="headerlink" title="数字证书："></a>数字证书：</h5><p>互联网通讯中标志通讯各方身份信息的一系列数据，它由CA机构中心发行，用来识别对方的身份。</p>
+<h5 id="根证书："><a href="#根证书：" class="headerlink" title="根证书："></a>根证书：</h5><p>根证书是CA认证中心给自己颁发的证书，是信任链的起始点。根证书是一份特殊的证书，它的签发者是它本身，下载根证书表示对该根证书以下所签发的证书都表示信任。</p>
+<h5 id="用户证书："><a href="#用户证书：" class="headerlink" title="用户证书："></a>用户证书：</h5><p>由CA中心签发的个人证书，用于识别、 鉴定终端用户，可存于USB-KEY等介质。</p>
+<h5 id="设备证书："><a href="#设备证书：" class="headerlink" title="设备证书："></a>设备证书：</h5><p>也称服务器证书，该证书将安装在服务器端，向尝试建立连接的客户端提供服务器身份、 证书和公钥信息，使用证书和公钥在客户端和服务端之间建立一条安全、 加密的通道，将通信两端的数据进行加密传输</p>
+<h3 id="数据安全案例"><a href="#数据安全案例" class="headerlink" title="数据安全案例"></a>数据安全案例</h3><p><img src="\images\pasted-208.png" alt="upload successful"></p>
+<h3 id="数据安全案例-HTTPS"><a href="#数据安全案例-HTTPS" class="headerlink" title="数据安全案例-HTTPS"></a>数据安全案例-HTTPS</h3><p>HTTP是常用的web协议，用来交互网页数据。</p>
+<p>由于HTTP是不加密的，在公网上明文传输，缺少保密性。 所以出现了安全加密的HTTP协议—HTTPS协议。</p>
+<p>HTTPS是在SSL协议基础上的HTTP协议。</p>
+<p>SSL协议的握手过程需要传输服务器的证书，并验证证书的可靠性。</p>
+
+      
+    </div>
+	
+	<div>
+	
+		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>史前感谢您的来访-------------</div>
+    
+</div>
+	
+	</div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/网络/" rel="tag"># 网络</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/02/SQL基础/" rel="next" title="SQL基础">
+                <i class="fa fa-chevron-left"></i> SQL基础
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">shiqian</p>
+              <p class="site-description motion-element" itemprop="description">繁华一场梦</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#VPN产生背景"><span class="nav-number">1.</span> <span class="nav-text">VPN产生背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#VPN定义"><span class="nav-number">2.</span> <span class="nav-text">VPN定义</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#虚拟："><span class="nav-number">2.0.0.0.1.</span> <span class="nav-text">虚拟：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#专用："><span class="nav-number">2.0.0.0.2.</span> <span class="nav-text">专用：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#核心技术："><span class="nav-number">2.0.0.0.3.</span> <span class="nav-text">核心技术：</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#VPN分类"><span class="nav-number">3.</span> <span class="nav-text">VPN分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#按业务类型"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">按业务类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#按网络层次分类"><span class="nav-number">3.0.0.2.</span> <span class="nav-text">按网络层次分类</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#VPN常用技术"><span class="nav-number">4.</span> <span class="nav-text">VPN常用技术</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#隧道技术"><span class="nav-number">4.0.1.</span> <span class="nav-text">隧道技术</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#隧道："><span class="nav-number">4.0.1.0.1.</span> <span class="nav-text">隧道：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#隧道技术："><span class="nav-number">4.0.1.0.2.</span> <span class="nav-text">隧道技术：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多种隧道技术比较"><span class="nav-number">4.0.2.</span> <span class="nav-text">多种隧道技术比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加解密技术"><span class="nav-number">4.0.3.</span> <span class="nav-text">加解密技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#密码学基础"><span class="nav-number">4.0.4.</span> <span class="nav-text">密码学基础</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#主流加密算法分为："><span class="nav-number">4.0.4.0.1.</span> <span class="nav-text">主流加密算法分为：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对称加密："><span class="nav-number">4.0.4.0.2.</span> <span class="nav-text">对称加密：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对称算法的缺陷"><span class="nav-number">4.0.4.0.3.</span> <span class="nav-text">对称算法的缺陷</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#常见的对称加密算法"><span class="nav-number">4.0.4.0.4.</span> <span class="nav-text">常见的对称加密算法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#非对称加密算法"><span class="nav-number">4.0.4.0.5.</span> <span class="nav-text">非对称加密算法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#非对称加密过程"><span class="nav-number">4.0.4.0.6.</span> <span class="nav-text">非对称加密过程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#常见的非对称加密算法"><span class="nav-number">4.0.4.0.7.</span> <span class="nav-text">常见的非对称加密算法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#非对称与对称算法的比较"><span class="nav-number">4.0.4.0.8.</span> <span class="nav-text">非对称与对称算法的比较</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#身份认证技术"><span class="nav-number">4.0.5.</span> <span class="nav-text">身份认证技术</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#身份认证："><span class="nav-number">4.0.5.0.1.</span> <span class="nav-text">身份认证：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#身份认证技术："><span class="nav-number">4.0.5.0.2.</span> <span class="nav-text">身份认证技术：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PKI体系"><span class="nav-number">4.0.6.</span> <span class="nav-text">PKI体系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PKI体系组成"><span class="nav-number">4.0.7.</span> <span class="nav-text">PKI体系组成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CA中心"><span class="nav-number">4.0.8.</span> <span class="nav-text">CA中心</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数字证书认证技术原理"><span class="nav-number">4.0.9.</span> <span class="nav-text">数字证书认证技术原理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#数字证书"><span class="nav-number">4.0.9.0.1.</span> <span class="nav-text">数字证书</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#签名证书："><span class="nav-number">4.0.9.0.2.</span> <span class="nav-text">签名证书：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#加密证书："><span class="nav-number">4.0.9.0.3.</span> <span class="nav-text">加密证书：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数字证书："><span class="nav-number">4.0.9.0.4.</span> <span class="nav-text">数字证书：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#根证书："><span class="nav-number">4.0.9.0.5.</span> <span class="nav-text">根证书：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用户证书："><span class="nav-number">4.0.9.0.6.</span> <span class="nav-text">用户证书：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设备证书："><span class="nav-number">4.0.9.0.7.</span> <span class="nav-text">设备证书：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据安全案例"><span class="nav-number">4.0.10.</span> <span class="nav-text">数据安全案例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据安全案例-HTTPS"><span class="nav-number">4.0.11.</span> <span class="nav-text">数据安全案例-HTTPS</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">shiqian</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
