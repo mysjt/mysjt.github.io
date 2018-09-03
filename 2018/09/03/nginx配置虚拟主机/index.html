@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Python," />
+  <meta name="keywords" content="运维," />
 
 
 
@@ -81,24 +81,17 @@
 
 
 
-<meta name="keywords" content="Python">
+<meta name="keywords" content="运维">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python3.7 安装scrapy框架">
-<meta property="og:url" content="http://yoursite.com/2018/09/02/Python3-7安装scrapy框架/index.html">
+<meta property="og:title" content="nginx配置虚拟主机的三种方法">
+<meta property="og:url" content="http://yoursite.com/2018/09/03/nginx配置虚拟主机/index.html">
 <meta property="og:site_name" content="Secer">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/images/pasted-95.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-185.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-187.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-186.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-188.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-189.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-190.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-191.png">
-<meta property="og:updated_time" content="2018-09-02T14:14:00.238Z">
+<meta property="og:image" content="http://yoursite.com/images/pasted-209.png">
+<meta property="og:updated_time" content="2018-09-03T07:08:11.924Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python3.7 安装scrapy框架">
-<meta name="twitter:image" content="http://yoursite.com/images/pasted-95.png">
+<meta name="twitter:title" content="nginx配置虚拟主机的三种方法">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-209.png">
 
 
 
@@ -128,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/02/Python3-7安装scrapy框架/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/03/nginx配置虚拟主机/"/>
 
 
 
 
 
-  <title>Python3.7 安装scrapy框架 | Secer</title>
+  <title>nginx配置虚拟主机的三种方法 | Secer</title>
   
 
 
@@ -271,7 +264,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/Python3-7安装scrapy框架/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/03/nginx配置虚拟主机/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="shiqian">
@@ -288,7 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python3.7 安装scrapy框架</h1>
+          <h1 class="post-title" itemprop="name headline">nginx配置虚拟主机的三种方法</h1>
         
 
         <div class="post-meta">
@@ -300,8 +293,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-02T15:32:45+08:00">
-                2018-09-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-03T13:57:05+08:00">
+                2018-09-03
               </time>
             
 
@@ -323,8 +316,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/运维/" itemprop="url" rel="index">
+                    <span itemprop="name">运维</span>
                   </a>
                 </span>
 
@@ -362,26 +355,17 @@
       
         <hr>
 <a id="more"></a>
-<p>繁华一场梦<br><img src="\images\pasted-95.png" alt="upload successful"></p>
-<h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><p>安装scrapy爬虫框架</p>
-<h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Python 3.7</span><br><span class="line">windows 8.1 x64位</span><br></pre></td></tr></table></figure>
-<h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><h4 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h4><p>在命令行下输入<code>pip install scrapy</code><br>报错，提示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">microsoft visual c++ 14.0 is required</span><br><span class="line">twisted is required</span><br></pre></td></tr></table></figure></p>
-<h4 id="解决过程"><a href="#解决过程" class="headerlink" title="解决过程"></a>解决过程</h4><h5 id="升级pip："><a href="#升级pip：" class="headerlink" title="升级pip："></a>升级pip：</h5><p><code>python -m pip install --upgrade pip</code><br>如果已经是最新的，可以略过这一步</p>
-<h5 id="安装-microsoft-visual-c-14-0"><a href="#安装-microsoft-visual-c-14-0" class="headerlink" title="安装 microsoft visual c++ 14.0"></a>安装 microsoft visual c++ 14.0</h5><p>下载网址：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://visualstudio.microsoft.com/downloads/?rr=https%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3DFkkrTc4jgi8McqJvBvl3DAreZXK4qM6ctZqszBy3NThiXmxsy8UIboRgnBY5oBNGOcfoPYESqoRiz2TYq1nFm_%26ie%3Dutf-8%26f%3D8%26tn%3Dmonline_3_dg%26wd%3Dvisual%2520studio%25E4%25B8%258B%25E8%25BD%25BD%26oq%3Dpython%2525E7%252588%2525AC%2525E5%25258F%252596%2525E5%2525A6%2525B9%2525E5%2525AD%252590%2525E5%25259B%2525BE%2525E7%252589%252587%26rqlang%3Dcn%26inputT%3D8064%26sug%3Dvisual%252520studio</span><br></pre></td></tr></table></figure></p>
-<p><img src="\images\pasted-185.png" alt="upload successful"><br>然后下载对应的操作系统版本即可，安装下一步即可</p>
-<h5 id="安装wheel"><a href="#安装wheel" class="headerlink" title="安装wheel"></a>安装wheel</h5><p><code>pip install wheel</code><br>安装完，在命令行下输入wheel，看到下面结果即为成功：</p>
-<p><img src="\images\pasted-187.png" alt="upload successful"></p>
-<h5 id="安装对应版本的Twisted"><a href="#安装对应版本的Twisted" class="headerlink" title="安装对应版本的Twisted"></a>安装对应版本的Twisted</h5><p>下载网址：<br><code>https://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted</code></p>
-<p><img src="\images\pasted-186.png" alt="upload successful"><br>注: cp37中的37代表python3.7版本，win后面代表操作系统的版本，笔者的是64位系统，以及python3.7版本，自行选择32 或者64位。<br>安装时，运行cmd，输入pip install + 文件路径 即可。</p>
-<p>如：<br><code>pip install C:\Users\name\Downloads\Twisted-18.7.0-cp37-cp37m-win_amd64.whl</code></p>
-<h5 id="安装Lxml"><a href="#安装Lxml" class="headerlink" title="安装Lxml"></a>安装Lxml</h5><p>下载网址:<br><code>https://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml</code></p>
-<p><img src="\images\pasted-188.png" alt="upload successful"><br>注: cp37中的37代表python3.7版本，win后面代表操作系统的版本，笔者的是64位系统，以及python3.7版本，自行选择32 或者64位。<br>安装方法同安装Twisted</p>
-<h5 id="安装Pywin32"><a href="#安装Pywin32" class="headerlink" title="安装Pywin32"></a>安装Pywin32</h5><p>下载网址：<br><code>https://sourceforge.net/projects/pywin32/files/pywin32/Build%20221/</code><br>切记要下载对应的python版本和对应的操作系统</p>
-<p><img src="\images\pasted-189.png" alt="upload successful"><br>安装直接下一步即可</p>
-<h5 id="安装scrapy框架"><a href="#安装scrapy框架" class="headerlink" title="安装scrapy框架"></a>安装scrapy框架</h5><p>安装完以上几项之后，在cmd里输入<br><code>pip install scrapy</code></p>
-<p><img src="\images\pasted-190.png" alt="upload successful"><br>安装完毕，cmd里输入scrapy出现安装成功</p>
-<p><img src="\images\pasted-191.png" alt="upload successful"></p>
-<p>至此，Python3.7和对应的scrapy安装完毕</p>
+<p>繁华一场梦</p>
+<p><img src="\images\pasted-209.png" alt="upload successful"></p>
+<h1 id="三种方法"><a href="#三种方法" class="headerlink" title="三种方法"></a>三种方法</h1><p>nginx下，一个server标签就是一个虚拟主机。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1、基于域名的虚拟主机，通过域名来区分虚拟主机——应用：外部网站</span><br><span class="line"></span><br><span class="line">2、基于端口的虚拟主机，通过端口来区分虚拟主机——应用：公司内部网站，外部网站的管理后台</span><br><span class="line"></span><br><span class="line">3、基于ip的虚拟主机，几乎不用。</span><br></pre></td></tr></table></figure></p>
+<h1 id="具体设置"><a href="#具体设置" class="headerlink" title="具体设置"></a>具体设置</h1><h4 id="1、基于域名配置虚拟主机配置："><a href="#1、基于域名配置虚拟主机配置：" class="headerlink" title="1、基于域名配置虚拟主机配置："></a>1、基于域名配置虚拟主机配置：</h4><p>需要建立/data/www /data/bbs目录，windows本地hosts添加虚拟机ip地址对应的域名解析；</p>
+<p>对应域名网站目录下新增index.html文件； </p>
+<p>nginx.conf配置文件新增如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">   listen 80;</span><br><span class="line">   server_name www.xxxxx.com;</span><br><span class="line">   index index.html;</span><br><span class="line">   root /data/www;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">   listen 80;</span><br><span class="line">   server_name bbs.yong.com;</span><br><span class="line">   index index.html;</span><br><span class="line">   root /data/bbs;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>验证结果，使用curl测试，或者浏览器输入域名访问<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">curl -xlocalhost:80 www.xxxxx.com</span><br><span class="line"></span><br><span class="line">this is yong linux</span><br><span class="line"></span><br><span class="line">curl -xlocalhost:80 bbs.yong.com</span><br><span class="line"></span><br><span class="line">this is yong bbs</span><br></pre></td></tr></table></figure></p>
+<h4 id="2、基于端口的虚拟主机配置"><a href="#2、基于端口的虚拟主机配置" class="headerlink" title="2、基于端口的虚拟主机配置:"></a>2、基于端口的虚拟主机配置:</h4><p>使用端口来区分，浏览器使用域名或ip地址:端口号 访问<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">server</span><br><span class="line">&#123;</span><br><span class="line">    listen 8000;</span><br><span class="line">    server_name www.xxxxx.com;</span><br><span class="line">    root /data/www;</span><br><span class="line">&#125;</span><br><span class="line">server</span><br><span class="line">&#123;</span><br><span class="line">    listen 8001;</span><br><span class="line">    server_name www.xxxxxx.com;</span><br><span class="line">    root /data/bbs;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>验证结果，使用curl测试，或者浏览器输入域名访问<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">curl www.xxxxx.com:8000</span><br><span class="line"></span><br><span class="line">this is yong linux</span><br><span class="line"></span><br><span class="line">curl www.xxxx.com:8001</span><br><span class="line"></span><br><span class="line">this is yong bbs</span><br></pre></td></tr></table></figure></p>
+<h4 id="3、基于ip地址的虚拟主机配置"><a href="#3、基于ip地址的虚拟主机配置" class="headerlink" title="3、基于ip地址的虚拟主机配置:"></a>3、基于ip地址的虚拟主机配置:</h4><p>通过ip来访问，需要配置多个ip<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ifconfig eth0:1 192.168.22.21</span><br><span class="line">server</span><br><span class="line">&#123;</span><br><span class="line">    listen 192.168.20.20:80;</span><br><span class="line">    server_name www.xxxxx.com;</span><br><span class="line">    root /data/www;</span><br><span class="line">&#125;</span><br><span class="line">server</span><br><span class="line">&#123;</span><br><span class="line">    listen 192.168.20.21:80;</span><br><span class="line">    server_name www.xxxxx.com;</span><br><span class="line">    root /data/bbs;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>验证结果，使用curl测试，或者浏览器输入域名访问<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">curl 192.168.22.20</span><br><span class="line"></span><br><span class="line">this is yong linux</span><br><span class="line"></span><br><span class="line">curl 192.168.22.21</span><br><span class="line"></span><br><span class="line">this is yong bbs</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -409,7 +393,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag"># Python</a>
+            <a href="/tags/运维/" rel="tag"># 运维</a>
           
         </div>
       
@@ -422,8 +406,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/01/URL采集/" rel="next" title="URL采集">
-                <i class="fa fa-chevron-left"></i> URL采集
+              <a href="/2018/09/03/等保/" rel="next" title="等保">
+                <i class="fa fa-chevron-left"></i> 等保
               </a>
             
           </div>
@@ -431,10 +415,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/02/SQL基础/" rel="prev" title="SQL基础">
-                SQL基础 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -573,7 +553,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目标"><span class="nav-number">1.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#环境"><span class="nav-number">2.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#过程"><span class="nav-number">3.</span> <span class="nav-text">过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#开始"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">开始</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决过程"><span class="nav-number">3.0.0.2.</span> <span class="nav-text">解决过程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#升级pip："><span class="nav-number">3.0.0.2.1.</span> <span class="nav-text">升级pip：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装-microsoft-visual-c-14-0"><span class="nav-number">3.0.0.2.2.</span> <span class="nav-text">安装 microsoft visual c++ 14.0</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装wheel"><span class="nav-number">3.0.0.2.3.</span> <span class="nav-text">安装wheel</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装对应版本的Twisted"><span class="nav-number">3.0.0.2.4.</span> <span class="nav-text">安装对应版本的Twisted</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装Lxml"><span class="nav-number">3.0.0.2.5.</span> <span class="nav-text">安装Lxml</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装Pywin32"><span class="nav-number">3.0.0.2.6.</span> <span class="nav-text">安装Pywin32</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装scrapy框架"><span class="nav-number">3.0.0.2.7.</span> <span class="nav-text">安装scrapy框架</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#三种方法"><span class="nav-number">1.</span> <span class="nav-text">三种方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#具体设置"><span class="nav-number">2.</span> <span class="nav-text">具体设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、基于域名配置虚拟主机配置："><span class="nav-number">2.0.0.1.</span> <span class="nav-text">1、基于域名配置虚拟主机配置：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、基于端口的虚拟主机配置"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">2、基于端口的虚拟主机配置:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、基于ip地址的虚拟主机配置"><span class="nav-number">2.0.0.3.</span> <span class="nav-text">3、基于ip地址的虚拟主机配置:</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
