@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-03T09:19:21.318Z</updated>
+  <updated>2018-09-03T12:38:13.956Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>万能密码原理</title>
+    <link href="http://yoursite.com/2018/09/03/%E4%B8%87%E8%83%BD%E5%AF%86%E7%A0%81%E5%8E%9F%E7%90%86/"/>
+    <id>http://yoursite.com/2018/09/03/万能密码原理/</id>
+    <published>2018-09-03T12:38:13.000Z</published>
+    <updated>2018-09-03T12:38:13.956Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>等保-安全通用要求</title>
@@ -431,28 +445,6 @@
     
     
       <category term="渗透测试" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>文件处理漏洞</title>
-    <link href="http://yoursite.com/2018/08/21/%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E6%BC%8F%E6%B4%9E/"/>
-    <id>http://yoursite.com/2018/08/21/文件处理漏洞/</id>
-    <published>2018-08-21T12:53:05.000Z</published>
-    <updated>2018-08-21T13:31:18.199Z</updated>
-    
-    <content type="html"><![CDATA[<hr><a id="more"></a><p>繁华一场梦</p><p><img src="\images\pasted-102.png" alt="upload successful"></p><h1 id="漏洞分类"><a href="#漏洞分类" class="headerlink" title="漏洞分类"></a>漏洞分类</h1><p>文件处理漏洞分为：任意文件上传漏洞和任意文件下载漏洞</p><h1 id="任意文件上传"><a href="#任意文件上传" class="headerlink" title="任意文件上传"></a>任意文件上传</h1><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>web应用程序在处理用户上传的文件时，解析了用户上传的恶意脚本文件，导致用户可以直接控制web服务器</p><h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>文件上传时检查不严</p><p>文件上传后对文件名处理不当，允许用户修改文件名的后缀</p><h3 id="限制"><a href="#限制" class="headerlink" title="限制"></a>限制</h3><p>对文件类型进行限制</p><p>对文件名后缀进行限制，采用白名单</p><h3 id="防御"><a href="#防御" class="headerlink" title="防御"></a>防御</h3><p>文件上传目录设置为不可执行</p><p>判断文件的类型，采用白名单策略</p><p>采用随机数来存储文件名</p><p>单独设置文件服务器域名，这个服务器不能运行动态的网页</p><h1 id="任意文件下载"><a href="#任意文件下载" class="headerlink" title="任意文件下载"></a>任意文件下载</h1><h3 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h3><p>网站对用户查看或下载的文件没有做限制，则恶意用户可以查看或下载任意敏感文件，下载系统的配置文件、源代码等，从而获得更多的漏洞</p><h3 id="可能存在的漏洞位置"><a href="#可能存在的漏洞位置" class="headerlink" title="可能存在的漏洞位置"></a>可能存在的漏洞位置</h3><p>导入文件时，直接输入文件名，则可能有注入点</p><p>代码中查看危险函数，如php中的readfile、fopen、file_get_contents</p><h3 id="防御-1"><a href="#防御-1" class="headerlink" title="防御"></a>防御</h3><p>过滤.(点)，使用户不能在url中回溯上级目录</p><p>严格判断用户输入参数的格式</p><p>限制文件的访问范围，如php.ini中配置open_basedir</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-    
-    </summary>
-    
-      <category term="web安全" scheme="http://yoursite.com/categories/web%E5%AE%89%E5%85%A8/"/>
-    
-    
-      <category term="Web安全" scheme="http://yoursite.com/tags/Web%E5%AE%89%E5%85%A8/"/>
     
   </entry>
   
