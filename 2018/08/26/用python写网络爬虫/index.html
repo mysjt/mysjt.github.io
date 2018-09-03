@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="读书笔记," />
+  <meta name="keywords" content="Python," />
 
 
 
@@ -81,15 +81,15 @@
 
 
 
-<meta name="keywords" content="读书笔记">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用python写网络爬虫">
+<meta property="og:title" content="抓取数据的方式">
 <meta property="og:url" content="http://yoursite.com/2018/08/26/用python写网络爬虫/index.html">
 <meta property="og:site_name" content="Secer">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-26T13:42:24.503Z">
+<meta property="og:updated_time" content="2018-09-03T07:19:34.866Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用python写网络爬虫">
+<meta name="twitter:title" content="抓取数据的方式">
 
 
 
@@ -125,7 +125,7 @@
 
 
 
-  <title>用python写网络爬虫 | Secer</title>
+  <title>抓取数据的方式 | Secer</title>
   
 
 
@@ -279,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">用python写网络爬虫</h1>
+          <h1 class="post-title" itemprop="name headline">抓取数据的方式</h1>
         
 
         <div class="post-meta">
@@ -314,8 +314,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/读书笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">读书笔记</span>
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
                   </a>
                 </span>
 
@@ -354,7 +354,7 @@
         <hr>
 <a id="more"></a>
 <p>繁华一场梦</p>
-<h1 id="第一章-网络爬虫简介"><a href="#第一章-网络爬虫简介" class="headerlink" title="第一章-网络爬虫简介"></a>第一章-网络爬虫简介</h1><h4 id="爬虫是否合法"><a href="#爬虫是否合法" class="headerlink" title="爬虫是否合法"></a>爬虫是否合法</h4><p>当抓 取的数据是现实生活中的真实数据（比如，营业地址、 电话清 单） 时， 是允许转载的。 但是， 如果是原创数据 （比如， 意见和评论）， 通常就会受到版权限制， 而不能转载</p>
+<h1 id="网络爬虫简介"><a href="#网络爬虫简介" class="headerlink" title="网络爬虫简介"></a>网络爬虫简介</h1><h4 id="爬虫是否合法"><a href="#爬虫是否合法" class="headerlink" title="爬虫是否合法"></a>爬虫是否合法</h4><p>当抓 取的数据是现实生活中的真实数据（比如，营业地址、 电话清 单） 时， 是允许转载的。 但是， 如果是原创数据 （比如， 意见和评论）， 通常就会受到版权限制， 而不能转载</p>
 <h4 id="爬虫的便利"><a href="#爬虫的便利" class="headerlink" title="爬虫的便利"></a>爬虫的便利</h4><p>重复的手工可以用爬虫的自动化实现</p>
 <h4 id="检查robots-txt"><a href="#检查robots-txt" class="headerlink" title="检查robots.txt"></a>检查robots.txt</h4><p>大多数网站 都会定义robots.txt文件， 这样可以让爬虫了解爬取该网站时存在哪些限制</p>
 <h4 id="检查网站地图"><a href="#检查网站地图" class="headerlink" title="检查网站地图"></a>检查网站地图</h4><p>网站提供的Sitemap 文件 （即网 站 地图） 可以帮助爬虫定位网 站 最新的内 容，而无须爬 取每 一 个网页</p>
@@ -435,7 +435,7 @@ except  urllib2.URLError as  e:
            return  download ( url , num_retries - 1 )
 
  return   html
-</code></pre><h1 id="第二章-数据抓取"><a href="#第二章-数据抓取" class="headerlink" title="第二章-数据抓取"></a>第二章-数据抓取</h1><h3 id="三种网页抓取方法"><a href="#三种网页抓取方法" class="headerlink" title="三种网页抓取方法"></a>三种网页抓取方法</h3><p>首先是正则表达式 ， 然后是流行的BeautifulSoup 模块 ， 最后是强大的lxml模块</p>
+</code></pre><h1 id="数据抓取"><a href="#数据抓取" class="headerlink" title="数据抓取"></a>数据抓取</h1><h3 id="三种网页抓取方法"><a href="#三种网页抓取方法" class="headerlink" title="三种网页抓取方法"></a>三种网页抓取方法</h3><p>首先是正则表达式 ， 然后是流行的BeautifulSoup 模块 ， 最后是强大的lxml模块</p>
 <p>示例网站为：<a href="http://example.webscraping.com" target="_blank" rel="noopener">http://example.webscraping.com</a></p>
 <h4 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h4><p>当我们使用正则表达式抓取面积数据 时 ， 首 先需要尝试匹配＜td&gt;元素中的内容 ， 如下所 示</p>
 <p>import re</p>
@@ -500,7 +500,7 @@ except  urllib2.URLError as  e:
       
         <div class="post-tags">
           
-            <a href="/tags/读书笔记/" rel="tag"># 读书笔记</a>
+            <a href="/tags/Python/" rel="tag"># Python</a>
           
         </div>
       
@@ -664,7 +664,7 @@ except  urllib2.URLError as  e:
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一章-网络爬虫简介"><span class="nav-number">1.</span> <span class="nav-text">第一章-网络爬虫简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#爬虫是否合法"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">爬虫是否合法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#爬虫的便利"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">爬虫的便利</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#检查robots-txt"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">检查robots.txt</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#检查网站地图"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">检查网站地图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#估算网站大小"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">估算网站大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#识别网站所用技术"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">识别网站所用技术</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#寻找网站所有者"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">寻找网站所有者</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编写第一个网络爬虫"><span class="nav-number">1.0.0.8.</span> <span class="nav-text">编写第一个网络爬虫</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#下载网页"><span class="nav-number">1.0.0.8.1.</span> <span class="nav-text">下载网页</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#捕获异常"><span class="nav-number">1.0.0.8.2.</span> <span class="nav-text">捕获异常</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#重试下载"><span class="nav-number">1.0.0.8.3.</span> <span class="nav-text">重试下载</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用户代理"><span class="nav-number">1.0.0.8.4.</span> <span class="nav-text">用户代理</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章-数据抓取"><span class="nav-number">2.</span> <span class="nav-text">第二章-数据抓取</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三种网页抓取方法"><span class="nav-number">2.0.1.</span> <span class="nav-text">三种网页抓取方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#正则表达式"><span class="nav-number">2.0.1.1.</span> <span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Beautiful-Soup"><span class="nav-number">2.0.1.2.</span> <span class="nav-text">Beautiful Soup</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Lxml"><span class="nav-number">2.0.1.3.</span> <span class="nav-text">Lxml</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#css-选择器"><span class="nav-number">2.0.1.3.1.</span> <span class="nav-text">css 选择器</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#性能对比"><span class="nav-number">2.0.1.4.</span> <span class="nav-text">性能对比</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#网络爬虫简介"><span class="nav-number">1.</span> <span class="nav-text">网络爬虫简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#爬虫是否合法"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">爬虫是否合法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#爬虫的便利"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">爬虫的便利</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#检查robots-txt"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">检查robots.txt</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#检查网站地图"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">检查网站地图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#估算网站大小"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">估算网站大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#识别网站所用技术"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">识别网站所用技术</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#寻找网站所有者"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">寻找网站所有者</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编写第一个网络爬虫"><span class="nav-number">1.0.0.8.</span> <span class="nav-text">编写第一个网络爬虫</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#下载网页"><span class="nav-number">1.0.0.8.1.</span> <span class="nav-text">下载网页</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#捕获异常"><span class="nav-number">1.0.0.8.2.</span> <span class="nav-text">捕获异常</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#重试下载"><span class="nav-number">1.0.0.8.3.</span> <span class="nav-text">重试下载</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用户代理"><span class="nav-number">1.0.0.8.4.</span> <span class="nav-text">用户代理</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据抓取"><span class="nav-number">2.</span> <span class="nav-text">数据抓取</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三种网页抓取方法"><span class="nav-number">2.0.1.</span> <span class="nav-text">三种网页抓取方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#正则表达式"><span class="nav-number">2.0.1.1.</span> <span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Beautiful-Soup"><span class="nav-number">2.0.1.2.</span> <span class="nav-text">Beautiful Soup</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Lxml"><span class="nav-number">2.0.1.3.</span> <span class="nav-text">Lxml</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#css-选择器"><span class="nav-number">2.0.1.3.1.</span> <span class="nav-text">css 选择器</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#性能对比"><span class="nav-number">2.0.1.4.</span> <span class="nav-text">性能对比</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
