@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-03T12:38:13.956Z</updated>
+  <updated>2018-09-04T06:22:08.198Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -18,15 +18,23 @@
   
   <entry>
     <title>万能密码原理</title>
-    <link href="http://yoursite.com/2018/09/03/%E4%B8%87%E8%83%BD%E5%AF%86%E7%A0%81%E5%8E%9F%E7%90%86/"/>
-    <id>http://yoursite.com/2018/09/03/万能密码原理/</id>
-    <published>2018-09-03T12:38:13.000Z</published>
-    <updated>2018-09-03T12:38:13.956Z</updated>
+    <link href="http://yoursite.com/2018/09/04/%E4%B8%87%E8%83%BD%E5%AF%86%E7%A0%81%E5%8E%9F%E7%90%86/"/>
+    <id>http://yoursite.com/2018/09/04/万能密码原理/</id>
+    <published>2018-09-04T05:33:05.000Z</published>
+    <updated>2018-09-04T06:22:08.198Z</updated>
+    
+    <content type="html"><![CDATA[<hr><a id="more"></a><p>繁华一场梦</p><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>用户进行用户名和密码验证时，网站需要查询数据库，查询数据库就是执行SQL语句。</p><p>当用户登录时，后台执行的数据库查询操作（SQL语句），如select  user  from  users   where  use_id =’用户名’</p><p>and   password = ‘密码’</p><p>由于网站在进行数据库查询时没有过滤，当输入用户名admin和万能密码 2‘ or ’ 1 。执行的SQL语句为select  user  from  users   where  use_id = ‘admin’  and   password = ‘ 2 ‘ or ‘ 1’ 。同时SQL语句中逻辑运算符具有优先级，=优先于 and，and优先于 or ，且适用传递性，因此，此SQL语句在后台解析时，分成两句：select  user  from  users   where  use_id = ‘admin’  and   password = ‘ 2 ‘  和  ‘ 1’，两句bool值进行逻辑or运算，恒为TRUE，SQL查询语句查询结果为TRUE，就意味着认证成功，也可以登录到系统中。</p><h2 id="常见万能密码"><a href="#常见万能密码" class="headerlink" title="常见万能密码"></a>常见万能密码</h2><p>“or “a”=”a<br> ‘)or(‘a’=’a<br>or 1=1–<br>‘or 1=1–<br>a’or’ 1=1–<br>“or 1=1–<br>‘or’a’=’a<br>“or”=”a’=’a<br>‘or’’=’<br>1’or’=’or’<br>1 or ‘1’=’1’=1<br>1 or ‘1’=’1’ or 1=1<br> ‘OR 1=1%00</p>]]></content>
     
     <summary type="html">
     
+      &lt;hr&gt;
+    
     </summary>
     
+      <category term="web安全" scheme="http://yoursite.com/categories/web%E5%AE%89%E5%85%A8/"/>
+    
+    
+      <category term="Web安全" scheme="http://yoursite.com/tags/Web%E5%AE%89%E5%85%A8/"/>
     
   </entry>
   
