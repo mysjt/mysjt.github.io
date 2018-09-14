@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Python," />
+  <meta name="keywords" content="运维," />
 
 
 
@@ -81,17 +81,17 @@
 
 
 
-<meta name="keywords" content="Python">
+<meta name="keywords" content="运维">
 <meta property="og:type" content="article">
-<meta property="og:title" content="人生苦短，Python当歌-4">
-<meta property="og:url" content="http://yoursite.com/2018/08/15/人生苦短，Python当歌-4/index.html">
+<meta property="og:title" content="vsftp的安全加固">
+<meta property="og:url" content="http://yoursite.com/2018/09/14/vsftp的安全加固/index.html">
 <meta property="og:site_name" content="Secer">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/images/pasted-95.png">
-<meta property="og:updated_time" content="2018-09-04T12:23:54.144Z">
+<meta property="og:image" content="http://yoursite.com/images/pasted-218.png">
+<meta property="og:updated_time" content="2018-09-14T12:00:01.940Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="人生苦短，Python当歌-4">
-<meta name="twitter:image" content="http://yoursite.com/images/pasted-95.png">
+<meta name="twitter:title" content="vsftp的安全加固">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-218.png">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/15/人生苦短，Python当歌-4/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/14/vsftp的安全加固/"/>
 
 
 
 
 
-  <title>人生苦短，Python当歌-4 | Secer</title>
+  <title>vsftp的安全加固 | Secer</title>
   
 
 
@@ -264,7 +264,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/15/人生苦短，Python当歌-4/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/14/vsftp的安全加固/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="shiqian">
@@ -281,7 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">人生苦短，Python当歌-4</h1>
+          <h1 class="post-title" itemprop="name headline">vsftp的安全加固</h1>
         
 
         <div class="post-meta">
@@ -293,8 +293,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-15T22:46:29+08:00">
-                2018-08-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-14T19:50:05+08:00">
+                2018-09-14
               </time>
             
 
@@ -316,8 +316,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/运维/" itemprop="url" rel="index">
+                    <span itemprop="name">运维</span>
                   </a>
                 </span>
 
@@ -355,17 +355,16 @@
       
         <hr>
 <a id="more"></a>
-<p>繁华一场梦<br><img src="\images\pasted-95.png" alt="upload successful"></p>
-<h1 id="爬虫"><a href="#爬虫" class="headerlink" title="爬虫"></a>爬虫</h1><p>爬虫，用Python写的很多的，re模块，BeautifulSoup模块，pyspider模块，pyquery等等</p>
-<p>还要用到requests模块，urllib模块，urllib2模块，还有一个四叶草公司开发的hackhttp等等</p>
-<p>BeautifulSoup模块和requests模块，Pyspider都要安装，因为是第三方库</p>
-<p>目标网站：<code>https://gaokao.chsi.com.cn/gkxx/zszcgd/dnzszc/201706/20170615/1611254988-%1.html</code></p>
-<p>要实现的目标是爬取学校的名字，并按省份分类放置</p>
-<p>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">#encoding=utf-8</span><br><span class="line"></span><br><span class="line">import  requests</span><br><span class="line">import lxml</span><br><span class="line">import json</span><br><span class="line">import logging   #解决ssl错误的</span><br><span class="line">import sys</span><br><span class="line">from bs4 import BeautifulSoup as bs</span><br><span class="line">logging.captureWarnings(True)</span><br><span class="line">reload(sys)     #解决编码问题的</span><br><span class="line">sys.setdefaultencoding(&apos;utf-8&apos;)</span><br><span class="line">def school():</span><br><span class="line">    for i in range(2, 34, 1):</span><br><span class="line">        try:</span><br><span class="line">           url = &apos;https://gaokao.chsi.com.cn/gkxx/zszcgd/dnzszc/201706/20170615/1611254988-%s.html&apos;%(str(i))</span><br><span class="line">           headers = &#123;</span><br><span class="line">               &apos;User-Agent&apos;: &apos;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0&apos;&#125;</span><br><span class="line">           r = requests.get(url=url,headers=headers,verify=False)</span><br><span class="line">           soup = bs(r.content,&apos;lxml&apos;)</span><br><span class="line">           content2 = soup.find_all(name=&quot;td&quot;, attrs=&#123;&quot;colspan&quot;: &quot;7&quot;&#125;)[0].string</span><br><span class="line">           f1 = open(&quot;D:/%s.txt&quot; % (content2), &quot;wb&quot;)</span><br><span class="line">           content = soup.find_all(name=&apos;tr&apos;,attrs=&#123;&quot;height&quot;:&quot;29&quot;&#125;)</span><br><span class="line">           for content1 in content:</span><br><span class="line">             try:</span><br><span class="line">               soup_content = bs(str(content1), &quot;lxml&quot;)</span><br><span class="line">               soup_content1 = soup_content.find_all(name=&quot;td&quot;)</span><br><span class="line">               f1.write(soup_content1[1].string +&apos;\n&apos;)</span><br><span class="line">               print(soup_content1[1].string)</span><br><span class="line">             except IndexError:</span><br><span class="line">                 pass</span><br><span class="line">        except IndexError:</span><br><span class="line">            pass</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__==&apos;__main__&apos;:</span><br><span class="line">    school()</span><br></pre></td></tr></table></figure></p>
-<p>爬虫遇到的问题：</p>
-<p><code>requests.exceptions.SSLError: HTTPSConnectionPool(host=&#39;gaokao.chsi.com.cn&#39;, port=443): Max retries</code> </p>
-<p>解决方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import logging</span><br><span class="line"></span><br><span class="line">logging.captureWarnings(True)</span><br><span class="line"></span><br><span class="line">r = requests.get(url=url,verify=False)</span><br></pre></td></tr></table></figure></p>
-
+<p>繁华一场梦</p>
+<p><img src="\images\pasted-218.png" alt="upload successful"></p>
+<h3 id="及时安装更新补丁"><a href="#及时安装更新补丁" class="headerlink" title="及时安装更新补丁"></a>及时安装更新补丁</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在安装更新补丁前，备份您的 vsftp 应用配置。从 VSFTPD官方网站 获取最新版本的 vsftp 软件安装包，完成升级安装。或者，您可以下载最新版 vsftp 源码包，自行编译后安装更新。您也可以执行yum update vsftpd命令通过 yum 源进行更新。</span><br></pre></td></tr></table></figure>
+<h3 id="禁止匿名登录访问"><a href="#禁止匿名登录访问" class="headerlink" title="禁止匿名登录访问"></a>禁止匿名登录访问</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">添加一个新用户（test），并配置强密码。例如，执行useradd -d /home -s /sbin/nologin test命令。其中，/sbin/nologin参数表示该用户不能登录 Linux shell 环境。</span><br><span class="line">test为用户名。</span><br><span class="line">通过passwd test命令，为该用户配置强密码。密码长度建议八位以上，且密码应包括大小写字母、特殊字符、数字混合体，且不要使用生日、姓名拼音等常见字符串作为密码。</span><br><span class="line">修改配置文件 vsftpd.conf，执行#vim /etc/vsftpd/vsftpd.conf命令。anonymous_enable=NO，将该参数配置为 NO 表示禁止匿名登录，必须要创建用户认证后才能登录 FTP 服务。</span><br></pre></td></tr></table></figure>
+<h3 id="禁止显示banner信息"><a href="#禁止显示banner信息" class="headerlink" title="禁止显示banner信息"></a>禁止显示banner信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">修改 VSFTP 配置文件 vsftpd.conf，设置ftpd_banner=Welcome。重启 vsftp 服务后，即不显示 banner 信息。</span><br></pre></td></tr></table></figure>
+<h3 id="限制FTP登录用户"><a href="#限制FTP登录用户" class="headerlink" title="限制FTP登录用户"></a>限制FTP登录用户</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在 ftpusers 和 user_list 文件中列举的用户都是不允许访问 FTP 服务的用户（例如 root、bin、daemon 等用户）。除了需要登录 FTP 的用户外，其余用户都应该添加至此拒绝列表中。</span><br></pre></td></tr></table></figure>
+<h3 id="限制用户访问目录"><a href="#限制用户访问目录" class="headerlink" title="限制用户访问目录"></a>限制用户访问目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">修改 VSFTP 配置文件 vsftpd.conf。</span><br><span class="line"></span><br><span class="line">chroot_list_enable=YES</span><br><span class="line">chroot_list_file=/etc/vsftpd/chroot_list</span><br><span class="line">新建 /etc/vsftpd/chroot_list 文件，并添加用户名。例如，将 user1 添加至该文件，则 user1 登录 FTP 服务后，只允许在 user1 用户的 home 目录中活动。</span><br></pre></td></tr></table></figure>
+<h3 id="修改默认地址和监听端口"><a href="#修改默认地址和监听端口" class="headerlink" title="修改默认地址和监听端口"></a>修改默认地址和监听端口</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">例如，修改 VSFTP 配置文件 vsftpd.conf，设置监听 1.1.1.1 地址的 8888 端口。</span><br><span class="line"></span><br><span class="line">listen_address=1.1.1.1</span><br><span class="line">listen_port=8888</span><br></pre></td></tr></table></figure>
+<h3 id="启用日志记录"><a href="#启用日志记录" class="headerlink" title="启用日志记录"></a>启用日志记录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">修改 VSFTP 配置文件 vsftpd.conf，启用日志记录。</span><br><span class="line"></span><br><span class="line"> xferlog_enable=YES</span><br><span class="line"> xferlog_std_format=YES</span><br><span class="line">如果您需要自定义日志存放位置，可以修改xferlog_file=/var/log/ftplog</span><br></pre></td></tr></table></figure>
+<h3 id="其他安全设置"><a href="#其他安全设置" class="headerlink" title="其他安全设置"></a>其他安全设置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">修改 VSFTP 配置文件 vsftpd.conf。</span><br><span class="line"></span><br><span class="line"> //限制连接数 </span><br><span class="line"> max_clients=100 </span><br><span class="line"> max_per_ip=5 </span><br><span class="line"> //限制传输速度 </span><br><span class="line"> anon_max_rate=81920 </span><br><span class="line"> local_max_rate=81920</span><br><span class="line">注意： 如果您不需要使用 FTP 服务，建议您关闭该服务</span><br></pre></td></tr></table></figure>
       
     </div>
 	
@@ -392,7 +391,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag"># Python</a>
+            <a href="/tags/运维/" rel="tag"># 运维</a>
           
         </div>
       
@@ -405,8 +404,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/15/人生苦短，python当歌-3/" rel="next" title="人生苦短，Python当歌-3">
-                <i class="fa fa-chevron-left"></i> 人生苦短，Python当歌-3
+              <a href="/2018/09/06/windows安全基础/" rel="next" title="windows基础">
+                <i class="fa fa-chevron-left"></i> windows基础
               </a>
             
           </div>
@@ -414,10 +413,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/18/X-path爬取CNNIC/" rel="prev" title="x-path爬取CNNIC">
-                x-path爬取CNNIC <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -556,7 +551,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#爬虫"><span class="nav-number">1.</span> <span class="nav-text">爬虫</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#及时安装更新补丁"><span class="nav-number">1.</span> <span class="nav-text">及时安装更新补丁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#禁止匿名登录访问"><span class="nav-number">2.</span> <span class="nav-text">禁止匿名登录访问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#禁止显示banner信息"><span class="nav-number">3.</span> <span class="nav-text">禁止显示banner信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#限制FTP登录用户"><span class="nav-number">4.</span> <span class="nav-text">限制FTP登录用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#限制用户访问目录"><span class="nav-number">5.</span> <span class="nav-text">限制用户访问目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改默认地址和监听端口"><span class="nav-number">6.</span> <span class="nav-text">修改默认地址和监听端口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启用日志记录"><span class="nav-number">7.</span> <span class="nav-text">启用日志记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他安全设置"><span class="nav-number">8.</span> <span class="nav-text">其他安全设置</span></a></li></ol></div>
             
 
           </div>
